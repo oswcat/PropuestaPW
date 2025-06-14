@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIREM - Universidad de la República Mexicana</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- ==    NAVEGACIÓN VERTICAL TIPO TIMELINE    == -->
+    <!-- ============================================= -->
+    <nav class="timeline-nav" id="timeline-nav">
+        <ul>
+            <li><a href="#inicio" data-section="inicio" title="Ir a Inicio">Inicio</a></li>
+            <li><a href="#actividades" data-section="actividades" title="Ir a Oferta Educativa">Oferta Educativa</a></li>
+            <li><a href="#quienes-somos" data-section="quienes-somos" title="Ir a Quiénes Somos">Quiénes Somos</a></li>
+            <li><a href="#clips-tiktok" data-section="clips-tiktok" title="Ir a Clips">Clips</a></li>
+            <li><a href="#destacados" data-section="destacados" title="Ir a Destacados">Destacados</a></li>
+            <li><a href="#contacto" data-section="contacto" title="Ir a Contacto">Contacto</a></li>
+            <li><a href="#footer-section" data-section="footer-section" title="Ir a Pie de página">Información</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==  BARRA DE NAVEGACIÓN SUPERIOR (AZUL)    == -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo">
+                 <!-- Added alt text for accessibility -->
+                <img src="/images/src/3 Logo-UNIREM-Blanco.png" alt="Logo UNIREM" height="45">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="#inicio">Inicio</a></li>
+                 <li class="has-dropdown">
+                     <!-- aria-haspopup="true" is important for accessibility -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Quiénes Somos <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                     <!-- aria-haspopup="true" is important for accessibility -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Oferta Educativa <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="oferta/bachillerato.html">Bachillerato</a></li> <!-- Corrected links to offer pages -->
+                         <li><a href="oferta/licenciaturas.html">Licenciaturas</a></li>
+                         <li><a href="oferta/posgrados.html">Posgrados</a></li>
+                         <li><a href="oferta/actividades.html#extracurriculares">Extracurriculares</a></li> <!-- Corrected link to activities page -->
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                     <!-- Added an Activities dropdown based on original links -->
+                      <a href="#" aria-haspopup="true" aria-expanded="false">Actividades <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="./pages/Bach.html">Deportes</a></li>
+                         <li><a href="./pages/Cita.html">Arte y Cultura</a></li>
+                         <li><a href="./pages/licenciaturas.html">Ciencia y Tec.</a></li>
+                         <li><a href="./pages/template.html">Plantilla</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#clips-tiktok">Clips</a></li>
+                 <li><a href="#destacados">Destacados</a></li>
+                 <li><a href="#contacto">Contacto</a></li>
+                 <li><a href="./pages/Cita.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==             SECCIÓN HERO (INICIO)       == -->
+    <!-- ============================================= -->
+    <header class="hero-section" id="inicio">
+       <div class="hero-overlay"></div>
+       <picture>
+            <!-- Added alt text to source images -->
+           <source srcset="/images/src/P1.jpeg" media="(min-width: 992px)">
+           <source srcset="/images/src/P3.jpeg" media="(min-width: 600px)">
+           <img src="/images/src/P2.jpeg" alt="Campus UNIREM con estudiantes" class="hero-image">
+       </picture>
+       <div class="container hero-content">
+            <h1 class="hero-title">Universidad de la República Mexicana</h1>
+            <!-- Typed.js target -->
+            <p class="hero-subtitle"><span id="typed-output">      </span></p>
+            <!-- Added aria-label to button -->
+            <a href="#quienes-somos" class="btn btn-primary btn-large hero-button" aria-label="Conoce más sobre UNIREM">Conoce UNIREM</a>
+       </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- ==           SECCIÓN OFERTA EDUCATIVA      == -->
+    <!-- ============================================= -->
+
+    <section id="actividades" class="section-padding">  
+        <div class="container">
+            <h2 class="section-title">Conoce Nuestra Oferta Educativa</h2>
+            <div class="image-grid">
+                 <!-- Added .animate-on-scroll class -->
+                <a href="oferta/bachillerato.html" class="image-box animate-on-scroll">
+                   <div class="image-box-images">
+                        <!-- Added alt text -->
+                       <img src="images/srcw/vive_unirem_bach_2.webp" alt="Estudiantes de bachillerato">
+                    </div>
+                   <div class="image-box-content">
+                        <h3><i class="fas fa-flask icon-left"></i>Bachillerato</h3>
+                        <p>Formación general en diversas áreas del conocimiento, preparando a los estudiantes para la universidad.</p>
+                        <span class="image-box-link">Conoce Bachillerato →</span>
+                   </div>
+                </a>
+                 <!-- Added .animate-on-scroll class -->
+                <a href="oferta/licenciaturas.html" class="image-box animate-on-scroll">
+                    <div class="image-box-images">
+                        <!-- Added alt text -->
+                       <img src="images/srcw/foto-gastronomia.webp" alt="Estudiantes de licenciatura">
+                    </div>
+                    <div class="image-box-content">
+                        <h3><i class="fa-solid fa-lightbulb icon-left"></i>Licenciaturas</h3>
+                        <p>Educación superior especializada en un área, con duración de 3 a 4 años, que culmina con un título profesional.</p>
+                        <span class="image-box-link">Explorar Licenciaturas →</span>
+                    </div>
+               </a>
+                <!-- Added .animate-on-scroll class -->
+               <a href="oferta/posgrados.html" class="image-box animate-on-scroll">
+                    <div class="image-box-images">
+                         <!-- Added alt text -->
+                        <img src="images/srcw/portada_posgrado.webp" alt="Investigación posgrado">
+                    </div>
+                    <div class="image-box-content">
+                        <h3><i class="fa-solid fa-landmark icon-left"></i>Posgrados</h3>
+                        <p>Estudios avanzados después de la licenciatura, enfocados en la especialización y la investigación.</p>
+                         <span class="image-box-link">Descubre Posgrados →</span>
+                    </div>
+               </a>
+            </div>
+        </div>
+   </section>
+
+    <!-- ============================================= -->
+    <!-- ==           SECCIÓN QUIÉNES SOMOS         == -->
+    <!-- ============================================= -->
+
+    <section id="quienes-somos" class="section-padding bg-light">
+        <div class="container">
+            <div class="split-section">
+                <!-- Added .animate-on-scroll class -->
+                <div class="split-content animate-on-scroll">
+                    <h2 class="section-title text-left">Nuestra Misión Educativa</h2>
+                    <!-- Added alt text -->
+                    <p>En UNIREM, nos dedicamos a fomentar el desarrollo integral de cada estudiante, cultivando no solo el conocimiento académico, sino también habilidades socioemocionales, pensamiento crítico y creatividad.</p>
+                    <p>Creemos en un enfoque personalizado, adaptándonos a las necesidades individuales para potenciar el talento único de cada joven y adulto en un ambiente de apoyo y respeto.</p>
+                     <!-- Added aria-label -->
+                    <a href="sobre-nosotros.html" class="btn btn-secondary" aria-label="Leer más sobre nuestra misión">Leer Más</a>
+                </div>
+                <!-- Added .animate-on-scroll class -->
+                <div class="split-image animate-on-scroll">
+                    <!-- Added alt text -->
+                    <img src="/images/srcw/vive_unirem_bach_8.webp" alt="Estudiantes colaborando en UNIREM">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==           SECCIÓN CLIPS TIKTOK (EMBEDS) == -->
+    <!-- ============================================= -->
+    <section id="clips-tiktok" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">#ComunidadUNIREM en Clips</h2>
+            <!-- Wrap each clip-card with .animate-on-scroll -->
+            <div class="clips-container">
+                 <div class="clip-card animate-on-scroll">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7439799256065543480" data-video-id="7439799256065543480" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Una experiencia única para nuestros estudiantes de Prepa UNAM! 🔬 🧪 Nuestros alumnos visitaron el Instituto de <a title="física" target="_blank" href="https://www.tiktok.com/tag/f%C3%ADsica?refer=embed">#Física</a> de la <a title="unam" target="_blank" href="https://www.tiktok.com/tag/unam?refer=embed">#UNAM</a> que cada año abre sus puertas para que más personas conozcan sobre los proyectos que transforman el futuro de la <a title="ciencia" target="_blank" href="https://www.tiktok.com/tag/ciencia?refer=embed">#ciencia</a>.  📚 Nuestro plan de estudios de Prepa UNAM forma líderes, brindado experiencias únicas que enriquecen su <a title="aprendizaje" target="_blank" href="https://www.tiktok.com/tag/aprendizaje?refer=embed">#aprendizaje</a>.  <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Backsound Music - Ibnusta" href="https://www.tiktok.com/music/Backsound-Music-7316749262485129218?refer=embed">♬ Backsound Music - Ibnusta</a> </section> </blockquote>
+                 </div>
+
+                 <div class="clip-card animate-on-scroll">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7328482977787153670" data-video-id="7328482977787153670" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> Soy estudiante de <a title="gastronomia" target="_blank" href="https://www.tiktok.com/tag/gastronomia?refer=embed">#gastronomia</a> obvio estudio en <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> 🧑‍🍳 ¡Feliz dia del <a title="chef" target="_blank" href="https://www.tiktok.com/tag/chef?refer=embed">#chef</a>! <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Rock This Party - 颜妹" href="https://www.tiktok.com/music/Rock-This-Party-6876283456507086856?refer=embed">♬ Rock This Party - 颜妹</a> </section> </blockquote>
+                 </div>
+
+                 <div class="clip-card animate-on-scroll">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7312500562661149958" data-video-id="7312500562661149958" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Aprender sobre ciencia nunca fue tan divertido! 👩‍🔬 <a title="ciencia" target="_blank" href="https://www.tiktok.com/tag/ciencia?refer=embed">#ciencia</a> <a title="experimento" target="_blank" href="https://www.tiktok.com/tag/experimento?refer=embed">#experimento</a> <a title="preparatoria" target="_blank" href="https://www.tiktok.com/tag/preparatoria?refer=embed">#preparatoria</a> <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> <a target="_blank" title="♬ thats what i like sped up - 🎃🎃🎃" href="https://www.tiktok.com/music/thats-what-i-like-sped-up-7099174146399095594?refer=embed">♬ thats what i like sped up - 🎃🎃🎃</a> </section> </blockquote>
+                 </div>
+
+                 <div class="clip-card animate-on-scroll">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7337732141234572550" data-video-id="7337732141234572550" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¿Te has preguntado alguna vez cómo funciona realmente la magia detrás de los dispositivos electrónicos que usamos a diario? ⚡️ No pierdas la oportunidad de expandir tus conocimientos y desbloquear nuevas posibilidades en el mundo <a title="digital" target="_blank" href="https://www.tiktok.com/tag/digital?refer=embed">#digital</a>. 💻 Cuéntanos, ¿cuál es tu clase favorita de ingeniería en <a title="sistemas" target="_blank" href="https://www.tiktok.com/tag/sistemas?refer=embed">#sistemas</a> computacionales? ✏️ <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a title="universidad" target="_blank" href="https://www.tiktok.com/tag/universidad?refer=embed">#universidad</a> <a target="_blank" title="♬ Funk It Up - John Etkin-Bell" href="https://www.tiktok.com/music/Funk-It-Up-7013707229828220929?refer=embed">♬ Funk It Up - John Etkin-Bell</a> </section> </blockquote>
+                 </div>
+
+                 <div class="clip-card animate-on-scroll">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7458754968871292165" data-video-id="7458754968871292165" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> 🌿¿Sabías que las <a title="chinampas" target="_blank" href="https://www.tiktok.com/tag/chinampas?refer=embed">#chinampas</a> son un sistema agrícola único en el mundo desde la época prehispánica?  Nuestros alumnos de la licenciatura en Administración de Empresas <a title="turísticas" target="_blank" href="https://www.tiktok.com/tag/tur%C3%ADsticas?refer=embed">#Turísticas</a> realizaron un increíble City Tour como parte de su proyecto final, explorando la cultura, tradiciones u belleza de este lugar declarado Patrimonio de la Humanidad. 🌎 <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a title="xochimilco" target="_blank" href="https://www.tiktok.com/tag/xochimilco?refer=embed">#Xochimilco</a> <a title="universidad" target="_blank" href="https://www.tiktok.com/tag/universidad?refer=embed">#universidad</a> <a target="_blank" title="♬ Así Fue - En Vivo Desde Bellas Artes, México/ 2013 - Juan Gabriel" href="https://www.tiktok.com/music/Así-Fue-En-Vivo-Desde-Bellas-Artes-México-2013-7218376302503365382?refer=embed">♬ Así Fue - En Vivo Desde Bellas Artes, México/ 2013 - Juan Gabriel</a> </section> </blockquote>
+                 </div>
+                 <!-- Added .animate-on-scroll class -->
+                 <div class="clip-card animate-on-scroll" style="display: flex; align-items: center; justify-content: center; background-color: var(--light-bg); text-align: center;">
+                    <p style="padding:20px; color: var(--medium-text); font-size: 0.9rem;">¡Síguenos en TikTok para ver más!</p>
+                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==     SECCIÓN CARACTERÍSTICAS DESTACADAS  == -->
+    <!-- ============================================= -->
+    <section id="destacados" class="section-padding bg-gradient">
+        <div class="container">
+             <h2 class="section-title text-light">¿Por qué elegir UNIREM?</h2>
+             <div class="features-grid">
+                 <!-- Added .animate-on-scroll class to each card -->
+                  <div class="feature-card animate-on-scroll">
+                      <div class="feature-icon"><i class="fas fa-chalkboard-user fa-2x"></i></div>
+                      <h4>Profesorado Calificado</h4>
+                      <p>Equipo docente apasionado, experto y comprometido con la formación continua.</p>
+                  </div>
+                  <div class="feature-card animate-on-scroll">
+                      <div class="feature-icon"><i class="fas fa-laptop-code fa-2x"></i></div>
+                      <h4>Tecnología Educativa</h4>
+                      <p>Integración efectiva de herramientas digitales para enriquecer el aprendizaje.</p>
+                  </div>
+                   <div class="feature-card animate-on-scroll">
+                      <div class="feature-icon"><i class="fas fa-users fa-2x"></i></div>
+                      <h4>Ambiente Inclusivo</h4>
+                      <p>Un espacio seguro, acogedor y respetuoso donde cada estudiante se siente valorado.</p>
+                  </div>
+                   <div class="feature-card animate-on-scroll">
+                      <div class="feature-icon"><i class="fas fa-graduation-cap fa-2x"></i></div>
+                      <h4>Excelencia Académica</h4>
+                      <p>Programas educativos rigurosos y estimulantes que preparan para el éxito futuro.</p>
+                  </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==      SECCIÓN LLAMADA A LA ACCIÓN (CTA)  == -->
+    <!-- ============================================= -->
+    <section id="contacto" class="cta-section section-padding">
+         <div class="container text-center">
+             <h2 class="cta-title">¿Listo para unirte a nuestra #ComunidadUNIREM?</h2>
+             <p class="cta-text">Ponte en contacto con nosotros para agendar una visita personalizada, resolver tus dudas o conocer más sobre nuestro proceso de admisión.</p>
+             <div class="cta-buttons">
+                  <!-- Added aria-label to buttons -->
+                  <a href="contacto.html" class="btn btn-light btn-large" aria-label="Contactar ahora para información">Contactar Ahora</a>
+                  <a href="admisiones.html" class="btn btn-outline-light btn-large" aria-label="Ver proceso de admisiones">Ver Admisiones</a>
+             </div>
+         </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==             PIE DE PÁGINA               == -->
+    <!-- ============================================= -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                  <!-- Added alt text -->
+                  <img src="/images/src/3 Logo-UNIREM-Blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo">
+                  <!-- Added aria-label for logo link if it were wrapped -->
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="#inicio">Inicio</a></li>
+                     <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                     <li><a href="#actividades">Oferta Educativa</a></li>
+                     <li><a href="admisiones.html">Admisiones</a></li>
+                     <li><a href="noticias.html">Noticias</a></li>
+                     <li><a href="contacto.html">Contacto</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección Completa de UNIREM, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                 <!-- Added aria-label for accessibility -->
+                 <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <p>© 2024 Universidad de la República Mexicana. Todos los derechos reservados. | <a href="politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ==        BOTÓN FLOTANTE WHATSAPP        == -->
+    <!-- ============================================= -->
+    <!-- Added rel="noopener noreferrer" for security with target="_blank" -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20UNIREM."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================= -->
+    <!-- ==                 SCRIPTS                 == -->
+    <!-- ============================================= -->
+    <!-- Typed.js CDN -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+
+    <!-- TikTok Embed Script (async recommended) -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <!-- Inline script for Typed.js on Index page -->
+     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+             const typedTargetIndex = document.getElementById('typed-output');
+             if (typedTargetIndex && typeof Typed !== 'undefined') {
+                 // Check if Typed is already initialized on this element
+                 if (!typedTargetIndex.classList.contains('typed-initialized')) {
+                     try {
+                         const typed = new Typed('#typed-output', {
+                             strings: [ // Frases para UNIREM index
+                                 "Educación de calidad a tu alcance.",
+                                 "Impulsando tu futuro profesional.",
+                                 "Programas con validez oficial.",
+                                 "Modalidades flexibles."
+                             ],
+                             typeSpeed: 50, backSpeed: 30, backDelay: 1500,
+                             startDelay: 500, loop: true, showCursor: true, cursorChar: '_',
+                             onComplete: (self) => {
+                                 // Add a class to indicate it's initialized
+                                 self.el.classList.add('typed-initialized');
+                             },
+                         });
+                     } catch (error) {
+                         console.error("Error Typed.js index (inline):", error);
+                         if (typedTargetIndex) typedTargetIndex.textContent = "Formando profesionales para el futuro."; // Fallback text
+                     }
+                  }
+             } else if (typedTargetIndex) {
+                 // Fallback text if Typed.js script failed to load
+                 typedTargetIndex.textContent = "Formando profesionales para el futuro.";
+             }
+         });
+     </script>
+
+</body>
+</html>

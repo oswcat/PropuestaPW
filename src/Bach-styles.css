@@ -1,0 +1,997 @@
+/* ============================================= */
+/* ==           VARIABLES CSS GLOBALES        == */
+/* ============================================= */
+:root {
+    /* Colores Principales (¡Fácil de cambiar aquí!) */
+    --primary-color: #4a69bd;         /* Azul principal */
+    --primary-color-rgb: 74, 105, 189;/* Azul principal en RGB */
+    --secondary-color: #6a89cc;       /* Azul más claro */
+    --secondary-color-rgb: 106, 137, 204;/* Azul claro en RGB */
+    --accent-color: #f6b93b;          /* Amarillo/Naranja */
+    --accent-color-darker: #e0a800;   /* Acento más oscuro para hover */
+
+    /* Colores Neutros */
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --light-bg: #f8f9fa;              /* Fondo muy claro */
+    --dark-text: #212529;             /* Texto oscuro principal (ligeramente más oscuro) */
+    --medium-text: #5a6268;           /* Texto gris medio */
+    --light-text: #f8f9fa;             /* Texto claro (casi blanco) */
+    --border-color: #dee2e6;          /* Borde gris claro */
+    --shadow-color-light: rgba(0, 0, 0, 0.08); /* Sombra clara */
+    --shadow-color-medium: rgba(0, 0, 0, 0.15);/* Sombra media */
+
+    /* Fondos Específicos */
+    --gradient-bg: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --navbar-bg: linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.92), rgba(var(--secondary-color-rgb), 0.92) 100%); /* Fondo Navbar */
+    --dropdown-bg: var(--white-color); /* Fondo Dropdown */
+    --footer-bg: var(--dark-text);    /* Fondo Footer */
+    --cta-bg: url('images/cta-bg.jpg'); /* Fondo CTA Section (update path) */
+    --cta-overlay: rgba(var(--primary-color-rgb), 0.85); /* Overlay CTA */
+
+
+    /* Tipografía */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --base-font-size: 16px; /* Base para REM */
+
+    /* Tamaños y Espacios */
+    --navbar-height: 70px;
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+    --container-width: 1140px;
+
+    /* >> Timeline Nav Variables << */
+    --timeline-nav-width: 180px;
+    --timeline-nav-right: 25px;
+    --timeline-text-color: rgba(52, 58, 64, 0.75);
+    --timeline-active-text-color: var(--primary-color);
+    --timeline-hover-text-color: var(--dark-text);
+    --timeline-dot-size: 8px;
+    --timeline-dot-color: rgba(0, 0, 0, 0.15);
+    --timeline-active-dot-color: var(--primary-color);
+    --timeline-hover-dot-color: var(--secondary-color);
+    --timeline-line-color: rgba(0, 0, 0, 0.1);
+    --timeline-item-spacing: 35px;
+    --timeline-dot-right-offset: 20px;
+    --timeline-line-right-offset: calc(var(--timeline-dot-right-offset) + var(--timeline-dot-size) / 2);
+    --timeline-text-right-offset: calc(var(--timeline-dot-right-offset) + var(--timeline-dot-size) + 15px);
+}
+
+/* ============================================= */
+/* ==     RESETEO BÁSICO Y ESTILOS GLOBALES   == */
+/* ============================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: var(--base-font-size); }
+body { font-family: var(--font-secondary); line-height: 1.7; color: var(--dark-text); background-color: var(--white-color); overflow-x: hidden; }
+.container { max-width: var(--container-width); margin: auto; padding: 0 20px; }
+a { text-decoration: none; color: var(--primary-color); transition: all 0.3s ease; }
+a:hover { color: var(--secondary-color); }
+img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-primary); font-weight: 700; margin-bottom: 0.75em; line-height: 1.3; color: var(--dark-text); }
+h1 { font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 800;}
+h2 { font-size: clamp(1.8rem, 4vw, 2.25rem); }
+h3 { font-size: clamp(1.3rem, 3vw, 1.5rem); }
+h4 { font-size: 1.1rem; font-weight: 600; }
+p { margin-bottom: 1rem; color: var(--medium-text); text-align: center; } /* Asegura alineación izquierda para párrafos */
+.section-padding { padding: clamp(60px, 8vw, 80px) 0; }
+.bg-light { background-color: var(--light-bg); }
+.bg-gradient { background: var(--gradient-bg); color: var(--light-text); }
+/* Adjust text color for elements within the gradient background */
+.bg-gradient .section-title, .bg-gradient h3, .bg-gradient h4, .bg-gradient p { color: var(--light-text); }
+/* Feature cards within gradient */
+.bg-gradient .feature-card { background-color: rgba(255, 255, 255, 0.15); color: var(--light-text); }
+.bg-gradient .feature-card h4 { color: var(--light-text); }
+.bg-gradient .feature-card p { color: rgba(255, 255, 255, 0.9); }
+
+
+.section-title { text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 15px; }
+.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; }
+.bg-gradient .section-title::after { background-color: var(--accent-color); }
+.section-title.text-left { text-align: left; }
+.section-title.text-left::after { left: 0; transform: translateX(0); }
+.text-light { color: var(--light-text) !important; }
+.text-center { text-align: center; } /* Utility class for centering *block* content */
+/* Regla para asegurar que elementos de *texto* dentro de un contenedor centrado mantengan alineación izquierda */
+/* Apply this to parent containers that are text-centered but contain paragraphs or lists that should be left-aligned */
+.text-center p,
+.text-center ul,
+.text-center ol,
+.text-center .content-details,
+.text-center .content-details h4, /* Ensure h4 inside details is also left-aligned */
+.text-center .campus-info p,
+.text-center .campus-info h4, /* Ensure text inside campus-info is left-aligned */
+.footer-content > div p, /* Footer paragraph alignment */
+.footer-content > div ul /* Footer list alignment */
+{
+    text-align: left;
+}
+/* Regla para asegurar que títulos específicos dentro de contenedores centrados SÍ se centren */
+.text-center h2,
+.text-center h3,
+.text-center h4.centered, /* Add class 'centered' if you need to center a specific h4 */
+.text-center .section-title,
+.footer-content > div h4 /* Footer heading alignment */
+{
+    text-align: center; /* Or left/right as needed by the parent container's layout */
+}
+
+
+/* ============================================= */
+/* ==       ESTILOS DE BOTONES                == */
+/* ============================================= */
+.btn { display: inline-block; font-family: var(--font-primary); font-weight: 600; padding: 0.6em 1.6em; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.85rem; line-height: 1.5; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; }
+.btn-large { padding: 0.8em 2em; font-size: 0.95rem; }
+.btn-small { padding: 0.4em 1.2em; font-size: 0.75rem; }
+.btn-primary { background-color: var(--accent-color); color: var(--dark-text); }
+.btn-primary:hover { background-color: var(--accent-color-darker); color: var(--dark-text); transform: translateY(-2px); box-shadow: 0 4px 10px var(--shadow-color-light); }
+.btn-secondary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-secondary:hover { background-color: var(--secondary-color); color: var(--white-color); transform: translateY(-2px); box-shadow: 0 4px 10px var(--shadow-color-light); }
+.btn-light { background-color: var(--white-color); color: var(--primary-color); box-shadow: 0 2px 5px var(--shadow-color-light);}
+.btn-light:hover { background-color: var(--light-bg); color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 4px 10px var(--shadow-color-light); }
+.btn-outline-light { background-color: transparent; color: var(--white-color); border: 2px solid var(--white-color); }
+.btn-outline-light:hover { background-color: var(--white-color); color: var(--primary-color); transform: translateY(-2px); }
+.nav-cta.btn-small { padding: 0.5em 1.3em; font-size: 0.8rem; }
+.nav-cta.btn-primary { background-color: var(--accent-color); color: var(--dark-text); }
+.nav-cta.btn-primary:hover { background-color: var(--accent-color-darker); color: var(--dark-text); box-shadow: 0 2px 8px rgba(0,0,0,0.2); transform: translateY(-1px); }
+
+/* ============================================= */
+/* ==   BARRA DE NAVEGACIÓN SUPERIOR (AZUL)   == */
+/* ============================================= */
+.navbar { background: var(--navbar-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); height: var(--navbar-height); box-shadow: 0 2px 15px var(--shadow-color-medium); position: sticky; top: 0; z-index: 1000; width: 100%; transition: top 0.4s ease-in-out, background 0.3s ease, transform 0.4s ease-in-out; transform: translateY(0); }
+.navbar--hidden { transform: translateY(-110%); }
+.navbar-content { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo img { border-radius: 0; height: var(--navbar-logo-height, 45px); width: auto; }
+.nav-links { list-style: none; display: flex; align-items: center; margin: 0; padding: 0; }
+.nav-links li { margin-left: 5px; position: relative; }
+.nav-links a { display: flex; align-items: center; color: var(--light-text); padding: 0.6em 1em; margin: 0 2px; font-weight: 500; position: relative; transition: color 0.3s ease, background-color 0.3s ease; font-size: 0.9rem; border-radius: var(--border-radius-small); }
+.nav-links a:not(.btn) { background-color: transparent; }
+.nav-links li:not(.has-dropdown) a:hover { background-color: rgba(255, 255, 255, 0.1); color: var(--white-color); }
+.nav-links li:not(.has-dropdown) a.active { background-color: rgba(0, 0, 0, 0.1); color: var(--white-color); }
+
+/* --- Estilos Dropdown --- */
+.has-dropdown > a { cursor: pointer; }
+.dropdown-indicator { font-size: 0.6em; margin-left: 8px; transition: transform 0.3s ease; }
+.has-dropdown.open > a .dropdown-indicator, .has-dropdown:hover > a .dropdown-indicator { transform: rotate(180deg); }
+.dropdown-menu { list-style: none; position: absolute; top: 95%; left: 0; min-width: 200px; background-color: var(--dropdown-bg); border-radius: var(--border-radius-small); box-shadow: 0 5px 15px var(--shadow-color-medium); z-index: 1001; padding: 10px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease; border: 1px solid var(--border-color); }
+.has-dropdown:hover .dropdown-menu, .has-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); transition: opacity 0.3s ease, visibility 0s linear 0s, transform 0.3s ease; }
+.dropdown-menu li { margin: 0; }
+.dropdown-menu a { display: block; padding: 8px 20px; color: var(--dark-text); font-size: 0.85rem; font-weight: 500; white-space: nowrap; border-radius: 0; transition: background-color 0.2s ease, color 0.2s ease; }
+.dropdown-menu a:hover, .dropdown-menu a:focus { background-color: var(--light-bg); color: var(--primary-color); outline: none; }
+
+/* Menú Hamburguesa */
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 1100; }
+.menu-toggle span { background-color: var(--light-text); display: block; width: 25px; height: 3px; margin: 5px 0; transition: all 0.3s ease-in-out; border-radius: 1px;}
+.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ============================================= */
+/* ==         NAVEGACIÓN VERTICAL TIMELINE    == */
+/* ============================================= */
+.timeline-nav { position: fixed; top: 50%; right: var(--timeline-nav-right); transform: translateY(-50%); width: var(--timeline-nav-width); z-index: 999; opacity: 0; visibility: hidden; transition: opacity 0.5s ease 0.2s, visibility 0s linear 0.7s; pointer-events: none; }
+.timeline-nav.visible { opacity: 1; visibility: visible; transition: opacity 0.5s ease 0.2s, visibility 0s linear 0s; pointer-events: auto; }
+.timeline-nav ul { list-style: none; padding: 0; margin: 0; position: relative; display: flex; flex-direction: column; align-items: flex-end; }
+.timeline-nav li { position: relative; padding-right: var(--timeline-text-right-offset); margin-bottom: var(--timeline-item-spacing); width: 100%; text-align: right; }
+.timeline-nav li:last-child { margin-bottom: 0; }
+/* Línea vertical */
+.timeline-nav li::before { content: ''; position: absolute; background-color: var(--timeline-line-color); width: 1px; right: var(--timeline-line-right-offset); top: calc(var(--timeline-dot-size) / 2 + 6px); bottom: calc(-1 * var(--timeline-item-spacing) + var(--timeline-dot-size) / 2 + 6px); z-index: 1; }
+.timeline-nav li:last-child::before { display: none; }
+.timeline-nav a { display: inline-block; position: relative; text-decoration: none; color: var(--timeline-text-color); font-family: var(--font-primary); font-weight: 500; font-size: 0.8rem; transition: color 0.3s ease; line-height: 1.3; cursor: pointer; }
+/* Punto */
+.timeline-nav a::before { content: ''; position: absolute; background-color: var(--timeline-dot-color); border: 1px solid var(--timeline-line-color); width: var(--timeline-dot-size); height: var(--timeline-dot-size); border-radius: 50%; right: calc(-1 * var(--timeline-text-right-offset) + var(--timeline-dot-right-offset)); top: 50%; transform: translateY(-50%); transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; z-index: 2; }
+.timeline-nav a:hover, .timeline-nav a:focus { color: var(--timeline-hover-text-color); outline: none; }
+.timeline-nav a:hover::before, .timeline-nav a:focus::before { background-color: var(--timeline-hover-dot-color); border-color: var(--timeline-hover-dot-color); transform: translateY(-50%) scale(1.3); }
+.timeline-nav a.active { color: var(--timeline-active-text-color); font-weight: 700; }
+.timeline-nav a.active::before { background-color: var(--timeline-active-dot-color); border-color: var(--timeline-active-dot-color); transform: translateY(-50%) scale(1.6); box-shadow: 0 0 5px var(--timeline-active-dot-color); }
+
+/* ============================================= */
+/* ==          SECCIÓN HERO (BANNER)          == */
+/* ============================================= */
+.hero-section { position: relative; height: calc(100vh - var(--navbar-height)); min-height: 500px; max-height: 800px; overflow: hidden; color: var(--white-color); display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; border-radius: 0; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: 2; }
+.hero-content { position: relative; z-index: 3; padding: 20px; max-width: 800px; }
+.hero-title { font-size: clamp(2.5rem, 6vw, 3.5rem); color: var(--white-color); margin-bottom: 0.5em; font-weight: 800; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+.hero-subtitle { font-size: clamp(1.1rem, 3vw, 1.4rem); color: rgba(255, 255, 255, 0.95); margin-bottom: 2em; font-weight: 400; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); min-height: 2.8em; }
+/* Estilo cursor Typed.js */
+.hero-subtitle .typed-cursor { color: var(--white-color); opacity: 1; animation: typedjsBlink 0.7s infinite; font-weight: bold; }
+@keyframes typedjsBlink { 50% { opacity: 0.0; } }
+
+/* ============================================= */
+/* == SECCIÓN BACHILLERATOS (SELECTOR + SLIDER) == */
+/* ============================================= */
+/* Reuse section-padding and container styles */
+
+/* Selector de Secciones */
+.section-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.selector-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.selector-button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.selector-button.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+}
+
+.selector-button.active:hover {
+     transform: none; /* Prevent lift effect on active button */
+}
+
+/* Estructura para el deslizamiento lateral */
+.content-slider-container {
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-color-medium);
+    position: relative;
+    /* Padding applied only to the container */
+    padding: 30px;
+    min-height: 650px; /* Adjusted min-height */
+}
+
+.content-slider {
+    display: flex;
+    width: 200%; /* 100% for each section */
+    transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    align-items: flex-start; /* Ensures content aligns at the top */
+}
+/* State for showing Bachillerato General */
+.content-slider.show-bachillerato {
+    transform: translateX(-50%);
+}
+
+.content-section {
+    width: 50%; /* Each section takes 100% of the visible container width */
+    flex-shrink: 0; /* Prevent sections from shrinking */
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+     /* REMOVED horizontal padding from here.
+        Padding is on .content-slider-container */
+}
+
+/* Reduce opacity and disable pointer events for the hidden section */
+.content-slider.show-bachillerato #prepa-section {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content-slider:not(.show-bachillerato) #bachillerato-section {
+    opacity: 0;
+    pointer-events: none;
+}
+/* Ensure the visible section has opacity 1 and pointer events */
+.content-slider.show-bachillerato #bachillerato-section,
+.content-slider:not(.show-bachillerato) #prepa-section {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Styles for content within the sections */
+.content-section h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.content-section p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: var(--dark-text);
+    text-align: left; /* Ensure left alignment for paragraphs within the section */
+}
+
+.content-details {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--border-radius-small);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.content-details h4 {
+    color: var(--dark-text);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+    text-align: left; /* Ensure h4 inside details is left-aligned */
+}
+
+.content-details p {
+    text-align: left; /* Ensure left alignment for paragraphs inside content-details */
+}
+
+
+.content-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-details ul li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    color: var(--medium-text);
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: left; /* Ensure left alignment for list items */
+    transition: color 0.3s ease;
+}
+.content-details ul li:hover {
+    color: var(--dark-text);
+}
+
+
+.content-details ul li::before {
+    content: "\f058"; /* Font Awesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    top: 0.1em;
+    transition: transform 0.3s ease;
+}
+.content-details ul li:hover::before {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+
+/* Styles for buttons within content-section */
+/* The parent div with text-center in HTML will center the buttons as a block */
+.content-section .btn {
+    margin: 10px;
+}
+.content-section .btn-large {
+    font-size: 1rem;
+    padding: 0.9em 2.2em;
+}
+
+
+/* ============================================= */
+/* ==        SECCIÓN QUIÉNES SOMOS (SPLIT)    == */
+/* ============================================= */
+.split-section { display: flex; align-items: center; gap: 60px; }
+/* split-content has text-center in HTML for block centering */
+.split-content { flex: 1; opacity: 0; /* Initial state for animation */ }
+/* Ensure text elements within split-content are left-aligned */
+.split-content p, .split-content ul, .split-content ol {
+    text-align: left;
+}
+.split-content h2, .split-content .section-title {
+     text-align: center; /* Title remains centered */
+}
+/* Adjust title underline for centered titles */
+.split-content .section-title::after {
+    left: 50%; transform: translateX(-50%);
+}
+
+
+.split-image { flex: 1; max-width: 50%; opacity: 0; /* Initial state for animation */ }
+.split-image img { box-shadow: 0 15px 35px rgba(0,0,0,0.12); border-radius: var(--border-radius); }
+.split-content .btn { margin-top: 25px; }
+
+/* ============================================= */
+/* ==      SECCIÓN VIDA EN EL CAMPUS (GRID)   == */
+/* ============================================= */
+/* Reuse section-padding and container with text-center */
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.campus-item {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-color-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Initial state for fade-in animation */
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Class added by JS to activate the animation */
+.campus-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.campus-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px var(--shadow-color-medium);
+}
+
+.campus-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the area */
+    border-radius: 0; /* No border radius for image corners inside card */
+    transition: transform 0.4s ease;
+}
+
+.campus-item:hover img {
+    transform: scale(1.05);
+}
+
+.campus-info {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: left; /* Align text inside the box */
+}
+
+.campus-info h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.campus-info p {
+    font-size: 0.95rem;
+    color: var(--medium-text);
+    margin-bottom: 0;
+    text-align: left; /* Ensure paragraph text is left-aligned */
+}
+
+
+/* ============================================= */
+/* ==         SECCIÓN CLIPS TIKTOK            == */
+/* ============================================= */
+.clips-container { display: flex; gap: 25px; overflow-x: auto; padding: 10px 20px 25px 20px; scrollbar-width: thin; scrollbar-color: var(--secondary-color) var(--light-bg); -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+.clips-container::-webkit-scrollbar { height: 8px; }
+.clips-container::-webkit-scrollbar-track { background: var(--border-color); border-radius: 4px; }
+.clips-container::-webkit-scrollbar-thumb { background-color: var(--secondary-color); border-radius: 4px; border: 2px solid var(--light-bg); }
+.clips-container::-webkit-scrollbar-thumb:hover { background-color: var(--primary-color); }
+.clip-card {
+    flex: 0 0 300px; /* Base width for the container */
+    height: 530px; /* Base height for 9:16 ratio */
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--medium-text); /* Background for placeholder or loading */
+    box-shadow: 0 6px 15px var(--shadow-color-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: center; /* Snap to center */
+    /* Ensure flex properties are set for the content inside if using flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center placeholder text */
+}
+/* Styles for the actual TikTok embed (blockquote and iframe) */
+.clip-card blockquote {
+    width: 100% !important; /* Force width */
+    height: 100% !important; /* Force height */
+    margin: 0 !important; /* Important to remove default margin */
+    padding: 0 !important; /* Important to remove default padding */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    /* The TikTok embed script will insert an iframe here */
+}
+.clip-card blockquote iframe {
+    /* Ensure the iframe fills the blockquote space */
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+.clip-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 10px 25px var(--shadow-color-medium); z-index: 5; }
+/* Style for the placeholder if TikTok doesn't load */
+.clip-card p { font-size: 0.9rem; font-weight: 500; text-align: center; color: var(--light-bg); padding: 20px;}
+
+
+/* ============================================= */
+/* ==   SECCIÓN CARACTERÍSTICAS DESTACADAS  == */
+/* ============================================= */
+/* Features grid styles */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 3rem; /* Larger icons */
+}
+
+.feature-card h4 {
+    color: var(--light-text);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    margin-bottom: 0;
+    font-size: 1rem;
+    text-align: left; /* Ensure paragraph text is left-aligned */
+}
+
+
+/* ============================================= */
+/* ==      SECCIÓN LLAMADA A LA ACCIÓN (CTA)  == */
+/* ============================================= */
+.cta-section {
+    background: var(--cta-overlay), var(--cta-bg);
+    background-size: cover;
+    background-position: center;
+    color: var(--black-color);
+    text-align: center;
+}
+
+.cta-title {
+    color: var(--white-color);
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.cta-text {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center; /* Keep CTA text centered */
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+}
+
+
+/* ============================================= */
+/* ==             PIE DE PÁGINA               == */
+/* ============================================= */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--light-text);
+    padding-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-about {
+    grid-column: span 1; /* Take 1 column on desktop */
+}
+.footer-about .footer-logo {
+    margin-bottom: 20px;
+    filter: invert(1); /* Make logo white if it's dark */
+    opacity: 0.8;
+    border-radius: 0;
+}
+.footer-about p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: left; /* Ensure left alignment */
+}
+
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+     color: var(--white-color);
+     margin-bottom: 20px;
+     font-size: 1.1rem;
+     position: relative;
+     padding-bottom: 10px;
+}
+.footer-links h4::after,
+.footer-contact h4::after,
+.footer-social h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Default to left for desktop */
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--white-color);
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start; /* Align text alongside icon */
+    gap: 10px; /* Space between icon and text */
+}
+.footer-contact i {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-right: 5px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.footer-contact p:last-child { margin-bottom: 0; }
+
+
+.footer-social a {
+    display: inline-block;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.footer-social a:hover {
+    color: var(--secondary-color);
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+.footer-bottom a {
+     color: rgba(255, 255, 255, 0.6);
+     text-decoration: underline;
+}
+.footer-bottom a:hover {
+     color: var(--white-color);
+}
+
+
+/* ============================================= */
+/* ==        BOTÓN FLOTANTE WHATSAPP        == */
+/* ============================================= */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================= */
+/* ==        MEDIA QUERIES (RESPONSIVE)       == */
+/* ============================================= */
+@media (max-width: 1199px) {
+    /* Hide timeline nav on smaller desktops/tablets */
+    .timeline-nav { display: none; }
+}
+
+@media (max-width: 991px) { /* Tablets */
+    :root { --navbar-height: 65px; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    .section-padding { padding: 60px 0; }
+    .container { max-width: 90%; } /* Slightly smaller max width */
+    .split-section { flex-direction: column; text-align: center; gap: 40px;}
+    .split-image { max-width: 75%; margin-top: 30px; order: -1; } /* Image above text */
+    .split-content { order: 1; opacity: 0; /* Reset opacity for mobile animation */ animation: slideInFromBottom 0.8s ease-out forwards; animation-delay: 0s; /* Animation starts immediately */ }
+    /* Alignment for text within the now-centered split-content block */
+    .split-content p, .split-content ul, .split-content ol { text-align: left; }
+    /* Title alignment remains centered */
+    .split-content h2, .split-content .section-title { text-align: center; }
+    .split-content .section-title::after { left: 50%; transform: translateX(-50%); }
+
+    .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+    /* Responsive for Bachillerato selector and slider */
+    .selector-button {
+        padding: 10px 20px;
+        margin: 0 8px;
+        font-size: 0.95rem;
+    }
+     .content-slider-container {
+         padding: 25px;
+         min-height: 600px; /* Adjust min-height */
+         align-items: flex-start; /* Ensure content aligns to top */
+     }
+      .content-section {
+         padding: 0; /* No horizontal padding on internal sections */
+     }
+     .content-section h3 {
+         font-size: 1.4rem;
+         margin-bottom: 15px;
+     }
+     .content-section p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+     }
+     .content-details {
+         padding: 20px;
+         margin-bottom: 25px;
+     }
+     .content-details h4 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+     }
+     .content-details ul li {
+         padding-left: 20px;
+         margin-bottom: 10px;
+         font-size: 0.95rem;
+         text-align: left;
+     }
+     .content-details ul li::before {
+         font-size: 0.9rem;
+         top: 0.2em;
+     }
+      /* Style for buttons within content-section (when centered) */
+      .content-section .btn {
+         margin: 8px;
+         font-size: 0.9rem;
+     }
+      .content-section .btn-large {
+         font-size: 0.95rem;
+         padding: 0.8em 2em;
+     }
+
+     /* Responsive for Campus Life section */
+     .campus-grid {
+         gap: 20px;
+     }
+     .campus-item img {
+         height: 180px;
+     }
+     .campus-info {
+         padding: 15px;
+     }
+     .campus-info h4 {
+         font-size: 1.1rem;
+         margin-bottom: 8px;
+     }
+     .campus-info p {
+         font-size: 0.9rem;
+     }
+
+     /* Adjust size of clips on tablet */
+    .clip-card { flex-basis: 280px; height: 500px; }
+
+    /* Footer adjustments */
+     .footer-content { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } /* Allow slightly smaller columns if needed */
+     .footer-content > div { text-align: center; } /* Center align columns on tablet */
+     .footer-about { grid-column: span 2 / auto; } /* Allow about section to span more if space allows */
+     .footer-about .footer-logo { margin: 0 auto 20px auto; } /* Center logo on tablet */
+
+     /* Adjust footer title underline for centered titles */
+     .footer-links h4::after,
+     .footer-contact h4::after,
+     .footer-social h4::after {
+         left: 50%; transform: translateX(-50%);
+     }
+
+     .footer-contact p { justify-content: center; } /* Center contact info */
+     .footer-social { text-align: center; margin-top: 15px; } /* Center social icons block */
+     .footer-social a { margin: 0 12px; } /* Space between icons */
+
+}
+
+@media (max-width: 767px) { /* Mobile */
+    :root { --navbar-height: 60px; --base-font-size: 15px; }
+    .navbar { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .logo img { height: 40px; }
+    .menu-toggle { display: block; }
+    /* Mobile navigation full screen overlay */
+    .nav-links { position: fixed; top: var(--navbar-height); left: 0; width: 100%; height: calc(100vh - var(--navbar-height)); background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); flex-direction: column; align-items: stretch; justify-content: flex-start; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); padding: 25px 0; z-index: 1050; overflow-y: auto; }
+    .nav-links.active { transform: translateX(0); }
+    .nav-links li { margin: 0; width: 100%; }
+    .nav-links a { font-size: 1.1rem; padding: 14px 30px; color: var(--dark-text); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); border-radius: 0; margin: 0; font-weight: 600; }
+    .nav-links a:hover, .nav-links a:focus { background-color: var(--light-bg); color: var(--primary-color); outline: none; }
+    .nav-links li:last-child a { border-bottom: none; }
+    /* Mobile CTA button within mobile menu */
+    .nav-links a.nav-cta { background-color: var(--primary-color); color: var(--white-color); margin: 25px 30px; border-radius: 50px; text-align: center; justify-content: center; font-size: 1rem; padding: 14px 20px; border-bottom: none; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { background-color: var(--secondary-color); color: var(--white-color); }
+    /* Mobile dropdowns */
+    .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: 1px solid var(--border-color); padding: 0; background-color: var(--light-bg); display: none; width: 100%; border-radius: 0; }
+    .has-dropdown.open .dropdown-menu { display: block; }
+    .dropdown-menu a { padding: 12px 30px 12px 45px; font-size: 0.95rem; font-weight: 500; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .dropdown-menu li:last-child a { border-bottom: none; }
+    .dropdown-indicator { transition: transform 0.3s ease; }
+    .has-dropdown.open > a .dropdown-indicator { transform: rotate(180deg); }
+
+    .hero-section { height: auto; min-height: 75vh; padding-top: 50px; padding-bottom: 50px;}
+    .hero-title { font-size: clamp(2.1rem, 8vw, 2.6rem); }
+    .hero-subtitle { font-size: clamp(1rem, 4.5vw, 1.1rem); min-height: 3.9em; }
+    .hero-button { padding: 0.7em 1.8em; font-size: 0.9rem; }
+    .section-padding { padding: 50px 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 40px; }
+    .split-image { max-width: 90%; }
+    .split-section { gap: 30px; }
+
+    /* Adjust size and spacing of clips on mobile */
+    .clips-container { gap: 15px; padding-left: 10px; padding-right: 10px; }
+    .clip-card { flex-basis: 250px; height: 440px; border-radius: 12px; }
+
+    /* CTA section on mobile */
+    .cta-title { font-size: 2rem; }
+    .cta-text { font-size: 1.05rem; }
+    .cta-buttons { flex-direction: column; align-items: center; width: 100%; gap: 15px;}
+    .cta-buttons .btn { width: 90%; max-width: 300px; margin: 0; font-size: 0.9rem; padding: 0.8em 1.5em;}
+
+     /* Responsive for Bachillerato selector and slider */
+    .selector-button {
+        display: block; /* Stack buttons */
+        margin: 10px auto; /* Center buttons */
+        width: 80%; /* Make buttons wider */
+        max-width: 250px;
+        font-size: 1rem;
+    }
+     .content-slider-container {
+         padding: 20px;
+         min-height: 600px; /* Adjust min-height */
+         align-items: flex-start; /* Ensure content aligns to top */
+     }
+      .content-section {
+         padding: 0; /* No horizontal padding on internal sections */
+     }
+     .content-section h3 {
+         font-size: 1.3rem;
+     }
+    .content-section p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    .content-details {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+     .content-details h4 {
+        font-size: 1.05rem;
+     }
+    .content-details ul li {
+        padding-left: 18px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+     .content-details ul li::before {
+         font-size: 0.8rem;
+         top: 0.3em;
+     }
+     /* Style for buttons within content-section (when centered) */
+     .content-section .btn {
+         display: block; /* Stack buttons */
+         width: 90%;
+         margin: 10px auto; /* Center buttons */
+         max-width: 300px;
+         font-size: 0.9rem;
+         padding: 0.8em 1.5em;
+     }
+      .content-section .btn-large {
+         font-size: 0.9rem;
+         padding: 0.8em 1.5em;
+     }
+
+     /* Responsive for Campus Life section */
+      .campus-item img {
+         height: 160px;
+     }
+     .campus-info {
+         padding: 12px;
+     }
+     .campus-info h4 {
+         font-size: 1rem;
+         margin-bottom: 6px;
+     }
+     .campus-info p {
+         font-size: 0.85rem;
+     }
+
+    /* Footer adjustments */
+    .footer-content { grid-template-columns: 1fr; gap: 20px; } /* Single column on mobile */
+    .footer-about { grid-column: span 1 / auto; } /* Ensure about section takes full width */
+    .footer-about .footer-logo { margin: 0 auto 15px auto; } /* Center logo on mobile */
+    /* Center align all footer columns on mobile */
+    .footer-content > div { text-align: center; }
+     /* Adjust footer title underline for centered titles */
+     .footer-links h4::after,
+     .footer-contact h4::after,
+     .footer-social h4::after {
+         left: 50%; transform: translateX(-50%);
+     }
+    .footer-links ul { margin-bottom: 20px; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-contact p { justify-content: center; gap: 8px; } /* Center contact info and reduce gap */
+    .footer-social { text-align: center; margin-top: 10px; } /* Center social icons block */
+    .footer-social a { margin: 0 10px; font-size: 1.3rem; } /* Space between icons, slightly smaller */
+
+    .footer-bottom { font-size: 0.8rem; padding: 15px 0; }
+
+}
+
+
+/* Animation Keyframes (reused) */
+@keyframes slideInFromLeft { 0% { transform: translateX(-50px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes slideInFromRight { 0% { transform: translateX(50px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes slideInFromBottom { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+
+/* Specific animation for Split-section elements (can be adjusted or removed if preferred) */
+#quienes-somos .split-content { animation: slideInFromLeft 0.8s ease-out forwards; }
+#quienes-somos .split-image { animation: slideInFromRight 0.8s ease-out forwards; animation-delay: 0.2s; }
+
+/* Campus item animation is handled by the specific class and transition */

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CAMBIAR TÍTULO ESPECÍFICO DEL EVENTO -->
+    <title>Nombre del Evento - UNIREM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS Comunes -->
+    <link rel="stylesheet" href="../style.css"> <!-- AJUSTA RUTA -->
+    <!-- Estilos CSS Específicos de la Página de Evento -->
+    <link rel="stylesheet" href="../src/BlogTem.css"> <!-- AJUSTA RUTA -->
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- ==  BARRA DE NAVEGACIÓN SUPERIOR (AZUL)    == -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo"> <!-- AJUSTA RUTA -->
+                <img src="../images/logo-escuela-moderno-blanco.png" alt="Logo UNIREM" height="45"> <!-- AJUSTA RUTA -->
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="../index.html#inicio">Inicio</a></li>
+                 <li class="has-dropdown">
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Quiénes Somos <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="../sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="../sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="../sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Oferta Educativa <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="../oferta/bachillerato.html">Bachillerato</a></li>
+                         <li><a href="../oferta/licenciaturas.html">Licenciaturas</a></li>
+                         <li><a href="../oferta/posgrados.html">Posgrados</a></li>
+                         <li><a href="../oferta/actividades.html#extracurriculares">Extracurriculares</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">Actividades <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="../pages/Bach.html">Deportes</a></li>
+                         <li><a href="../pages/Cita.html">Arte y Cultura</a></li>
+                         <li><a href="../pages/licenciaturas.html">Ciencia y Tec.</a></li>
+                         <li><a href="../pages/template.html">Plantilla</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="../index.html#clips-tiktok">Clips</a></li>
+                 <li><a href="../noticias.html">Noticias y Eventos</a></li>
+                 <li><a href="../index.html#contacto">Contacto</a></li>
+                 <li><a href="../pages/Cita.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==         HERO DEL EVENTO                 == -->
+    <!-- ============================================= -->
+    <!-- CAMBIAR IMAGEN DE FONDO: reemplaza 'hero-evento-fondo.jpg' -->
+    <header class="hero-section event-hero" id="inicio-evento" 
+            style="background-image: url('../images/eventos/hero-evento-fondo.jpg');">
+        <div class="hero-overlay" style="background: rgba(0,0,0,0.55);"></div> <!-- Overlay más oscuro -->
+        <div class="container hero-content text-center">
+            <!-- CAMBIAR TÍTULO ESPECÍFICO DEL EVENTO -->
+            <h1 class="hero-title text-light animate-on-scroll" data-animation="fadeInUp"> Evento </h1>
+            <!-- CAMBIAR SUBTÍTULO O FECHA BREVE -->
+            <p class="hero-subtitle text-light animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                 descripción o eslogan del evento | XX de Mes, AAAA
+            </p>
+            <!-- CAMBIAR ENLACE DEL BOTÓN -->
+            <a href="#evento-registro-seccion" class="btn btn-primary btn-large hero-button animate-on-scroll" data-animation="fadeInUp" data-delay="400">
+                Regístrate Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- ==       CONTENIDO DETALLADO DEL EVENTO    == -->
+    <!-- ============================================= -->
+    <main class="section-padding page-content-evento">
+        <div class="container">
+            <div class="evento-layout">
+                <!-- Contenido Principal del Evento -->
+                <article class="evento-contenido-principal">
+                    <!-- CAMBIAR IMAGEN PRINCIPAL DEL EVENTO (POSTER O SIMILAR) -->
+                    <img src="../images/eventos/poster-grande-evento.jpg" alt="Poster o imagen principal del Nombre del Evento" class="evento-imagen-destacada animate-on-scroll" data-animation="fadeIn">
+
+                    <h2 class="animate-on-scroll" data-animation="fadeInUp">Acerca del Evento</h2>
+                    <!-- CAMBIAR DESCRIPCIÓN DETALLADA -->
+                    <p class="animate-on-scroll" data-animation="fadeInUp" data-delay="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p class="animate-on-scroll" data-animation="fadeInUp" data-delay="200">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
+                    
+                    <!-- SECCIÓN PROGRAMA/AGENDA (OPCIONAL) -->
+                    <section id="evento-programa" class="evento-seccion">
+                        <h3 class="animate-on-scroll" data-animation="fadeInUp">Programa del Evento</h3>
+                        <ul class="programa-lista">
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="100"><strong>09:00 AM - 09:30 AM:</strong> Registro y Bienvenida</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="200"><strong>09:30 AM - 10:30 AM:</strong> Conferencia Inaugural: Título de la Conferencia</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="300"><strong>10:30 AM - 11:00 AM:</strong> Coffee Break & Networking</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="400"><strong>11:00 AM - 01:00 PM:</strong> Talleres Simultáneos (Sala A, B, C)</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="500"><strong>01:00 PM - 02:00 PM:</strong> Comida</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="600"><strong>02:00 PM - 04:00 PM:</strong> Mesas Redondas y Paneles de Discusión</li>
+                            <li class="animate-on-scroll" data-animation="fadeInRight" data-delay="700"><strong>04:00 PM - 05:00 PM:</strong> Conferencia de Clausura y Agradecimientos</li>
+                        </ul>
+                    </section>
+
+                    <!-- SECCIÓN PONENTES (OPCIONAL) -->
+                    <section id="evento-ponentes" class="evento-seccion">
+                        <h3 class="animate-on-scroll" data-animation="fadeInUp">Ponentes Destacados</h3>
+                        <div class="ponentes-grid">
+                            <div class="ponente-card animate-on-scroll" data-animation="zoomIn" data-delay="100">
+                                <img src="../images/ponentes/ponente1.jpg" alt="Nombre Ponente 1"> <!-- CAMBIAR IMAGEN -->
+                                <h4>Nombre Ponente 1</h4>
+                                <p class="ponente-cargo">Cargo/Especialidad</p>
+                                <p class="ponente-bio">Breve biografía del ponente, destacando su experiencia y contribuciones al tema del evento.</p>
+                            </div>
+                            <div class="ponente-card animate-on-scroll" data-animation="zoomIn" data-delay="200">
+                                <img src="../images/ponentes/ponente2.jpg" alt="Nombre Ponente 2"> <!-- CAMBIAR IMAGEN -->
+                                <h4>Nombre Ponente 2</h4>
+                                <p class="ponente-cargo">Cargo/Especialidad</p>
+                                <p class="ponente-bio">Breve biografía del ponente, explorando sus logros y el valor que aportará al evento.</p>
+                            </div>
+                            <div class="ponente-card animate-on-scroll" data-animation="zoomIn" data-delay="300">
+                                <img src="../images/ponentes/ponente3.jpg" alt="Nombre Ponente 3"> <!-- CAMBIAR IMAGEN -->
+                                <h4>Nombre Ponente 3</h4>
+                                <p class="ponente-cargo">Cargo/Especialidad</p>
+                                <p class="ponente-bio">Otra breve biografía, enfocada en la relevancia del ponente para la audiencia del evento.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECCIÓN GALERÍA DEL EVENTO (OPCIONAL) -->
+                    <!-- Para usar Lightbox2, incluye su CSS en <head> y su JS antes del cierre de </body> -->
+                    <!-- <link href="ruta/a/lightbox.min.css" rel="stylesheet"> -->
+                    <!-- <script src="ruta/a/lightbox.min.js"></script> -->
+                    <section id="evento-galeria" class="evento-seccion">
+                        <h3 class="animate-on-scroll" data-animation="fadeInUp">Galería del Evento</h3>
+                        <div class="evento-galeria-grid">
+                            <!-- CAMBIAR IMÁGENES Y ENLACES -->
+                            <a href="../images/1.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 1" class="animate-on-scroll" data-animation="fadeIn" data-delay="100"><img src="../images/eventos/galeria/img1-thumb.jpg" alt="Imagen 1 de la galería del evento"></a>
+                            <a href="../images/2.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 2" class="animate-on-scroll" data-animation="fadeIn" data-delay="200"><img src="../images/eventos/galeria/img2-thumb.jpg" alt="Imagen 2 de la galería del evento"></a>
+                            <a href="../images/3.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 3" class="animate-on-scroll" data-animation="fadeIn" data-delay="300"><img src="../images/eventos/galeria/img3-thumb.jpg" alt="Imagen 3 de la galería del evento"></a>
+                            <a href="../images/4.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 4" class="animate-on-scroll" data-animation="fadeIn" data-delay="400"><img src="../images/eventos/galeria/img4-thumb.jpg" alt="Imagen 4 de la galería del evento"></a>
+                            <a href="../images/5.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 5" class="animate-on-scroll" data-animation="fadeIn" data-delay="500"><img src="../images/eventos/galeria/img5-thumb.jpg" alt="Imagen 5 de la galería del evento"></a>
+                            <a href="../images/6.jpg" data-lightbox="evento-galeria" data-title="Descripción de la Imagen 6" class="animate-on-scroll" data-animation="fadeIn" data-delay="600"><img src="../images/eventos/galeria/img6-thumb.jpg" alt="Imagen 6 de la galería del evento"></a>
+                        </div>
+                    </section>
+
+                    <!-- SECCIÓN REGISTRO / CTA FINAL (OPCIONAL) -->
+                    <section id="evento-registro-seccion" class="evento-seccion text-center animate-on-scroll" data-animation="fadeInUp">
+                        <h3>¡No te lo Pierdas!</h3>
+                        <p>Asegura tu lugar en este increíble evento. Las plazas son limitadas.</p>
+                        <!-- CAMBIAR ENLACE DEL BOTÓN -->
+                        <a href="#info-boton-accion" class="btn btn-primary btn-large">Regístrate Ahora</a>
+                    </section>
+
+                </article>
+
+                <!-- Barra Lateral del Evento -->
+                <aside class="evento-barra-lateral">
+                    <div class="info-box tarjeta-info-principal animate-on-scroll" data-animation="fadeInRight" data-delay="100">
+                        <div class="tarjeta-icono"><i class="fas fa-calendar-check fa-2x"></i></div>
+                        <h3>Información Clave</h3>
+                        <ul>
+                            <li><i class="fas fa-calendar-alt fa-fw"></i> <strong>Fecha:</strong> <span id="info-fecha">XX de Mes, AAAA</span></li>
+                            <li><i class="fas fa-clock fa-fw"></i> <strong>Hora:</strong> <span id="info-hora">HH:MM - HH:MM</span></li>
+                            <li><i class="fas fa-map-marker-alt fa-fw"></i> <strong>Lugar:</strong> <span id="info-lugar">Nombre del Lugar, Dirección</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box tarjeta-accion animate-on-scroll" data-animation="fadeInRight" data-delay="200">
+                        <div class="tarjeta-icono"><i class="fas fa-ticket-alt fa-2x"></i></div>
+                        <h3>Entradas y Registro</h3>
+                        <p><strong>Costo:</strong> <span id="info-costo">Gratuito / $XX.XX MXN</span></p>
+                        <!-- CAMBIAR ENLACE Y TEXTO DEL BOTÓN -->
+                        <a href="#" class="btn btn-primary btn-large" id="info-boton-accion" style="width:100%; margin-top:15px;">Inscríbete Aquí</a>
+                    </div>
+
+                    <div class="info-box animate-on-scroll" data-animation="fadeInRight" data-delay="300">
+                        <h4>Ubicación</h4>
+                        <!-- CAMBIAR EMBED DEL MAPA -->
+                        <div class="mapa-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.2827990000003!2d-99.13320020000001!3d19.4326077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92f5f5f5f5f%3A0x0!2sZ%C3%B3calo%2C%20Centro%20Hist%C3%B3rico%20de%20la%20Cdad.%20de%20M%C3%A9xico%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1678888888888!5m2!1ses!2smx" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación del evento"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box animate-on-scroll" data-animation="fadeInRight" data-delay="400">
+                        <h4>Organiza</h4>
+                        <p><i class="fas fa-user-tie fa-fw"></i> <span id="info-organizador">Departamento UNIREM</span></p>
+                        <h4>Contacto del Evento</h4>
+                        <p><i class="fas fa-envelope fa-fw"></i> <a href="mailto:evento@unirem.mx">evento@unirem.mx</a></p>
+                        <p><i class="fas fa-phone fa-fw"></i> +52 55 8765 4321</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================= -->
+    <!-- ==             PIE DE PÁGINA               == -->
+    <!-- ============================================= -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                  <img src="../images/logo-escuela-blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo"> <!-- AJUSTA RUTA -->
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="../index.html#inicio">Inicio</a></li>
+                     <li><a href="../index.html#quienes-somos">Quiénes Somos</a></li>
+                     <li><a href="../index.html#actividades">Oferta Educativa</a></li>
+                     <li><a href="../noticias.html">Noticias y Eventos</a></li>
+                     <li><a href="../admisiones.html">Admisiones</a></li>
+                     <li><a href="../contacto.html">Contacto</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección Completa de UNIREM, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                 <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <p>© 2024 Universidad de la Republica Mexicana. Todos los derechos reservados. | <a href="../politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ==        BOTÓN FLOTANTE WHATSAPP        == -->
+    <!-- ============================================= -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20UNIREM."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================= -->
+    <!-- ==                 SCRIPTS                 == -->
+    <!-- ============================================= -->
+    <!-- Scripts Comunes -->
+    <script src="../script.js"></script> <!-- AJUSTA RUTA -->
+    <!-- Scripts Específicos de esta página de evento (si son necesarios, ej. para lightbox) -->
+    <!-- <script src="../js/evento-detalle.js"></script> --> <!-- AJUSTA RUTA -->
+
+</body>
+</html>

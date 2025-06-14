@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Tu Opinión Impulsa el Futuro de UNIREM</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .email-wrapper {
+            background-color: #f0f2f5;
+            padding: 30px 10px;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+
+        /* --- HEADER SECTION --- */
+        .header-section {
+            background-color: #0b254b;
+            padding: 40px 30px;
+            text-align: left;
+        }
+        .header-section img.logo {
+            max-width: 150px;
+            margin-bottom: 25px;
+        }
+        .header-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            margin: 0 0 10px 0;
+        }
+        .header-section .subtitle {
+            font-size: 17px;
+            font-weight: 300;
+            color: #b0cadb;
+            margin: 0;
+        }
+
+        /* --- CONTENT SECTION --- */
+        .content-section {
+            padding: 35px 30px 15px 30px; /* Reducido padding inferior para acercar a features */
+        }
+        .content-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #585858;
+        }
+        .content-section p.lead {
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .content-section p.features-intro { /* Estilo para el párrafo introductorio de features */
+            margin-bottom: 15px; /* Menos margen para acercarlo a los items */
+        }
+        .highlight {
+            color: #0b254b;
+            font-weight: 600;
+        }
+
+        /* --- BENEFITS/FEATURES SECTION (NUEVO ESTILO) --- */
+        .features-grid {
+            margin: 0 0 30px 0; /* Margen superior reducido, margen inferior para separar de CTA */
+            padding: 0 30px; /* Mantenemos padding lateral igual que content-section */
+        }
+        .feature-item {
+            text-align: left;
+            padding: 20px 20px 20px 25px;
+            margin-bottom: 18px;
+            background-color: #ffffff; /* Asegurar fondo blanco */
+            border-left: 4px solid #0b254b;
+            border-radius: 0 6px 6px 0;
+            /* box-shadow: 2px 2px 5px rgba(0,0,0,0.05); /* Sombra sutil opcional */
+        }
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+        .feature-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b254b;
+            margin: 0 0 6px 0;
+        }
+        .feature-item p {
+            font-size: 15px;
+            color: #585858;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            padding: 35px 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef; /* Puede ser necesario si el último feature item no tiene margen */
+        }
+        .cta-section .cta-intro-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+         .cta-section .cta-details-text {
+            font-size: 15px;
+            color: #585858;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #0e2b55 0%, #13386f 100%);
+            color: #ffffff !important;
+            padding: 15px 40px;
+            text-decoration: none !important;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            box-shadow: 0 4px 15px rgba(11, 37, 75, 0.2);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(11, 37, 75, 0.3);
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-section {
+            padding: 40px 30px;
+            background-color: #0b254b;
+            text-align: center;
+        }
+        .quote-section p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #cce0ff;
+            line-height: 1.7;
+            margin: 0 0 10px 0;
+        }
+        .quote-section .author {
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* --- FOOTER SECTION --- */
+        .footer-section {
+            padding: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #888888;
+        }
+        .footer-section a {
+            color: #0b254b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer-section p { margin: 5px 0; }
+
+        /* --- Mobile Optimizations --- */
+        @media screen and (max-width: 600px) {
+            .email-wrapper { padding: 15px 5px; }
+            .header-section { padding: 30px 20px; }
+            .header-section h1 { font-size: 24px; }
+            .content-section { padding: 30px 20px 10px 20px; } /* Ajustado padding inferior */
+            .features-grid { padding: 0 20px; margin: 0 0 25px 0;} /* Ajustado padding y margen inferior */
+            .feature-item {
+                padding: 15px 15px 15px 20px;
+            }
+            .feature-item h3 { font-size: 17px; }
+            .feature-item p { font-size: 14px; }
+            .cta-section, .quote-section, .footer-section { padding: 30px 20px; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+
+            <div class="header-section">
+                <img src="<?= CONFIG.UNIREM_LOGO_URL ?>" alt="Logo UNIREM" class="logo">
+                <h1>TU OPINIÓN ES CLAVE<br><span class="subtitle">PARA EL FUTURO DE UNIREM</span></h1>
+            </div>
+
+            <div class="content-section">
+                <p class="lead">Estimado/a <strong class="highlight"><?= nombreUsuario ?></strong>,</p>
+                <p>En UNIREM, valoramos enormemente tu perspectiva. Para continuar mejorando e innovando, te invitamos a compartir tu experiencia a través de una <strong class="highlight">breve encuesta</strong>.</p>
+
+            </div>
+
+
+
+            <div class="cta-section">
+                <p class="cta-intro-text">¿Listo/a para compartir tu visión?</p>
+                <p class="cta-details-text">Solo te tomará unos <strong>3-5 minutos</strong>. Tu feedback es confidencial y muy valioso.</p>
+                <a href="URL_DE_TU_ENCUESTA_AQUI" class="cta-button" target="_blank">RESPONDER ENCUESTA AHORA</a>
+            </div>
+
+            <div class="quote-section">
+                <p>"La evolución de UNIREM se nutre de la voz de su comunidad. ¡Tu opinión cuenta!"</p>
+                <span class="author">- El Equipo Directivo, UNIREM</span>
+            </div>
+
+            <div class="footer-section">
+                <p>© <?= new Date().getFullYear() ?> UNIREM - Universidad de la República Mexicana.</p>
+                <p><a href="<?= CONFIG.UNIREM_WEBSITE_URL ?>" target="_blank">Visita Nuestro Sitio Web</a> | <a href="URL_POLITICA_PRIVACIDAD" target="_blank">Política de Privacidad</a></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

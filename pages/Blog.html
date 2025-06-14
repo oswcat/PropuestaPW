@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Eventos - UNIREM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS Comunes -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Estilos CSS Específicos del Blog -->
+    <link rel="stylesheet" href="../src/Blog.css">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- ==    NAVEGACIÓN VERTICAL TIPO TIMELINE    == -->
+    <!-- ============================================= -->
+    <nav class="timeline-nav" id="timeline-nav">
+        <ul>
+            <li><a href="#inicio-noticias" data-section="inicio-noticias" title="Ir a Inicio Noticias">Noticias</a></li>
+            <li><a href="#articulos-destacados" data-section="articulos-destacados" title="Ir a Artículos Destacados">Destacados</a></li>
+            <li><a href="#video-destacado-unirem" data-section="video-destacado-unirem" title="Ir a Video Destacado">Video</a></li>
+            <li><a href="#galeria-comunidad" data-section="galeria-comunidad" title="Ir a Galería Comunidad">Comunidad</a></li>
+            <li><a href="#clips-tiktok-blog" data-section="clips-tiktok-blog" title="Ir a Clips TikTok">Clips</a></li>
+            <li><a href="#cartelera-eventos" data-section="cartelera-eventos" title="Ir a Cartelera de Eventos">Eventos</a></li>
+            <li><a href="#archivo-noticias" data-section="archivo-noticias" title="Ir a Archivo">Archivo</a></li>
+            <li><a href="#footer-section" data-section="footer-section" title="Ir a Pie de página">Información</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==  BARRA DE NAVEGACIÓN SUPERIOR (AZUL)    == -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo-escuela-moderno-blanco.png" alt="Logo UNIREM" height="45">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="../index.html#inicio">Inicio</a></li>
+                 <li class="has-dropdown">
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Quiénes Somos <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="../sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="../sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="../sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Oferta Educativa <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="../oferta/bachillerato.html">Bachillerato</a></li>
+                         <li><a href="../oferta/licenciaturas.html">Licenciaturas</a></li>
+                         <li><a href="../oferta/posgrados.html">Posgrados</a></li>
+                         <li><a href="../oferta/actividades.html#extracurriculares">Extracurriculares</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">Actividades <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="../pages/Bach.html">Deportes</a></li>
+                         <li><a href="../pages/Cita.html">Arte y Cultura</a></li>
+                         <li><a href="../pages/licenciaturas.html">Ciencia y Tec.</a></li>
+                         <li><a href="../pages/template.html">Plantilla</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">Blog</a></li> <!-- Enlace a esta misma página -->
+                 <li><a href="../index.html#contacto">Contacto</a></li>
+                 <li><a href="../pages/Cita.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==      SECCIÓN HERO NOTICIAS (INICIO)     == -->
+    <!-- ============================================= -->
+    <header class="hero-section hero-noticias bg-gradient" id="inicio-noticias">
+       <div class="container hero-content">
+            <h1 class="hero-title text-light">Blog y Vida UNIREM</h1>
+            <p class="hero-subtitle text-light">Descubre las últimas noticias, artículos de interés, videos y los próximos eventos de nuestra comunidad.</p>
+            <a href="#articulos-destacados" class="btn btn-light btn-large hero-button" aria-label="Ver artículos destacados">Leer Artículos</a>
+       </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- ==       SECCIÓN ARTÍCULOS DESTACADOS      == -->
+    <!-- ============================================= -->
+    <section id="articulos-destacados" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Artículos Destacados</h2>
+            <div class="article-grid">
+                <!-- Artículo 1 -->
+                <div class="article-card animate-on-scroll">
+                    <a href="articulo-placeholder-1.html" class="article-card-link">
+                        <img src="../images/placeholder-noticia-1.jpg" alt="Innovación Educativa en UNIREM">
+                        <div class="article-card-content">
+                            <span class="article-card-date">15 de Julio, 2024</span>
+                            <h3>Innovación Educativa en UNIREM: Nuevas Metodologías</h3>
+                            <p>Descubre cómo UNIREM está implementando enfoques pedagógicos de vanguardia...</p>
+                            <span class="btn btn-secondary btn-small">Leer Más <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artículo 2 -->
+                <div class="article-card animate-on-scroll" data-delay="100">
+                    <a href="articulo-placeholder-2.html" class="article-card-link">
+                        <img src="../images/placeholder-noticia-2.jpg" alt="Alumnos de UNIREM ganan concurso">
+                        <div class="article-card-content">
+                             <span class="article-card-date">10 de Julio, 2024</span>
+                            <h3>Éxito Estudiantil: Triunfo en Concurso Nacional de Robótica</h3>
+                            <p>Un equipo de ingeniería de UNIREM obtiene el primer lugar. Conoce su proyecto...</p>
+                            <span class="btn btn-secondary btn-small">Leer Más <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artículo 3 -->
+                <div class="article-card animate-on-scroll" data-delay="200">
+                     <a href="articulo-placeholder-3.html" class="article-card-link">
+                        <img src="../images/placeholder-noticia-3.jpg" alt="Conferencia sobre IA">
+                        <div class="article-card-content">
+                            <span class="article-card-date">5 de Julio, 2024</span>
+                            <h3>Conferencia Magistral sobre Inteligencia Artificial en el Campus</h3>
+                            <p>El Dr. Alejandro Vargas ofreció una charla inspiradora sobre el futuro de la IA...</p>
+                            <span class="btn btn-secondary btn-small">Leer Más <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+             <div class="text-center" style="margin-top: 40px;">
+                <a href="#archivo-noticias" class="btn btn-primary">Ver Todos los Artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==        SECCIÓN VIDEO DESTACADO          == -->
+    <!-- ============================================= -->
+    <section id="video-destacado-unirem" class="section-padding bg-dark-gradient video-section">
+        <div class="container text-center">
+            <h2 class="section-title text-light">Descubre UNIREM en Video</h2>
+            <p class="video-section-subtitle text-light animate-on-scroll" data-animation="fadeInUp">
+                Sumérgete en la experiencia UNIREM. Conoce nuestro campus, estudiantes y la vibrante vida universitaria.
+            </p>
+            <div class="video-wrapper animate-on-scroll" data-animation="zoomIn">
+                <!-- Reemplaza con tu ID de video de YouTube o Vimeo -->
+                <iframe 
+                    width="560" height="315" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0&modestbranding=1" 
+                    title="Video Destacado UNIREM" 
+                    frameborder="0" 
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <a href="#" class="btn btn-primary btn-large video-cta-button animate-on-scroll" data-animation="fadeInUp" data-delay="200">
+                Ver Más Videos <i class="fas fa-play-circle"></i>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- ==     SECCIÓN GALERÍA COMUNIDAD UNIREM    == -->
+    <!-- ============================================= -->
+    <section id="galeria-comunidad" class="section-padding"> <!-- Alternar fondo, antes era bg-light -->
+        <div class="container">
+            <h2 class="section-title">Vida en #ComunidadUNIREM</h2>
+            <div class="collage-grid">
+                <!-- Item 1 -->
+                <div class="collage-item animate-on-scroll" tabindex="0" data-description="Celebración del Día del Estudiante...">
+                    <img src="../images/1.jpg" alt="Día del Estudiante UNIREM">
+                </div>
+                <!-- Item 2 (Wide) -->
+                <div class="collage-item collage-item--width2 animate-on-scroll" tabindex="0" data-description="Vista panorámica del campus UNIREM...">
+                    <img src="../images/5.jpg" alt="Campus UNIREM al atardecer">
+                </div>
+                <!-- Item 3 -->
+                <div class="collage-item animate-on-scroll" tabindex="0" data-description="Equipo de fútbol UNIREM celebrando su victoria...">
+                    <img src="../images/2.jpg" alt="Equipo de fútbol UNIREM">
+                </div>
+                <!-- Item 4 (Tall) -->
+                <div class="collage-item collage-item--height2 animate-on-scroll" tabindex="0" data-description="Detalle de un innovador proyecto de arquitectura...">
+                    <img src="../images/8.jpg" alt="Proyecto de arquitectura vertical">
+                </div>
+                <!-- ... más items como en la respuesta anterior ... -->
+                 <div class="collage-item animate-on-scroll" tabindex="0" data-description="Alumnos participando con entusiasmo en el taller de robótica durante la Semana de la Ciencia. Construyendo el futuro, hoy.">
+                    <img src="../images/3.jpg" alt="Taller de robótica">
+                </div>
+                <div class="collage-item animate-on-scroll" tabindex="0" data-description="Exposición de arte de los alumnos de la Licenciatura en Diseño Gráfico. Creatividad sin límites y talento desbordante en cada obra.">
+                    <img src="../images/4.jpg" alt="Exposición de arte UNIREM">
+                </div>
+                <div class="collage-item collage-item--width2 collage-item--height2 animate-on-scroll" tabindex="0" data-description="Ceremonia de graduación UNIREM. Un día inolvidable para nuestros egresados y sus familias.">
+                    <img src="../images/7.jpg" alt="Graduación UNIREM grande">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para la Galería (inicialmente oculto) -->
+    <div id="collage-modal" class="collage-modal-overlay">
+        <div class="collage-modal-content">
+            <span class="collage-modal-close" role="button" tabindex="0" aria-label="Cerrar">×</span>
+            <img id="collage-modal-image" src="" alt="Imagen ampliada">
+            <div id="collage-modal-description" class="collage-modal-text"></div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- ==     SECCIÓN CLIPS TIKTOK (BLOG PAGE)    == -->
+    <!-- ============================================= -->
+    <section id="clips-tiktok-blog" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">#ComunidadUNIREM en Clips</h2>
+            <div class="clips-container">
+                 <div class="clip-card animate-on-scroll">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7439799256065543480" data-video-id="7439799256065543480" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Una experiencia única para nuestros estudiantes de Prepa UNAM! 🔬 🧪 Nuestros alumnos visitaron el Instituto de <a title="física" target="_blank" href="https://www.tiktok.com/tag/f%C3%ADsica?refer=embed">#Física</a> de la <a title="unam" target="_blank" href="https://www.tiktok.com/tag/unam?refer=embed">#UNAM</a> [...] <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Backsound Music - Ibnusta" href="https://www.tiktok.com/music/Backsound-Music-7316749262485129218?refer=embed">♬ Backsound Music - Ibnusta</a> </section> </blockquote>
+                 </div>
+                 <div class="clip-card animate-on-scroll" data-delay="100">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7328482977787153670" data-video-id="7328482977787153670" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> Soy estudiante de <a title="gastronomia" target="_blank" href="https://www.tiktok.com/tag/gastronomia?refer=embed">#gastronomia</a> obvio estudio en <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> [...] <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Rock This Party - 颜妹" href="https://www.tiktok.com/music/Rock-This-Party-6876283456507086856?refer=embed">♬ Rock This Party - 颜妹</a> </section> </blockquote>
+                 </div>
+                 <div class="clip-card animate-on-scroll" data-delay="200">
+                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7312500562661149958" data-video-id="7312500562661149958" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Aprender sobre ciencia nunca fue tan divertido! 👩‍🔬 <a title="ciencia" target="_blank" href="https://www.tiktok.com/tag/ciencia?refer=embed">#ciencia</a> [...] <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> <a target="_blank" title="♬ thats what i like sped up - 🎃🎃🎃" href="https://www.tiktok.com/music/thats-what-i-like-sped-up-7099174146399095594?refer=embed">♬ thats what i like sped up - 🎃🎃🎃</a> </section> </blockquote>
+                 </div>
+                 <div class="clip-card animate-on-scroll" data-delay="300">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7337732141234572550" data-video-id="7337732141234572550" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¿Te has preguntado alguna vez cómo funciona realmente la magia detrás de los dispositivos electrónicos [...] <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Funk It Up - John Etkin-Bell" href="https://www.tiktok.com/music/Funk-It-Up-7013707229828220929?refer=embed">♬ Funk It Up - John Etkin-Bell</a> </section> </blockquote>
+                 </div>
+                 <div class="clip-card animate-on-scroll" data-delay="400" style="display: flex; align-items: center; justify-content: center; background-color: #e9ecef; text-align: center;"> <!-- Un poco más claro que light-bg -->
+                    <p style="padding:20px; color: var(--medium-text); font-size: 0.9rem;">¡Síguenos en TikTok para ver más contenido como este!</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- ==         SECCIÓN CARTELERA DE EVENTOS    == -->
+    <!-- ============================================= -->
+    <section id="cartelera-eventos" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <div class="event-poster-grid">
+                <!-- Evento 1 -->
+                <div class="event-poster animate-on-scroll" tabindex="0" 
+                     data-event-title="Semana de la Ciencia y Tecnología"
+                     data-event-date="20 - 24 de Agosto, 2024"
+                     data-event-image="../images/eventos/poster-ciencia.jpg"
+                     data-event-description="Participa en talleres, conferencias y demostraciones sobre los últimos avances científicos y tecnológicos..."
+                     data-event-lugar="Auditorio Principal y Laboratorios de Ciencias."
+                     data-event-horario="09:00 - 18:00 hrs."
+                     data-event-link="#"
+                     data-event-link-text="Más Información / Inscribirse">
+                    <img src="../images/eventos/poster-ciencia.jpg" alt="Poster Semana de la Ciencia">
+                    <div class="event-poster-overlay">
+                        <h3>Semana de la Ciencia y Tecnología</h3>
+                        <p>20 - 24 de Agosto, 2024</p>
+                    </div>
+                </div>
+                <!-- Evento 2 -->
+                <div class="event-poster animate-on-scroll" data-delay="100" tabindex="0"
+                     data-event-title="Feria de Empleo UNIREM 2024"
+                     data-event-date="10 de Septiembre, 2024"
+                     data-event-image="../images/eventos/poster-feria-empleo.jpg"
+                     data-event-description="Conecta con empresas líderes y explora oportunidades de prácticas y empleo..."
+                     data-event-lugar="Gimnasio Universitario."
+                     data-event-horario="10:00 - 17:00 hrs."
+                     data-event-extra="Entrada libre para alumnos y egresados UNIREM."
+                     data-event-link="#"
+                     data-event-link-text="Ver Empresas Participantes">
+                    <img src="../images/eventos/poster-feria-empleo.jpg" alt="Poster Feria de Empleo">
+                     <div class="event-poster-overlay">
+                        <h3>Feria de Empleo UNIREM 2024</h3>
+                        <p>10 de Septiembre, 2024</p>
+                    </div>
+                </div>
+                <!-- Evento 3 -->
+                 <div class="event-poster animate-on-scroll" data-delay="200" tabindex="0"
+                     data-event-title="Concierto de Aniversario UNIREM"
+                     data-event-date="25 de Octubre, 2024"
+                     data-event-image="../images/eventos/poster-concierto.jpg"
+                     data-event-description="Celebra con nosotros un año más de UNIREM con un concierto especial..."
+                     data-event-lugar="Explanada Central."
+                     data-event-horario="19:00 hrs."
+                     data-event-link="#"
+                     data-event-link-text="Comprar Boletos">
+                    <img src="../images/eventos/poster-concierto.jpg" alt="Poster Concierto Aniversario">
+                     <div class="event-poster-overlay">
+                        <h3>Concierto de Aniversario UNIREM</h3>
+                        <p>25 de Octubre, 2024</p>
+                    </div>
+                </div>
+                <!-- Evento 4 -->
+                 <div class="event-poster animate-on-scroll" data-delay="300" tabindex="0"
+                     data-event-title="Congreso Marketing Digital"
+                     data-event-date="15 - 17 de Noviembre, 2024"
+                     data-event-image="../images/eventos/poster-marketing.jpg"
+                     data-event-description="Expertos de talla mundial compartirán las últimas tendencias en marketing digital..."
+                     data-event-lugar="Centro de Convenciones UNIREM."
+                     data-event-horario="Todo el día (consultar programa)."
+                     data-event-link="#"
+                     data-event-link-text="Registrarse Ahora">
+                    <img src="../images/eventos/poster-marketing.jpg" alt="Poster Congreso Marketing Digital">
+                     <div class="event-poster-overlay">
+                        <h3>Congreso Marketing Digital</h3>
+                        <p>15 - 17 de Noviembre, 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para los Eventos -->
+    <div id="event-modal" class="event-modal-overlay">
+        <div class="event-modal-content-wrapper">
+            <span class="event-modal-close" role="button" tabindex="0" aria-label="Cerrar">×</span>
+            <img id="event-modal-image" src="" alt="Poster del Evento">
+            <div class="event-modal-details">
+                <h3 id="event-modal-title"></h3>
+                <p class="event-modal-info-item"><i class="far fa-calendar-alt"></i> <span id="event-modal-date"></span></p>
+                <p id="event-modal-description"></p>
+                <p class="event-modal-info-item" id="event-modal-lugar-container"><strong>Lugar:</strong> <span id="event-modal-lugar"></span></p>
+                <p class="event-modal-info-item" id="event-modal-horario-container"><strong>Horario:</strong> <span id="event-modal-horario"></span></p>
+                <p class="event-modal-info-item" id="event-modal-extra-container"><em><span id="event-modal-extra"></span></em></p>
+                <a href="#" id="event-modal-link" class="btn btn-primary btn-small"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- ==          SECCIÓN ARCHIVO DE NOTICIAS    == -->
+    <!-- ============================================= -->
+    <section id="archivo-noticias" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Archivo de Noticias</h2>
+            <div class="archive-grid">
+                <!-- ... Contenido del archivo ... -->
+                <div class="archive-year animate-on-scroll">
+                    <h4>2024</h4>
+                    <ul>
+                        <li><a href="articulo-placeholder-julio-1.html"><span>Julio</span> - Impacto de la IA en la Educación Superior</a></li>
+                        <li><a href="articulo-placeholder-junio-1.html"><span>Junio</span> - UNIREM Lanza Nuevo Programa de Intercambio</a></li>
+                    </ul>
+                </div>
+                <div class="archive-year animate-on-scroll" data-delay="100">
+                    <h4>2023</h4>
+                    <ul>
+                        <li><a href="articulo-placeholder-dic-1.html"><span>Diciembre</span> - Resumen Anual: Logros UNIREM 2023</a></li>
+                        <li><a href="articulo-placeholder-nov-1.html"><span>Noviembre</span> - Alumnos Destacados del Semestre</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ==             PIE DE PÁGINA               == -->
+    <!-- ============================================= -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                  <img src="../images/logo-escuela-blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo">
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="../index.html#inicio">Inicio</a></li>
+                     <li><a href="../index.html#quienes-somos">Quiénes Somos</a></li>
+                     <li><a href="#">Blog y Eventos</a></li>
+                     <li><a href="../admisiones.html">Admisiones</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección UNIREM, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                 <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <p>© 2024 UNIREM. Todos los derechos reservados. | <a href="../politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ==        BOTÓN FLOTANTE WHATSAPP        == -->
+    <!-- ============================================= -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20UNIREM."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================= -->
+    <!-- ==                 SCRIPTS                 == -->
+    <!-- ============================================= -->
+    <script src="../script.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script async src="https://www.tiktok.com/embed.js"></script> <!-- TikTok Embed Script -->
+    <script src="../js/Blog.js"></script>
+
+</body>
+</html>

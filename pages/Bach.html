@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIREM - Bachillerato | Prepa UNAM y General</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS -->
+    <!-- Assuming Bach-styles.css contains ALL the styles, including global ones -->
+    <link rel="stylesheet" href="../src/Bach-styles.css">
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- ==    NAVEGACIÓN VERTICAL TIPO TIMELINE    == -->
+    <!-- ============================================= -->
+    <nav class="timeline-nav" id="timeline-nav">
+        <ul>
+            <li><a href="#inicio" data-section="inicio" title="Ir a Inicio">Inicio</a></li>
+            <li><a href="#oferta-bachillerato" data-section="oferta-bachillerato" title="Ir a Bachillerato">Bachillerato</a></li>
+            <li><a href="#quienes-somos" data-section="quienes-somos" title="Ir a Quiénes Somos">Quiénes Somos</a></li>
+            <li><a href="#campus-life" data-section="campus-life" title="Ir a Vida en Campus">Campus</a></li>
+            <li><a href="#clips-tiktok" data-section="clips-tiktok" title="Ir a Clips">Clips</a></li>
+            <li><a href="#destacados" data-section="destacados" title="Ir a Ventajas">Ventajas</a></li>
+            <li><a href="#contacto" data-section="contacto" title="Ir a Contacto">Contacto</a></li>
+             <!-- Ensure the footer ID matches the data-section if you want the timeline to reach it -->
+            <li><a href="#footer-section" data-section="footer-section" title="Ir a Información">Información</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==  BARRA DE NAVEGACIÓN SUPERIOR (AZUL)    == -->
+    <!-- ============================================= -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="logo">
+                <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                <img src="../images/src/3 Logo-UNIREM-Blanco.png" alt="Logo UNIREM" height="45">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="#inicio">Inicio</a></li>
+                 <li><a href="#oferta-bachillerato">Bachillerato</a></li>
+                 <li class="has-dropdown">
+                      <!-- Navegación de la Universidad -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">La Universidad <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                         <li><a href="oferta/licenciaturas.html">Licenciaturas</a></li>
+                         <li><a href="oferta/posgrados.html">Posgrados</a></li>
+                         <li><a href="admisiones.html">Admisiones UNIREM</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                       <!-- Navegación de Vida Estudiantil -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Vida Estudiantil <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="detalle_deportes.html">Deportes</a></li>
+                         <li><a href="detalle_arte.html">Arte y Cultura</a></li>
+                         <li><a href="detalle_ciencias.html">Ciencia y Tec.</a></li>
+                         <li><a href="actividades.html#extracurriculares">Extracurriculares</a></li>
+                          <li><a href="#clips-tiktok">#ComunidadUNIREM (Clips)</a></li>
+                          <li><a href="#campus-life">Campus y Talleres</a></li>
+                          <li><a href="galeria.html">Galería</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#contacto">Contacto</a></li>
+                 <li><a href="inscripciones.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================= -->
+    <!-- ==             SECCIÓN HERO (INICIO)       == -->
+    <!-- ============================================= -->
+    <header class="hero-section" id="inicio">
+       <div class="hero-overlay"></div>
+       <picture>
+            <!-- Asegúrate que las rutas de las imágenes sean correctas -->
+           <source srcset="../images/src/P1.jpeg" media="(min-width: 992px)">
+           <source srcset="../images/src/P3.jpeg" media="(min-width: 600px)">
+           <img src="../images/src/P2.jpeg" alt="Campus UNIREM con estudiantes" class="hero-image">
+       </picture>
+       <div class="container hero-content">
+            <h1 class="hero-title">Tu Futuro Comienza Aquí en UNIREM</h1>
+            <p class="hero-subtitle"><span id="typed-output">      </span></p>
+            <a href="#oferta-bachillerato" class="btn btn-primary btn-large hero-button">Explora nuestra oferta de media superior</a>
+       </div>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- == SECCIÓN BACHILLERATOS (SELECTOR + SLIDER) == -->
+    <!-- ============================================= -->
+    <section id="oferta-bachillerato" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Encuentra el Bachillerato Perfecto Para Ti</h2>
+
+            <div class="section-selector">
+                <button id="btn-prepa" class="selector-button active">Prepa UNAM</button>
+                <button id="btn-bachillerato" class="selector-button">Bachillerato General</button>
+            </div>
+
+            <div class="content-slider-container">
+                <div class="content-slider">
+                    <!-- Sección Prepa UNAM -->
+                    <section id="prepa-section" class="content-section">
+                        <h3>Prepa UNAM</h3>
+                        <p>En UNIREM, te ofrecemos un programa de Bachillerato que sigue los <strong>planes de estudio de la UNAM (ENP y CCH)</strong>, diseñado para brindarte una formación académica rigurosa y prepararte de manera óptima para el examen de ingreso a la licenciatura en la máxima casa de estudios. Nuestro enfoque va más allá de lo académico, buscando tu desarrollo integral y preparándote para los desafíos universitarios. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+
+                        <div class="content-details">
+                             <h4>Características Destacadas del Programa UNAM:</h4>
+                             <ul>
+                                 <li><strong>Plan de Estudios UNAM:</strong> Contenido actualizado y alineado con los temarios oficiales de la Escuela Nacional Preparatoria y el Colegio de Ciencias y Humanidades. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                 <li><strong>Preparación Intensiva para Examen:</strong> Clases y talleres enfocados en las áreas clave evaluadas en el concurso de selección UNAM. Sed do eiusmod tempor incididunt ut labore.</li>
+                                 <li><strong>Profesorado Especializado:</strong> Docentes con amplia experiencia en los programas de la UNAM y metodologías de enseñanza efectivas para este nivel. Ut enim ad minim veniam.</li>
+                                 <li><strong>Simulacros de Examen:</strong> Evaluaciones periódicas que replican las condiciones del examen real para medir tu progreso y familiarizarte con el formato. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                 <li><strong>Seguimiento Académico Personalizado:</strong> Tutorías y asesorías para identificar y superar dificultades en materias específicas. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                                 <li><strong>Orientación Vocacional Continua:</strong> Te ayudamos a definir tu área de interés y la carrera universitaria que se ajusta mejor a tus aptitudes y pasiones. Excepteur sint occaecat cupidatat non proident.</li>
+                                 <li><strong>Formación Humanística y Científica:</strong> Desarrollo de habilidades de investigación, análisis crítico y aprecio por las ciencias y las humanidades. Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                             </ul>
+                         </div>
+
+                         <div class="content-details">
+                             <h4>Áreas de Profundización UNAM:</h4>
+                             <p>Nuestro programa UNAM te permite perfilar tu preparación hacia diferentes áreas de conocimiento desde una etapa temprana, facilitando tu elección de carrera posterior:</p>
+                             <ul>
+                                 <li><strong>Área 1: Físico-Matemáticas y de las Ingenierías:</strong> Enfocado en cálculo, física, dibujo técnico y pensamiento lógico-matemático. Lorem ipsum dolor sit amet.</li>
+                                 <li><strong>Área 2: Ciencias Biológicas y de la Salud:</strong> Profundización en biología, química, salud y aspectos bioéticos. Sed do eiusmod tempor incididunt.</li>
+                                 <li><strong>Área 3: Ciencias Sociales:</strong> Estudio de la historia, sociología, derecho, economía, administración y ciencias políticas. Ut enim ad minim veniam.</li>
+                                 <li><strong>Área 4: Humanidades y Artes:</strong> Exploración de filosofía, literatura, artes plásticas, música, teatro, historia del arte y lenguas. Quis nostrud exercitation.</li>
+                             </ul>
+                              <p>La elección temprana del área te permite enfocar tus estudios y aprovechar al máximo nuestro plan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                         </div>
+
+                         <div class="content-details">
+                             <h4>Actividades Complementarias y Vida Estudiantil:</h4>
+                             <p>Complementamos tu formación académica con actividades que enriquecen tu experiencia y desarrollo integral:</p>
+                             <ul>
+                                 <li>Talleres extracurriculares (deportes, arte, cultura, idiomas). Lorem ipsum dolor sit amet.</li>
+                                 <li>Ciclos de conferencias con profesionales y académicos invitados. Sed do eiusmod tempor incididunt.</li>
+                                 <li>Visitas a museos, instituciones culturales y laboratorios especializados. Ut enim ad minim veniam.</li>
+                                 <li>Participación en concursos académicos, eventos culturales y jornadas científicas. Quis nostrud exercitation.</li>
+                                  <li>Programas de tutoría entre pares y clubes estudiantiles. Duis aute irure dolor in reprehenderit.</li>
+                             </ul>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                         </div>
+
+
+                        <div class="text-center" style="margin-top: 40px;">
+                             <!-- Enlaces a páginas de información más detallada -->
+                             <a href="oferta/prepa-unam-admision.html" class="btn btn-primary btn-large">Proceso de Admisión UNAM</a>
+                             <a href="oferta/prepa-unam-plan.html" class="btn btn-secondary btn-large">Plan de Estudios Detallado</a>
+                              <a href="inscripciones.html#prepa-unam" class="btn btn-light btn-large">Inscríbete Ahora</a>
+                         </div>
+
+                    </section>
+
+                    <!-- Sección Bachillerato General -->
+                    <section id="bachillerato-section" class="content-section">
+                        <h3>Bachillerato General</h3>
+                        <p>Nuestro Bachillerato General es la opción ideal si buscas una <strong>formación académica sólida, amplia y versátil</strong>, preparándote eficazmente para continuar tus estudios superiores en cualquier universidad de México (incluida la UNAM vía examen de admisión, IPN, UAM) o del extranjero, así como para insertarte en el mundo laboral si así lo decides. Nos enfocamos en desarrollar una base académica sólida, pensamiento crítico y habilidades transversales esenciales para tu éxito futuro en cualquier camino que elijas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                         <div class="content-details">
+                            <h4>Beneficios Clave de Nuestro Bachillerato General:</h4>
+                             <ul>
+                                 <li><strong>Preparación Universal:</strong> Formación que te capacita para presentar exámenes de admisión a cualquier universidad o institución de educación superior. Lorem ipsum dolor sit amet.</li>
+                                 <li><strong>Plan de Estudios Completo:</strong> Materias fundamentales de Ciencias Exactas, Ciencias Sociales, Humanidades y Artes para una base educativa completa. Sed do eiusmod tempor incididunt.</li>
+                                 <li><strong>Desarrollo de Habilidades Fundamentales:</strong> Fomentamos el pensamiento crítico, la creatividad, la comunicación efectiva, el trabajo en equipo y la resolución de problemas. Ut enim ad minim veniam.</li>
+                                 <li><strong>Orientación Vocacional:</strong> Acompañamiento constante para descubrir tus intereses, aptitudes y elegir la carrera universitaria o camino profesional adecuado con confianza. Quis nostrud exercitation.</li>
+                                 <li><strong>Adaptabilidad y Flexibilidad:</strong> Modalidades de estudio que se ajustan a tus necesidades y ritmo de aprendizaje. Duis aute irure dolor in reprehenderit.</li>
+                                 <li><strong>Profesorado Comprometido:</strong> Docentes calificados, apasionados y dedicados a tu aprendizaje y crecimiento personal. Excepteur sint occaecat cupidatat non proident.</li>
+                                  <li><strong>Enfoque Práctico y Teórico:</strong> Combinación equilibrada de teoría y aplicación práctica en laboratorios, talleres y proyectos. Sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                                  <li><strong>Preparación para la Vida:</strong> Adquieres conocimientos y habilidades no solo académicos, sino también para desenvolverte en la sociedad. Lorem ipsum dolor sit amet.</li>
+                             </ul>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+
+                        <div class="content-details">
+                            <h4>Modalidades de Estudio:</h4>
+                            <p>Entendemos que cada estudiante es diferente y tiene distintas necesidades, por eso ofrecemos flexibilidad en nuestras modalidades:</p>
+                            <ul>
+                                <li><strong>Modalidad Presencial:</strong> Disfruta la experiencia universitaria tradicional con interacción directa, clases en vivo y uso completo de nuestras modernas instalaciones. Ideal para quienes prefieren el ambiente de campus diario. Lorem ipsum dolor sit amet.</li>
+                                <li><strong>Modalidad Semiescolarizada:</strong> Perfecta si trabajas, tienes otras actividades o vives lejos. Combina sesiones presenciales intensivas (ej. fines de semana o días específicos) con estudio autónomo apoyado en nuestra sólida plataforma en línea y materiales didácticos. Sed do eiusmod tempor incididunt.</li>
+                            </ul>
+                            <p>Además, complementamos tu formación con una amplia gama de talleres y actividades extracurriculares disponibles en ambas modalidades.</p>
+                        </div>
+
+                         <div class="content-details">
+                             <h4>Áreas Terminales o de Especialización (Opcional):</h4>
+                             <p>Para complementar tu formación y darte un enfoque inicial hacia tu futura elección universitaria o profesional, ofrecemos áreas de especialización que te permiten explorar campos de interés. Estas áreas brindan conocimientos más profundos sin cerrar la puerta a otras opciones al egresar.</p>
+                              <ul>
+                                 <li>Ciencias Físico-Matemáticas: Lorem ipsum dolor sit amet.</li>
+                                 <li>Ciencias Químico-Biológicas: Sed do eiusmod tempor incididunt.</li>
+                                 <li>Ciencias Sociales y Administrativas: Ut enim ad minim veniam.</li>
+                                  <li>Humanidades y Artes: Quis nostrud exercitation.</li>
+                             </ul>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                         </div>
+
+
+                        <div class="text-align" style="margin-top: 40px;">
+                            <!-- Enlaces a páginas de información más detallada -->
+                             <a href="oferta/bachillerato-general-admision.html" class="btn btn-primary btn-large">Proceso de Admisión Bachillerato</a>
+                             <a href="oferta/bachillerato-general-plan.html" class="btn btn-secondary btn-large">Plan de Estudios Detallado</a>
+                              <a href="inscripciones.html#bachillerato-general" class="btn btn-light btn-large">Inscríbete Ahora</a>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- ============================================= -->
+     <!-- ==           SECCIÓN QUIÉNES SOMOS         == -->
+     <!-- ============================================= -->
+     <section id="quienes-somos" class="section-padding">
+         <div class="container">
+             <!-- Contenido centrado textualmente dentro de split-content -->
+             <div class="split-section">
+                 <div class="split-content text-center"> <!-- Añadido text-center para centrar el bloque -->
+                     <h2 class="section-title">Nuestra Misión Educativa</h2> <!-- Título ya centrado por section-title -->
+                     <!-- Contenido de Quiénes Somos -->
+                     <p>En UNIREM, nos dedicamos a fomentar el desarrollo integral de cada estudiante, cultivando no solo el conocimiento académico, sino también habilidades socioemocionales, pensamiento crítico y creatividad. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                     <p>Creemos en un enfoque personalizado, adaptándonos a las necesidades individuales para potenciar el talento único de cada joven y adulto en un ambiente de apoyo y respeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                     <a href="sobre-nosotros.html" class="btn btn-secondary">Leer Más Sobre Nosotros</a> <!-- Texto más descriptivo -->
+                 </div>
+                 <div class="split-image">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                     <img src="../images/srcw/vive_unirem_bach_7.webp" alt="Estudiantes colaborando en UNIREM">
+                 </div>
+             </div>
+         </div>
+     </section>
+
+    <!-- ============================================= -->
+    <!-- ==      SECCIÓN VIDA EN EL CAMPUS (GRID)   == -->
+    <!-- ============================================= -->
+    <section id="campus-life" class="section-padding bg-light">
+        <div class="container text-center"> <!-- Contenido centrado -->
+            <h2 class="section-title">Vive la Experiencia UNIREM</h2>
+             <p style="max-width: 800px; margin: 0 auto 50px auto; font-size: 1.1rem; color: var(--dark-text);">Sumérgete en nuestra comunidad estudiantil, descubre nuestras modernas instalaciones y participa en una amplia gama de actividades que complementarán tu formación académica. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="campus-grid">
+                <!-- Puedes añadir más items aquí -->
+                <div class="campus-item">
+                     <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="../images/srcw/_DSC8084.webp" alt="Laboratorio Moderno UNIREM">
+                    <div class="campus-info">
+                        <h4>Laboratorios Equipados</h4>
+                        <p>Contamos con laboratorios de última generación para tus prácticas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                </div>
+                 <div class="campus-item">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="../images/srcw/_DSC5172.webp" alt="Biblioteca UNIREM">
+                    <div class="campus-info">
+                        <h4>Biblioteca y Espacios de Estudio</h4>
+                         <p>Un ambiente ideal para la investigación y el estudio individual o grupal. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam.</p>
+                    </div>
+                </div>
+                 <div class="campus-item">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="../images/srcw/1.webp" alt="Canchas Deportivas UNIREM">
+                    <div class="campus-info">
+                        <h4>Instalaciones Deportivas</h4>
+                         <p>Canchas y espacios para practicar tu deporte favorito y mantenerte activo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis nostrud exercitation.</p>
+                    </div>
+                </div>
+                 <div class="campus-item">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="../images/srcw/IMG_0410.webp" alt="Áreas Verdes Campus UNIREM">
+                    <div class="campus-info">
+                        <h4>Áreas de Recreación</h4>
+                         <p>Espacios verdes y zonas de descanso para socializar y relajarte entre clases. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor.</p>
+                    </div>
+                </div>
+                 <div class="campus-item">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="images/campus/campus5.jpg" alt="Aula de Cómputo UNIREM">
+                    <div class="campus-info">
+                        <h4>Aulas de Cómputo Equipadas</h4>
+                         <p>Salas con equipos modernos y acceso a internet para tus proyectos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat.</p>
+                    </div>
+                </div>
+                 <div class="campus-item">
+                      <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                    <img src="images/campus/campus6.jpg" alt="Cafetería Campus UNIREM">
+                    <div class="campus-info">
+                        <h4>Cafetería y Comedores</h4>
+                         <p>Opciones variadas de alimentos y bebidas en un ambiente agradable. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt in culpa qui officia.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="text-center" style="margin-top: 50px;">
+                 <a href="galeria.html" class="btn btn-primary btn-large">Ver Galería Completa</a>
+             </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- ==           SECCIÓN CLIPS TIKTOK (EMBEDS) == -->
+    <!-- ============================================= -->
+     <section id="clips-tiktok" class="section-padding">
+         <div class="container">
+             <h2 class="section-title">#ComunidadUNIREM en Clips</h2>
+             <div class="clips-container">
+                  <!-- Incluye aquí los embed codes de TikTok -->
+                  <!-- **IMPORTANTE:** REMUEVE EL ATRIBUTO 'style' DE CADA BLOCKQUOTE -->
+                   <div class="clip-card">
+                       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7439799256065543480" data-video-id="7439799256065543480"> <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Una experiencia única para nuestros estudiantes de Prepa UNAM! 🔬 🧪 Nuestros alumnos visitaron el Instituto de <a title="física" target="_blank" href="https://www.tiktok.com/tag/f%C3%ADsica?refer=embed">#Física</a> de la <a title="unam" target="_blank" href="https://www.tiktok.com/tag/unam?refer=embed">#UNAM</a> que cada año abre sus puertas para que más personas conozcan sobre los proyectos que transforman el futuro de la <a title="ciencia" target="_blank" href="https://www.tiktok.com/tag/ciencia?refer=embed">#ciencia</a>.  📚 Nuestro plan de estudios de Prepa UNAM forma líderes, brindado experiencias únicas que enriquecen su <a title="aprendizaje" target="_blank" href="https://www.tiktok.com/tag/aprendizaje?refer=embed">#aprendizaje</a>.  <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Backsound Music - Ibnusta" href="https://www.tiktok.com/music/Backsound-Music-7316749262485129218?refer=embed">♬ Backsound Music - Ibnusta</a> </section> </blockquote>
+                   </div>
+
+                   <div class="clip-card">
+                       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7328482977787153670" data-video-id="7328482977787153670"> <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> Soy estudiante de <a title="gastronomia" target="_blank" href="https://www.tiktok.com/tag/gastronomia?refer=embed">#gastronomia</a> obvio estudio en <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> 🧑‍🍳 ¡Feliz dia del <a title="chef" target="_blank" href="https://www.tiktok.com/tag/chef?refer=embed">#chef</a>! <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a target="_blank" title="♬ Rock This Party - 颜妹" href="https://www.tiktok.com/music/Rock-This-Party-6876283456507086856?refer=embed">♬ Rock This Party - 颜妹</a> </section> </blockquote>
+                   </div>
+
+                   <div class="clip-card">
+                       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7312500562661149958" data-video-id="7312500562661149958"> <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¡Aprender sobre ciencia nunca fue tan divertido! 👩‍🔬 <a title="ciencia" target="_blank" href="https://www.tiktok.com/tag/ciencia?refer=embed">#ciencia</a> <a title="experimento" target="_blank" href="https://www.tiktok.com/tag/experimento?refer=embed">#experimento</a> <a title="preparatoria" target="_blank" href="https://www.tiktok.com/tag/preparatoria?refer=embed">#preparatoria</a> <a title="unirem" target="_blank" href="https://www.tiktok.com/tag/unirem?refer=embed">#UNIREM</a> <a target="_blank" title="♬ thats what i like sped up - 🎃🎃🎃" href="https://www.tiktok.com/music/thats-what-i-like-sped-up-7099174146399094562?refer=embed">♬ thats what i like sped up - 🎃🎃🎃</a> </section> </blockquote>
+                   </div>
+
+                   <div class="clip-card">
+                      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7337732141234572550" data-video-id="7337732141234572550"> <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> ¿Te has preguntado alguna vez cómo funciona realmente la magia detrás de los dispositivos electrónicos que usamos a diario? ⚡️ No pierdas la oportunidad de expandir tus conocimientos y desbloquear nuevas posibilidades en el mundo <a title="digital" target="_blank" href="https://www.tiktok.com/tag/digital?refer=embed">#digital</a>. 💻 Cuéntanos, ¿cuál es tu clase favorita de ingeniería en <a title="sistemas" target="_blank" href="https://www.tiktok.com/tag/sistemas?refer=embed">#sistemas</a> computacionales? ✏️ <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a title="universidad" target="_blank" href="https://www.tiktok.com/tag/universidad?refer=embed">#universidad</a> <a target="_blank" title="♬ Funk It Up - John Etkin-Bell" href="https://www.tiktok.com/music/Funk-It-Up-7013707229828220929?refer=embed">♬ Funk It Up - John Etkin-Bell</a> </section> </blockquote>
+                   </div>
+
+                   <div class="clip-card">
+                       <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@unirem.mx/video/7458754968871292165" data-video-id="7458754968871292165"> <section> <a target="_blank" title="@unirem.mx" href="https://www.tiktok.com/@unirem.mx?refer=embed">@unirem.mx</a> 🌿¿Sabías que las <a title="chinampas" target="_blank" href="https://www.tiktok.com/tag/chinampas?refer=embed">#chinampas</a> son un sistema agrícola único en el mundo desde la época prehispánica?  Nuestros alumnos de la licenciatura en Administración de Empresas <a title="turísticas" target="_blank" href="https://www.tiktok.com/tag/tur%C3%ADsticas?refer=embed">#Turísticas</a> realizaron un increíble City Tour como parte de su proyecto final, explorando la cultura, tradiciones u belleza de este lugar declarado Patrimonio de la Humanidad. 🌎 <a title="comunidadunirem" target="_blank" href="https://www.tiktok.com/tag/comunidadunirem?refer=embed">#ComunidadUNIREM</a> <a title="xochimilco" target="_blank" href="https://www.tiktok.com/tag/xochimilco?refer=embed">#Xochimilco</a> <a title="universidad" target="_blank" href="https://www.tiktok.com/tag/universidad?refer=embed">#universidad</a> <a target="_blank" title="♬ Así Fue - En Vivo Desde Bellas Artes, México/ 2013 - Juan Gabriel" href="https://www.tiktok.com/music/Así-Fue-En-Vivo-Desde-Bellas-Artes-México-2013-7218376302503365382?refer=embed">♬ Así Fue - En Vivo Desde Bellas Artes, México/ 2013 - Juan Gabriel</a> </section> </blockquote>
+                   </div>
+
+                   <div class="clip-card">
+                    <!-- Placeholder content if TikTok does not load or for the last card -->
+                    <p style="padding:20px;">¡Síguenos en TikTok para ver más!<br><a href="https://www.tiktok.com/@unirem.mx" target="_blank" rel="noopener noreferrer" style="color: var(--white-color); text-decoration: underline; font-weight: bold;">@unirem.mx</a></p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================= -->
+    <!-- ==     SECCIÓN CARACTERÍSTICAS DESTACADAS  == -->
+    <!-- ============================================= -->
+     <section id="destacados" class="section-padding bg-gradient">
+         <div class="container">
+              <h2 class="section-title text-light">¿Por Qué Elegir UNIREM?</h2>
+              <div class="features-grid">
+                   <div class="feature-card">
+                       <div class="feature-icon"><i class="fas fa-chalkboard-user fa-2x"></i></div>
+                       <h4>Profesorado Calificado</h4>
+                       <p>Equipo docente apasionado, experto y comprometido con la formación continua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   </div>
+                   <div class="feature-card">
+                       <div class="feature-icon"><i class="fas fa-laptop-code fa-2x"></i></div>
+                       <h4>Tecnología Educativa</h4>
+                       <p>Integración efectiva de herramientas digitales y plataformas virtuales para enriquecer el aprendizaje. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                   </div>
+                    <div class="feature-card">
+                       <div class="feature-icon"><i class="fas fa-users fa-2x"></i></div>
+                       <h4>Ambiente Inclusivo</h4>
+                       <p>Un espacio seguro, acogedor y respetuoso donde cada estudiante se siente valorado y parte de una comunidad vibrante. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                   </div>
+                    <div class="feature-card">
+                       <div class="feature-icon"><i class="fas fa-graduation-cap fa-2x"></i></div>
+                       <h4>Excelencia Académica</h4>
+                       <p>Programas educativos rigurosos y estimulantes que preparan a nuestros egresados para el éxito futuro en sus estudios superiores o carrera profesional. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                   </div>
+              </div>
+         </div>
+     </section>
+
+
+
+
+    <!-- ============================================= -->
+    <!-- ==             PIE DE PÁGINA               == -->
+    <!-- ============================================= -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                   <!-- Asegúrate que la ruta de la imagen sea correcta -->
+                  <img src="../images/src/3 Logo-UNIREM-Blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo">
+                  <!-- Contenido del footer sobre la escuela -->
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="#inicio">Inicio</a></li>
+                     <li><a href="#oferta-bachillerato">Bachillerato</a></li>
+                     <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                     <li><a href="admisiones.html">Admisiones</a></li>
+                     <li><a href="noticias.html">Noticias</a></li>
+                     <li><a href="contacto.html">Contacto</a></li>
+                     <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                   <!-- **IMPORTANTE:** REEMPLAZA ESTA INFORMACIÓN CON LOS DATOS REALES -->
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección Completa de UNIREM, Calle Falsa 123, Col. Imaginaria, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+                  <p><i class="fas fa-clock fa-fw"></i> Horario de atención: Lun-Vie 9:00 - 18:00</p> <!-- Ejemplo de añadir más info -->
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                  <!-- **IMPORTANT:** REPLACE # WITH REAL SOCIAL LINKS -->
+                 <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <!-- **IMPORTANTE:** REEMPLAZA EL AÑO Y NOMBRE DE LA INSTITUCIÓN -->
+              <p>© 2024 Universidad de la Republica Mexicana. Todos los derechos reservados. | <a href="politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ==        BOTÓN FLOTANTE WHATSAPP        == -->
+    <!-- ============================================= -->
+    <!-- **IMPORTANTE:** REEMPLAZA EL NÚMERO DE WHATSAPP -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20UNIREM."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================= -->
+    <!-- ==                 SCRIPTS                 == -->
+    <!-- ============================================= -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- Tu script principal -->
+    <script src="../js/Bach-script.js"></script>
+
+    <!-- Script de TikTok Embed -->
+    <!-- Este script es necesario para que los embeds funcionen -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <!-- Script de Typed.js (inline para el hero) -->
+     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+             const typedTargetIndex = document.getElementById('typed-output');
+             // Add check for page type if needed, or use a different ID for the bachillerato page
+             if (typedTargetIndex && typeof Typed !== 'undefined') {
+                 // Check if element is already initialized or not
+                 if (!typedTargetIndex.classList.contains('typed-initialized')) {
+                     try {
+                         const typed = new Typed('#typed-output', {
+                             strings: [ // Phrases specific to the Bachillerato page
+                                 "Prepara tu futuro universitario.",
+                                 "Elige Prepa UNAM.",
+                                 "Elige Bachillerato General.",
+                                 "Desarrolla tu potencial académico.",
+                                 "Únete a nuestra comunidad de aprendizaje.",
+                                 "Tu camino hacía el éxito comienza aquí.",
+                                 "Formación integral para tu éxito."
+                             ],
+                             typeSpeed: 50, backSpeed: 30, backDelay: 1500,
+                             startDelay: 500, loop: true, showCursor: true, cursorChar: '_',
+                             onComplete: (self) => { self.el.classList.add('typed-initialized'); },
+                         });
+                     } catch (error) {
+                         console.error("Error initializing Typed.js:", error);
+                         // Fallback text if Typed.js fails
+                         if (typedTargetIndex) typedTargetIndex.textContent = "Prepara tu futuro universitario.";
+                     }
+                 }
+             } else if (typedTargetIndex) {
+                  // Fallback text if Typed.js is not available or element not found
+                 typedTargetIndex.textContent = "Prepara tu futuro universitario.";
+             }
+         });
+     </script>
+
+</body>
+</html>

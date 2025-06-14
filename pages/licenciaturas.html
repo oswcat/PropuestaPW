@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenciaturas - UNIREM</title>
+    <meta name="description" content="Explora nuestra oferta académica de licenciaturas en la Universidad de la Republica Mexicana (UNIREM). ¡Encuentra tu camino profesional!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS Generales (TU style.css) -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Estilos CSS Específicos para listados de oferta -->
+    <link rel="stylesheet" href="../src/licenciaturas.css">
+    <!-- Note: career-styles.css is NOT linked here as it's for individual career pages -->
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Twitter Cards (for sharing this page) -->
+    <meta property="og:title" content="Licenciaturas - UNIREM">
+    <meta property="og:description" content="Explora nuestra oferta académica de licenciaturas en la Universidad de la Republica Mexicana (UNIREM).">
+    <!-- Replace with a relevant image for the licenciaturas overview page -->
+    <meta property="og:image" content="/images/oferta-licenciaturas-social.jpg">
+    <meta property="og:url" content="[URL de la página de licenciaturas]">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Universidad de la Republica Mexicana",
+      "url": "[URL de la Escuela]",
+      "description": "La Universidad de la Republica Mexicana (UNIREM) ofrece una amplia gama de programas de licenciaturas.",
+      "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Licenciaturas UNIREM",
+          "numberOfItems": 15, // Or the actual number
+          "itemListElement": [
+              {
+                  "@type": "OfferCatalog",
+                  "name": "[Nombre de Licenciatura 1]",
+                  "itemOffered": {
+                       "@type": "EducationalOccupationalProgram",
+                       "name": "[Nombre de Licenciatura 1]",
+                       "url": "[URL de la página de Licenciatura 1]"
+                  }
+              },
+              // ... Add entries for each of the 15 licenciaturas ...
+              {
+                  "@type": "OfferCatalog",
+                  "name": "[Nombre de Licenciatura 15]",
+                  "itemOffered": {
+                       "@type": "EducationalOccupationalProgram",
+                       "name": "[Nombre de Licenciatura 15]",
+                       "url": "[URL de la página de Licenciatura 15]"
+                  }
+              }
+          ]
+      }
+    }
+    </script>
+
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <!-- Reutiliza la misma estructura y clases del Index/Template -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="/" class="logo">
+                <img src="/images/logo-escuela-moderno-blanco.png" alt="Logo UNIREM" height="45">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="/">Inicio</a></li>
+                 <li class="has-dropdown">
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Quiénes Somos <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                          <li><a href="/sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="/sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="/sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown active"> <!-- Added active class for this page -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Oferta Educativa <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="/oferta/bachillerato.html">Bachillerato</a></li>
+                         <li><a href="/oferta/licenciaturas.html">Licenciaturas</a></li>
+                         <li><a href="/oferta/posgrados.html">Posgrados</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                      <a href="#" aria-haspopup="true" aria-expanded="false">Vida Estudiantil <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="/actividades.html#deportes">Deportes</a></li>
+                         <li><a href="/actividades.html#arte-cultura">Arte y Cultura</a></li>
+                         <li><a href="/actividades.html#ciencias-tec">Ciencia y Tec.</a></li>
+                         <li><a href="/actividades.html#extracurriculares">Extracurriculares</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="/noticias.html">Noticias</a></li>
+                 <li><a href="/admisiones.html">Admisiones</a></li>
+                 <li><a href="/contacto.html">Contacto</a></li>
+                 <li><a href="/inscripciones.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content">
+
+        <!-- === INTRO SECTION FOR LICENCIATURAS PAGE === -->
+        <section class="section-padding">
+            <div class="container text-center">
+                <h1 class="section-title">Nuestras Licenciaturas</h1>
+                <p class="lead">Explora las áreas de estudio y encuentra el camino profesional que te apasiona. En UNIREM, te preparamos para destacar en un mundo en constante cambio.</p>
+            </div>
+        </section>
+
+        <!-- === LICENCIATURAS GRID SECTION === -->
+        <!-- Added ID for potential future timeline nav linking -->
+        <section id="licenciaturas-list" class="section-padding">
+            <div class="container">
+                <!-- Title is in the intro section above -->
+                <div class="licenciaturas-grid">
+
+                    <!-- === CARD 1 === -->
+                    <!-- Use the licenciatura-card class -->
+                    <!-- Use animate-on-scroll for reveal animation -->
+                    <a href="/oferta/licenciaturas/licenciatura-1.html" class="licenciatura-card animate-on-scroll">
+                         <!-- Content visible by default -->
+                         <div class="card-content-visible">
+                              <!-- Replace with relevant icon -->
+                              <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                              <!-- Replace with Licenciatura Name -->
+                              <h3>Ingeniería en Sistemas Computacionales</h3>
+                         </div>
+                         <!-- Content visible on hover -->
+                         <div class="card-description">
+                              <!-- Replace with brief description -->
+                              <p>Desarrolla soluciones tecnológicas, software y sistemas para transformar organizaciones.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 2 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-2.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                              <h3>Administración de Empresas</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Lidera equipos, gestiona recursos y optimiza procesos en cualquier tipo de organización.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 3 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-3.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                              <h3>Derecho</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Comprende y aplica el marco legal para defender la justicia y los derechos ciudadanos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 4 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-4.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                              <h3>Contaduría Pública</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Domina las finanzas, impuestos y auditoría para el éxito económico de empresas e individuos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 5 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-5.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                              <h3>Ciencias de la Educación</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Diseña, implementa y evalúa procesos educativos innovadores y efectivos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 6 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-6.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-users"></i></div>
+                              <h3>Psicología</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Comprende el comportamiento humano y aplica técnicas para el bienestar individual y social.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 7 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-7.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-user-md"></i></div>
+                              <h3>Enfermería</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Proporciona cuidados de salud de calidad, asistiendo a pacientes en su recuperación y bienestar.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 8 === -->
+                    <a href="/oferta/licenciaturas/licenciatura-8.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                              <h3>Gastronomía</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Explora el arte culinario, desde técnicas clásicas hasta tendencias internacionales y gestión de negocios gastronómicos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 9 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-9.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-film"></i></div>
+                              <h3>Ciencias de la Comunicación</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Analiza, crea y difunde mensajes a través de diversos medios, impactando en la sociedad y la cultura.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 10 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-10.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+                              <h3>Diseño Gráfico</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Crea soluciones visuales innovadoras para marcas, productos y medios digitales e impresos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 11 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-11.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                              <h3>Recursos Humanos</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Gestiona el capital humano, desarrollando talento y creando ambientes laborales positivos y productivos.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 12 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-12.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-hotel"></i></div>
+                              <h3>Administración Turística</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Dirige y gestiona proyectos y empresas en el sector turístico y hotelero, promoviendo experiencias memorables.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- === CARD 13 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-13.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+                              <h3>Fisioterapia</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Ayuda a recuperar la movilidad y función física mediante técnicas terapéuticas y de rehabilitación.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 14 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-14.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-city"></i></div>
+                              <h3>Arquitectura</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Diseña y construye espacios funcionales, estéticos y sostenibles que dan forma a nuestro entorno.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                     <!-- === CARD 15 === -->
+                     <a href="/oferta/licenciaturas/licenciatura-15.html" class="licenciatura-card animate-on-scroll">
+                         <div class="card-content-visible">
+                              <div class="card-icon"><i class="fas fa-truck-fast"></i></div>
+                              <h3>Logística Internacional</h3>
+                         </div>
+                         <div class="card-description">
+                              <p>Optimiza cadenas de suministro globales, coordinando el flujo de bienes y servicios a nivel internacional.</p>
+                              <span class="read-more">Ver Detalles →</span>
+                         </div>
+                    </a>
+
+                    <!-- Add more cards here following the same structure -->
+                    <!-- Remember to update the href for each card! -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- === FINAL CTA SECTION === -->
+        <!-- Reutiliza la estructura y clases del Index/Template -->
+         <section id="final-cta-section" class="cta-section section-padding">
+            <div class="container text-center">
+                <h2 class="cta-title animate-on-scroll">¿Te interesa alguna Licenciatura?</h2>
+                <p class="cta-text animate-on-scroll">Nuestro equipo de asesores está listo para ayudarte a resolver todas tus dudas y guiarte en tu proceso de admisión.</p>
+                <div class="cta-buttons animate-on-scroll">
+                     <a href="/contacto.html" class="btn btn-light btn-large" aria-label="Contactar ahora"><i class="fas fa-envelope mr-2"></i> Contactar Ahora</a>
+                     <a href="/admisiones.html" class="btn btn-outline-light btn-large" aria-label="Ver proceso de admisiones"><i class="fas fa-user-plus mr-2"></i> Ver Admisiones</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <!-- Reutiliza la estructura y clases del Index/Template -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                  <img src="/images/logo-escuela-blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo">
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="/">Inicio</a></li>
+                     <li><a href="/sobre-nosotros.html">Quiénes Somos</a></li>
+                     <li><a href="/oferta/licenciaturas.html">Oferta Educativa</a></li> <!-- Link to this page -->
+                     <li><a href="/admisiones.html">Admisiones</a></li>
+                     <li><a href="/noticias.html">Noticias</a></li>
+                     <li><a href="/contacto.html">Contacto</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección Completa de UNIREM, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                 <a href="[URL Facebook]" target="_blank" rel="noopener noreferrer" aria-label="Facebook de UNIREM" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="[URL Twitter]" target="_blank" rel="noopener noreferrer" aria-label="Twitter de UNIREM" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="[URL Instagram]" target="_blank" rel="noopener noreferrer" aria-label="Instagram de UNIREM" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="[URL LinkedIn]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de UNIREM" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="[URL TikTok]" target="_blank" rel="noopener noreferrer" aria-label="TikTok de UNIREM" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <p>© 2024 Universidad de la Republica Mexicana. Todos los derechos reservados. | <a href="/politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP BUTTON ==================== -->
+    <!-- Reutiliza la estructura y clases -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20Licenciaturas."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Script principal del sitio (maneja navbar show/hide, mobile menu, reveal on scroll) -->
+    <script src="../script.js"></script>
+    <!-- No necesitamos career-scripts.js aquí, ya que no usamos Swiper ni Accordion -->
+
+    <!-- Script de Font Awesome (Si usas un kit, descomenta y reemplaza YOUR_KIT_CODE) -->
+    <!-- <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> -->
+    <!-- Script de embebidos de TikTok (solo si usas embeds de TikTok en esta página) -->
+    <!-- <script async src="https://www.tiktok.com/embed.js"></script> -->
+
+</body>
+</html>

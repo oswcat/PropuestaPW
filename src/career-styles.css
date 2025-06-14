@@ -1,0 +1,898 @@
+/*
+  Archivo: career-styles.css
+  Descripción: Estilos específicos para las páginas de carreras en UNIREM.
+  Complementa a style.css (estilos generales del sitio UNIREM).
+  Utiliza variables CSS y clases base definidas en style.css.
+  Ajustado a tonos azules y estilos del Index.
+  FUERZA COLORES DE TEXTO EN TARJETAS Y BARRA DE NAVEGACIÓN CON !IMPORTANT.
+  INCLUYE ESTILOS PARA EL CARRUSEL DE PLAN DE ESTUDIOS, VIDEO TESTIMONIAL RESPONSIVO,
+  SECCIÓN PERFIL CON BOTÓN TEST VOCACIONAL.
+*/
+
+/* ============================================= */
+/* ==           VARIABLES CSS (Reference) == */
+/* ============================================= */
+/* These variables are just a reference. The authoritative source is style.css.
+   Avoid modifying these here unless absolutely necessary for a specific override
+   that cannot be achieved otherwise. */
+   :root {
+    --primary-color: #4a69bd;
+    --primary-color-rgb: 74, 105, 189;
+    --secondary-color: #6a89cc;
+    --secondary-color-rgb: 106, 137, 204;
+    --accent-color: #f6b93b;
+    --accent-color-darker: #e0a800;
+
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+    --medium-text: #5a6268;
+    --light-text: #f8f9fa;
+    --border-color: #dee2e6;
+    --shadow-color-light: rgba(0, 0, 0, 0.08);
+    --shadow-color-medium: rgba(0, 0, 0, 0.15);
+    --shadow-color-dark: rgba(0, 0, 0, 0.3);
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --base-font-size: 16px;
+
+    --navbar-height: 70px; /* Must match style.css */
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+    --container-width: 1140px;
+}
+
+
+/* ==================== FORZAR BARRA DE NAVEGACIÓN SUPERIOR (AZUL Y POSICIÓN) ==================== */
+/* These rules use !important to ensure the navbar on these pages
+   is always blue and fixed at the top, potentially overriding
+   conflicting styles from style.css if loaded later or with lower specificity.
+   Ideally, style.css defines the primary navbar state correctly,
+   and this block would not be needed with !important flags.
+   However, to guarantee the desired appearance as requested, we keep them. */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    /* Ensure the background and shadow match the index */
+    background: var(--navbar-bg, linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.92), rgba(var(--secondary-color-rgb), 0.92) 100%)) !important;
+    box-shadow: 0 2px 15px var(--shadow-color-medium) !important;
+    z-index: 1000 !important;
+    /* Keep transition for JS hide/show */
+    transition: transform 0.4s ease-in-out !important;
+}
+
+/* Ensure text and link colors inside the forced navbar are light */
+.navbar a {
+    color: var(--light-text) !important; /* Force link color */
+}
+.navbar a:hover {
+    color: var(--white-color) !important; /* Force hover color */
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Match index hover effect */
+}
+.navbar a.active {
+     background-color: rgba(0, 0, 0, 0.1) !important; /* Match index active effect */
+     color: var(--white-color) !important;
+}
+.navbar .nav-cta.btn-small {
+    /* Ensure CTA button styles are not overridden by the above general 'a' rules */
+    color: var(--dark-text) !important;
+    background-color: var(--accent-color) !important;
+}
+.navbar .nav-cta.btn-small:hover {
+     color: var(--dark-text) !important;
+     background-color: var(--accent-color-darker) !important;
+     box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+     transform: translateY(-1px) !important;
+}
+
+
+/* Ensure mobile dropdown menu styles are correct when forced fixed */
+@media (max-width: 767px) { /* Apply only in mobile view */
+    .navbar .nav-links {
+        /* Positioned fixed relative to viewport below the fixed navbar */
+        position: fixed !important; /* Force fixed */
+        top: var(--navbar-height) !important; /* Force position below navbar */
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - var(--navbar-height)) !important; /* Full viewport height below navbar */
+        background-color: rgba(255, 255, 255, 0.98) !important; /* Force white/light background */
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        transform: translateX(100%) !important; /* Initially off-screen */
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+        padding: 25px 0 !important;
+        overflow-y: auto !important; /* Ensure scrollable if content overflows */
+        z-index: 1050 !important;
+    }
+
+    .navbar .nav-links.active {
+        transform: translateX(0%) !important; /* Slide in */
+    }
+
+    .navbar .nav-links a {
+        /* Force specific link styles for mobile menu */
+        color: var(--dark-text) !important;
+        padding: 14px 30px !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        justify-content: space-between !important;
+        background-color: transparent !important; /* Reset any background from general rules */
+        border-radius: 0 !important; /* Reset border-radius */
+        margin: 0 !important; /* Reset margin */
+        display: flex !important;
+        align-items: center !important;
+    }
+
+     .navbar .nav-links a:hover, .navbar .nav-links a:focus {
+         background-color: var(--light-bg) !important;
+         color: var(--primary-color) !important;
+         outline: none !important;
+     }
+
+     .navbar .nav-links li:last-child > a {
+          border-bottom: none !important; /* Remove border on last item if not a button */
+     }
+
+     .navbar .nav-links a.nav-cta {
+         /* Force CTA button styles within the mobile menu */
+         background-color: var(--primary-color) !important;
+         color: var(--white-color) !important;
+         margin: 25px 30px !important;
+         border-radius: 50px !important;
+         text-align: center !important;
+         justify-content: center !important;
+         font-size: 1rem !important;
+         padding: 14px 20px !important;
+         border-bottom: none !important; /* Remove border */
+     }
+     .navbar .nav-links a.nav-cta:hover, .navbar .nav-links a.nav-cta:focus {
+         background-color: var(--secondary-color) !important;
+         color: var(--white-color) !important;
+     }
+
+
+    .navbar .dropdown-menu {
+        /* Force dropdown menu styles when open in mobile */
+        position: static !important; /* Important for mobile accordion behavior */
+        opacity: 1 !important; /* Force visible */
+        visibility: visible !important; /* Force visible */
+        transform: none !important; /* Reset transform */
+        box-shadow: none !important; /* Remove shadow */
+        border: none !important; /* Remove border */
+        border-top: 1px solid var(--border-color) !important; /* Add separator */
+        padding: 0 !important;
+        background-color: var(--light-bg) !important; /* Force light grey background */
+        display: none; /* Initially hidden, controlled by JS .open class on parent li */
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+
+    .navbar .has-dropdown.open > .dropdown-menu {
+        display: block !important; /* Show when parent li has 'open' class */
+    }
+
+    .navbar .dropdown-menu a {
+        /* Force sub-link styles in mobile dropdown */
+        padding: 12px 30px 12px 45px !important; /* Indent */
+        font-size: 0.95rem !important;
+        font-weight: 500 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important; /* Light separator */
+         color: var(--dark-text) !important; /* Force text color */
+         background-color: transparent !important; /* Reset background */
+    }
+    .navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus {
+        background-color: rgba(0,0,0,0.03) !important; /* Lighter hover for sub-items */
+        color: var(--primary-color) !important;
+    }
+     .navbar .dropdown-menu li:last-child > a {
+          border-bottom: none !important; /* Remove border on last sub-item */
+     }
+
+}
+/* End of force navbar styles */
+
+
+/* ==================== FORZAR FONDO BLANCO EN TODAS LAS SECCIONES DE CONTENIDO ==================== */
+/* This rule targets all direct children of <main> that have .section-padding
+   and forces their background to white, overriding any .bg-light or .bg-gradient
+   classes applied in the HTML. */
+main > .section-padding {
+    background-color: var(--white-color) !important; /* Force the background to white */
+    background-image: none !important; /* Ensure no gradient */
+    color: var(--dark-text); /* Set general text color within these sections */
+    /* Padding is inherited from .section-padding in style.css */
+}
+
+/* Adjustments for the final CTA section when forced to white background */
+.cta-section {
+    background-image: none !important; /* Remove background image */
+    background-attachment: scroll !important; /* Ensure it scrolls normally */
+    background-color: var(--white-color) !important; /* Force white background */
+}
+/* Remove the overlay as it's not needed on a white background */
+.cta-section .hero-overlay { /* Changed from cta-overlay to match Index HTML class */
+     display: none !important;
+}
+/* Ensure text inside the final CTA is dark on the white background */
+.cta-section .cta-title,
+.cta-section .cta-text {
+     color: var(--dark-text) !important; /* Force dark color */
+     text-shadow: none !important; /* Remove text shadow */
+}
+/* Adjust buttons for the final CTA on a white background */
+.cta-section .cta-buttons .btn-light { /* "Inscríbete Ahora" button */
+     background-color: var(--accent-color) !important;
+     color: var(--dark-text) !important;
+     border: 2px solid var(--accent-color) !important; /* Match border to bg */
+}
+.cta-section .cta-buttons .btn-light:hover {
+    background-color: var(--accent-color-darker) !important;
+    border-color: var(--accent-color-darker) !important;
+}
+.cta-section .cta-buttons .btn-outline-light { /* "Habla con un Asesor" button */
+     background-color: transparent !important;
+     color: var(--primary-color) !important;
+     border: 2px solid var(--primary-color) !important;
+}
+.cta-section .cta-buttons .btn-outline-light:hover {
+     background-color: var(--primary-color) !important;
+     color: var(--white-color) !important;
+     border-color: var(--primary-color) !important;
+}
+
+/* ==================== General Component Styling (Overriding for White BG) ==================== */
+/* These styles ensure components look good on the forced white background.
+   They override potentially darker text colors set in style.css for components
+   placed on colored or gradient backgrounds. Use !important where necessary
+   to ensure override against base .feature-card, .image-box etc. */
+
+/* Override text colors for standard text elements within sections */
+main .section-padding h2,
+main .section-padding h3,
+main .section-padding h4 {
+     color: var(--dark-text) !important; /* Ensure headings are dark */
+}
+main .section-padding p {
+     color: var(--medium-text) !important; /* Ensure paragraphs are medium grey */
+}
+
+
+/* Styles for cards/items that reuse base classes but need text color adjustments */
+/* Feature Cards (used in Profile section) */
+.student-profile-section .feature-card {
+     /* Background and shadow handled by the specific rule below */
+     background-color: var(--white-color); /* Explicitly white */
+     box-shadow: var(--shadow-color-light) 0 5px 15px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.student-profile-section .feature-card:hover {
+     transform: translateY(-8px);
+     box-shadow: var(--shadow-color-medium) 0 12px 35px;
+}
+.student-profile-section .feature-card .feature-icon {
+     color: var(--primary-color); /* Use primary color for icons */
+}
+.student-profile-section .feature-card h4 {
+    color: var(--dark-text) !important; /* Force dark text for titles */
+}
+.student-profile-section .feature-card p {
+    color: var(--medium-text) !important; /* Force medium grey for paragraphs */
+}
+
+/* Image Boxes (if used, currently not in template) - kept for reference */
+/*
+.image-box {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow-color-light) 0 5px 20px;
+}
+.image-box .image-box-content h3 {
+    color: var(--primary-color) !important;
+}
+.image-box .image-box-content p {
+    color: var(--medium-text) !important;
+}
+*/
+
+
+/* Job Opportunity Items (reuse feature-card) */
+.job-opportunities .job-item.feature-card { /* Specificity to target job items reusing feature card */
+     background-color: var(--white-color); /* Explicitly white */
+     box-shadow: var(--shadow-color-light) 0 5px 15px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.job-opportunities .job-item.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-color-medium) 0 12px 35px;
+}
+.job-opportunities .job-item.feature-card i {
+     color: var(--secondary-color); /* Use secondary color for icons */
+}
+.job-opportunities .job-item.feature-card h3 {
+    color: var(--dark-text) !important; /* Force dark text for titles */
+}
+.job-opportunities .job-item.feature-card ul,
+.job-opportunities .job-item.feature-card li,
+.job-opportunities .job-item.feature-card p {
+    color: var(--medium-text) !important; /* Force medium grey for lists/paragraphs */
+}
+.job-list.features-grid .job-item ul { /* Specificity */
+    list-style: none; padding-left: 0; margin-top: 15px;
+}
+.job-list.features-grid .job-item li { /* Specificity */
+    padding-left: 20px; position: relative; line-height: 1.5; font-size: 0.95rem;
+}
+.job-list.features-grid .job-item li::before { /* Specificity */
+     content: '\f058'; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 1em; position: absolute; left: 0; top: 2px;
+     color: var(--accent-color); /* Use accent color for checkmarks */
+}
+
+
+/* Testimonial Items (if used, defined below) */
+.testimonials-section .testimonial-item {
+     background-color: var(--white-color); /* Explicitly white */
+     box-shadow: var(--shadow-color-medium) 0 8px 20px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* Other styles like padding, min-width in section below */
+}
+.testimonials-section .testimonial-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-color-medium) 0 12px 35px;
+}
+.testimonials-section .testimonial-item .quote {
+     color: var(--medium-text) !important; /* Force medium grey */
+     font-style: italic; line-height: 1.7; font-size: 1rem;
+}
+.testimonials-section .testimonial-item .author {
+     color: var(--dark-text) !important; /* Force dark text */
+     font-weight: 700; font-size: 0.95rem;
+}
+.testimonials-section .testimonial-item img { /* Specificity */
+     border: 4px solid var(--accent-color); /* Keep accent color border */
+}
+
+
+/* Faculty Member Items (reuse feature-card) */
+.faculty-section .faculty-member.feature-card { /* Specificity */
+     background-color: var(--white-color); /* Explicitly white */
+     box-shadow: var(--shadow-color-light) 0 5px 15px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* Other styles like padding, text-align in section below */
+}
+.faculty-section .faculty-member.feature-card:hover {
+     transform: translateY(-8px);
+     box-shadow: var(--shadow-color-medium) 0 12px 35px;
+}
+.faculty-section .faculty-member.feature-card img { /* Specificity */
+     border: 3px solid var(--secondary-color); /* Keep secondary color border */
+}
+.faculty-section .faculty-member.feature-card h3 {
+     color: var(--dark-text) !important; /* Force dark text for name */
+}
+.faculty-section .faculty-member.feature-card .title { /* Specificity */
+     color: var(--medium-text) !important; /* Force medium grey for title */
+     font-size: 0.9rem; margin-top: -8px; margin-bottom: 15px;
+}
+.faculty-section .faculty-member.feature-card .bio-summary { /* Specificity */
+     color: var(--medium-text) !important; /* Force medium grey for summary */
+     font-size: 0.9rem; line-height: 1.5;
+}
+
+
+/* Gallery Items (for Projects/Facilities if used) */
+.gallery-grid .gallery-item { /* Specificity */
+     box-shadow: var(--shadow-color-light) 0 2px 8px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     overflow: hidden; /* Important for border-radius and hover effect */
+     border-radius: var(--border-radius); /* Apply border-radius */
+}
+.gallery-grid .gallery-item:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--shadow-color-medium) 0 5px 15px;
+}
+.gallery-grid .gallery-item img { /* Specificity */
+     display: block; width: 100%; height: 100%; object-fit: cover;
+     border-radius: 0; /* Images inside item shouldn't have border-radius unless intentional */
+}
+.gallery-grid .item-caption { /* Specificity */
+    background-color: rgba(var(--primary-color-rgb), 0.85); /* Keep colored overlay */
+    color: var(--white-color); /* Keep white text */
+    padding: 15px;
+    position: absolute; bottom: 0; left: 0; right: 0;
+    transform: translateY(100%); transition: transform 0.3s ease;
+    text-align: center;
+}
+.gallery-grid .gallery-item:hover .item-caption {
+    transform: translateY(0);
+}
+.gallery-grid .item-caption h4 {
+     color: var(--white-color) !important; /* Force white title */
+     margin-bottom: 5px; font-size: 1.1rem;
+}
+.gallery-grid .item-caption p {
+    color: rgba(255, 255, 255, 0.9) !important; /* Force light grey paragraph */
+    font-size: 0.9rem; margin-bottom: 10px;
+}
+/* Ensure links/buttons inside gallery items are visible */
+.gallery-grid .item-caption a {
+    color: var(--white-color); /* Or specific button color */
+    text-decoration: underline; /* Or button styles */
+}
+
+
+/* ==================== SECTION SPECIFIC STYLES ==================== */
+
+/* --- Listas Personalizadas (Keep as defined) --- */
+.checked-list { list-style: none; padding: 0; margin-top: 20px; }
+.checked-list li {
+    margin-bottom: 12px; padding-left: 25px; position: relative;
+    font-size: 1rem; line-height: 1.6;
+    color: var(--dark-text); /* Ensure dark text on white background */
+}
+.checked-list li i.icon-left {
+    color: var(--accent-color); font-size: 1.1em; top: 2px;
+}
+
+.decimal-list { list-style: none; padding: 0; margin-top: 20px; counter-reset: decimal-counter; }
+.decimal-list li {
+     margin-bottom: 12px; padding-left: 30px; position: relative;
+     font-size: 1rem; line-height: 1.6;
+     color: var(--dark-text); /* Ensure dark text on white background */
+     counter-increment: decimal-counter;
+}
+.decimal-list li::before {
+     content: counter(decimal-counter) "."; position: absolute; left: 0; top: 0;
+     font-family: var(--font-primary); font-weight: 700; font-size: 1.1em;
+     color: var(--primary-color);
+}
+
+
+/* ==================== CAREER HERO / INTRO ==================== */
+/* Inherits base styles from .hero-section in style.css */
+.career-hero.hero-section {
+     height: calc(100vh - var(--navbar-height)); min-height: 550px; max-height: 700px;
+     padding-top: var(--navbar-height); /* Add padding to push content below fixed navbar */
+     /* padding-bottom might also be needed if hero height is not strictly 100vh */
+}
+.career-hero .hero-overlay {
+    /* Adjusted overlay color to match primary theme better */
+    background: linear-gradient(rgba(var(--primary-color-rgb), 0.75), rgba(var(--primary-color-rgb), 0.95));
+}
+/* .career-title and .career-tagline inherit color from .hero-content in style.css (white) */
+.career-hero .career-title { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--white-color); }
+.career-hero .career-tagline { font-size: clamp(1rem, 3vw, 1.3rem); min-height: auto; margin-bottom: 30px; color: var(--light-text); }
+.career-hero .hero-actions .btn { margin: 0 10px; }
+
+
+/* ==================== INTRODUCCIÓN SECTION ==================== */
+/* career-intro just a label, styles inherit from .section-padding, .split-section */
+.career-intro .split-content .section-subtitle { color: var(--dark-text); }
+.career-intro .split-content p { color: var(--medium-text); }
+
+
+/* ==================== STUDENT PROFILE SECTION ==================== */
+.student-profile-section { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+/* .features-grid and .feature-card styles handled in General Component Styling section above */
+
+/* Styles for the vocational test CTA block */
+.profile-cta-block {
+    margin-top: 50px; padding: 40px 20px; background-color: var(--light-bg); border-radius: var(--border-radius);
+}
+.profile-cta-block .section-subtitle { color: var(--dark-text); margin-bottom: 15px; }
+.profile-cta-block p {
+    color: var(--medium-text); font-size: 1.1rem; margin-bottom: 30px;
+    max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.profile-cta-block .btn i { margin-right: 8px; }
+
+/* Style for the final note */
+.student-profile-section .profile-note {
+     text-align: center; margin-top: 30px; font-style: italic; font-size: 0.95rem;
+     color: var(--medium-text);
+}
+
+
+/* ==================== CURRICULUM SECTION (Swiper Carousel) ==================== */
+.curriculum-section { /* Background forced white above */ }
+/* .section-title inherits dark-text color */
+.curriculum-interactive { margin-top: 50px; }
+
+.curriculum-tabs {
+    display: flex; flex-wrap: wrap; margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color); gap: 5px; justify-content: center;
+}
+.curriculum-tabs .tab-button {
+    padding: 12px 20px; margin: 0 2px; border: none; background-color: transparent; cursor: pointer;
+    font-family: var(--font-primary); font-size: 1em; font-weight: 600;
+    border-bottom: 3px solid transparent; transition: color 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0; outline: none;
+    color: var(--medium-text); /* Default tab color */
+}
+.curriculum-tabs .tab-button:hover { color: var(--primary-color); }
+.curriculum-tabs .tab-button.active { color: var(--primary-color); border-bottom-color: var(--primary-color); font-weight: 700; }
+
+/* --- Styles for Swiper --- */
+.curriculum-carousel { width: 100%; padding-bottom: 30px; }
+.curriculum-slide {
+    padding: 25px; border-radius: var(--border-radius); min-height: 350px;
+    display: flex; flex-direction: column;
+    background-color: var(--white-color); box-shadow: var(--shadow-color-light) 0 5px 15px;
+}
+.curriculum-slide h3 { margin-top: 0; font-size: 1.4em; margin-bottom: 15px; flex-shrink: 0; color: var(--primary-color); }
+.curriculum-slide ul { list-style: disc; padding-left: 25px; flex-grow: 1; color: var(--dark-text); } /* Ensure list items are dark */
+.curriculum-slide li { margin-bottom: 10px; line-height: 1.6; font-size: 1rem; color: var(--medium-text); /* Ensure list item text is medium grey */ }
+.curriculum-slide li strong { color: var(--dark-text); /* Ensure strong text is dark */ }
+
+
+/* Specific styles for the download slide */
+.curriculum-slide.download-slide {
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    padding: 40px 20px; background-color: var(--light-bg); /* Slightly different background */
+}
+.curriculum-slide.download-slide h3 { color: var(--dark-text); margin-bottom: 20px; }
+.curriculum-slide.download-slide p { color: var(--medium-text); margin-bottom: 30px; font-size: 1.1rem; }
+.curriculum-slide.download-slide .btn i { margin-right: 8px; }
+
+/* Swiper Pagination (Dots) */
+.curriculum-carousel .swiper-pagination { position: relative; bottom: 0; margin-top: 15px; }
+.curriculum-carousel .swiper-pagination-bullet { background-color: var(--primary-color); opacity: 0.5; transition: opacity 0.3s ease, transform 0.3s ease; }
+.curriculum-carousel .swiper-pagination-bullet-active { background-color: var(--primary-color); opacity: 1; transform: scale(1.2); }
+
+/* Swiper Navigation (Arrows) */
+.curriculum-carousel .swiper-button-prev, .curriculum-carousel .swiper-button-next {
+    color: var(--primary-color); top: 50%; transform: translateY(-50%); width: 40px; height: 40px;
+}
+.curriculum-carousel .swiper-button-prev::after, .curriculum-carousel .swiper-button-next::after { font-size: 1.2rem; font-weight: 900; }
+@media (max-width: 767px) {
+    .curriculum-carousel .swiper-button-prev, .curriculum-carousel .swiper-button-next { display: none; } /* Hide arrows on small screens */
+    .curriculum-carousel { padding-bottom: 25px; }
+}
+
+
+/* ==================== JOB OPPORTUNITIES SECTION ==================== */
+.job-opportunities { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+/* .job-list.features-grid and .job-item.feature-card styles handled in General Component Styling section above */
+
+
+/* ==================== TESTIMONIALS SECTION ==================== */
+.testimonials-section { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+
+/* Swiper Testimonial Carousel (if used) */
+.testimonials-section .testimonials-carousel {
+     width: 100%; /* Adjust if you want gap/padding visible */
+     padding-bottom: 40px; /* Space for pagination dots if needed */
+     /* overflow: visible; */ /* Sometimes needed for scale effects on hover */
+     /* padding: 0 20px; */ /* Add padding if you want space on sides */
+}
+.testimonials-section .testimonial-item {
+     min-width: 300px; /* Base width */
+     padding: 25px;
+     /* Background, shadow, text colors handled in General Component Styling */
+}
+/* Swiper Pagination for Testimonials */
+.testimonials-carousel .swiper-pagination { position: absolute; bottom: 5px; left: 0; right: 0; text-align: center; }
+.testimonials-carousel .swiper-pagination-bullet { background-color: var(--primary-color); opacity: 0.5; }
+.testimonials-carousel .swiper-pagination-bullet-active { opacity: 1; }
+
+
+/* Video Testimonial Styles */
+.video-testimonial { margin-top: 50px; }
+.video-testimonial h3 { color: var(--dark-text); /* Ensure title is dark */ }
+
+/* Responsive Video Container (16:9 Aspect Ratio) */
+.video-responsive {
+  position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden;
+  max-width: 700px; margin: 0 auto; /* Center the video */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-color-medium) 0 8px 20px;
+}
+.video-responsive iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  border-radius: var(--border-radius); /* Apply border-radius to iframe */
+  margin: 0; max-width: none; box-shadow: none; /* Reset default iframe styles */
+}
+
+
+/* ==================== FACILITIES SECTION ==================== */
+.facilities-section { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+/* .split-section and .split-section.reverse inherit layout */
+.facilities-section .split-content .section-subtitle { color: var(--dark-text); }
+.facilities-section .split-content p { color: var(--medium-text); }
+/* .checked-list already defined/styled */
+
+/* Specific button styling for facilities section */
+.facilities-section .btn-outline-primary {
+     border-color: var(--primary-color);
+     color: var(--primary-color);
+     background-color: transparent;
+}
+.facilities-section .btn-outline-primary:hover {
+     background-color: var(--primary-color);
+     color: var(--white-color);
+     border-color: var(--primary-color); /* Keep border color on hover */
+}
+.facilities-section .btn-outline-primary i { margin-right: 8px; }
+
+/* Facilities Image Gallery Grid (if used) */
+.facilities-gallery.grid { /* Assuming .grid provides a grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between images */
+    margin-top: 40px; /* Space below text */
+}
+.facilities-gallery img {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the space without distortion */
+    border-radius: var(--border-radius-small); /* Small border radius for images */
+    box-shadow: var(--shadow-color-light) 0 2px 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.facilities-gallery img:hover {
+     transform: scale(1.03);
+     box-shadow: var(--shadow-color-medium) 0 5px 15px;
+}
+
+
+/* ==================== FACULTY SECTION ==================== */
+.faculty-section { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+/* .faculty-list.features-grid and .faculty-member.feature-card styles handled in General Component Styling section above */
+/* rounded-circle class from general styles/bootstrap if used */
+.faculty-section .faculty-member img {
+     border-radius: 50% !important; /* Ensure round images */
+     border: 3px solid var(--secondary-color);
+}
+.faculty-section .faculty-member .small-link {
+     display: inline-block; margin-top: 10px;
+     font-size: 0.9rem; font-weight: 600;
+     color: var(--primary-color);
+}
+.faculty-section .faculty-member .small-link:hover {
+     color: var(--secondary-color);
+     text-decoration: underline;
+}
+
+
+/* ==================== PROJECTS GALLERY SECTION ==================== */
+.projects-gallery { /* Background forced white above */ }
+/* .section-title and p.text-center inherit styles */
+/* .gallery-grid and .gallery-item styles handled in General Component Styling section above */
+
+
+/* ==================== ADMISSIONS SECTION ==================== */
+.admissions-section { /* Background forced white above */ }
+/* .section-title inherits dark-text */
+/* .split-section and .split-section.reverse inherit layout */
+.admissions-section .split-content .section-subtitle { color: var(--dark-text); }
+.admissions-section .split-content p { color: var(--medium-text); }
+/* .decimal-list already defined/styled */
+.admissions-section .admissions-cta-text { color: var(--dark-text); /* Ensure dark */ }
+/* Buttons within admissions section inherit base styles */
+.admissions-section .btn {
+     /* Ensure correct button styles if using btn-primary or other variants */
+}
+.admissions-section .btn i { margin-right: 8px; }
+
+
+/* ==================== FAQ SECTION (Accordion) ==================== */
+.faq-section { /* Background forced white above */ }
+/* .section-title inherits dark-text */
+
+/* FAQ Item Container */
+.faq-items {
+    margin-top: 50px; max-width: 800px; margin-left: auto; margin-right: auto;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-color-light) 0 1px 5px;
+    margin-bottom: 15px;
+    overflow: hidden; /* Needed for border-radius */
+    background-color: var(--white-color); /* Explicitly white */
+}
+
+/* FAQ Question Button (Accordion Header) */
+.faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 18px 20px; border: none;
+    background-color: var(--light-bg); /* Light grey background for contrast */
+    color: var(--dark-text); /* Dark text color */
+    text-align: left; font-family: var(--font-primary); font-size: 1.1em;
+    font-weight: 600; cursor: pointer; outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.faq-question:hover, .faq-question:focus {
+    background-color: #e9ecef; /* Slightly darker grey on hover/focus */
+    color: var(--primary-color);
+}
+
+/* Arrow Icon */
+.faq-question::after {
+    content: '\f078'; /* Font Awesome chevron-down icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+    color: var(--primary-color); /* Primary color for the icon */
+}
+/* Rotate icon when accordion is open */
+.faq-question[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* FAQ Answer Content (Accordion Panel) */
+.faq-answer {
+    padding: 0 20px; /* Initial padding */
+    background-color: var(--white-color); /* White background for answer */
+    display: none; /* Initially hidden, controlled by JS */
+}
+.faq-answer p {
+     padding-top: 15px; /* Space above paragraph */
+     padding-bottom: 15px; /* Space below paragraph */
+     margin-bottom: 0 !important; /* Remove default paragraph margin */
+     color: var(--medium-text) !important; /* Force medium grey text */
+     line-height: 1.7; font-size: 1rem;
+}
+.faq-answer a {
+     color: var(--primary-color); /* Ensure links within answers are primary color */
+}
+.faq-answer a:hover {
+     color: var(--secondary-color);
+}
+
+
+/* CTA within FAQ section */
+.faq-section .text-center .section-subtitle {
+     color: var(--dark-text); /* Ensure title is dark */
+     margin-bottom: 15px;
+}
+.faq-section .btn-outline-primary {
+     border-color: var(--primary-color);
+     color: var(--primary-color);
+     background-color: transparent;
+}
+.faq-section .btn-outline-primary:hover {
+     background-color: var(--primary-color);
+     color: var(--white-color);
+     border-color: var(--primary-color);
+}
+.faq-section .btn-outline-primary i { margin-right: 8px; }
+
+
+/* ==================== FINAL CTA SECTION ==================== */
+/* Styles overridden in the "FORZAR FONDO BLANCO" section above */
+/* .cta-section .cta-title, .cta-section .cta-text inherit dark-text forced */
+/* Buttons styles overridden above as well */
+
+
+/* ==================== MEDIA QUERIES (Adapted from style.css) ==================== */
+
+/* Tablets and Small Desktops (<= 991px) */
+@media (max-width: 991px) {
+    /* Layout adjustments inherited from style.css */
+    .career-hero.hero-section { min-height: 60vh; padding-top: var(--navbar-height); }
+    .career-hero .career-title { font-size: clamp(2rem, 4.5vw, 2.5rem); }
+    .career-hero .career-tagline { font-size: clamp(0.95rem, 2.5vw, 1.2rem); }
+
+    /* Grids - adjusted gap and minmax */
+    .features-grid, .job-list.features-grid, .faculty-list.features-grid,
+    .facilities-gallery.grid, .projects-gallery .gallery-grid { /* Added .grid class */
+         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 30px;
+    }
+    .facilities-gallery img { height: 180px; } /* Adjust image height */
+
+
+    /* Testimonials */
+    .testimonials-section .testimonial-item { min-width: 280px; padding: 20px; }
+    .testimonials-section .testimonials-carousel { gap: 20px; margin-top: 30px; } /* Adjust gap for swiper */
+     /* Video responsivo */
+    .video-responsive { max-width: 90%; }
+
+    /* Curriculum Tabs */
+    .curriculum-tabs { justify-content: center; gap: 8px;} /* Keep centered or left */
+    .curriculum-tabs .tab-button { font-size: 0.95em; padding: 10px 15px; }
+    /* Curriculum Slides */
+    .curriculum-slide { min-height: 280px; padding: 20px; }
+    .curriculum-slide h3 { font-size: 1.3em; }
+    .curriculum-slide ul { padding-left: 20px; }
+    .curriculum-slide li { font-size: 0.95rem; }
+    .curriculum-slide.download-slide p { font-size: 1rem; }
+
+    /* FAQ */
+     .faq-question { padding: 16px 20px; font-size: 1.05em; }
+     .faq-answer { padding: 0 20px 16px; }
+     .faq-answer p { padding-top: 16px; }
+}
+
+/* Mobile (<= 767px) */
+@media (max-width: 767px) {
+    /* Layout adjustments inherited from style.css (single column, stacked buttons, etc.) */
+    .career-hero.hero-section { min-height: 65vh; padding-top: var(--navbar-height); padding-bottom: 40px; }
+    .career-hero .career-title { font-size: clamp(1.8rem, 7vw, 2.2rem); }
+    .career-hero .career-tagline { font-size: clamp(0.9rem, 3.5vw, 1.1rem); margin-bottom: 20px; }
+    .career-hero .hero-actions .btn { margin: 0 5px; } /* Smaller gap */
+
+
+    /* Grids - single column */
+    .features-grid, .job-list.features-grid, .faculty-list.features-grid,
+    .facilities-gallery.grid, .projects-gallery .gallery-grid {
+        grid-template-columns: 1fr; gap: 20px; margin-top: 30px;
+    }
+     .facilities-gallery img { height: 160px; } /* Adjust image height */
+
+
+     /* Testimonials */
+     /* Swiper setup for mobile carousel */
+     .testimonials-section .testimonials-carousel {
+         width: 100%; /* Full width */
+         padding-bottom: 30px; /* Space for pagination */
+         overflow: hidden; /* Hide extra slides */
+         /* Remove side padding if added above */
+     }
+     .testimonials-section .testimonial-item {
+         width: 85%; /* Make items slightly less than full width */
+         margin: 0 7.5%; /* Center items with equal side margin */
+         min-width: 260px; /* Ensure a minimum size */
+         padding: 20px;
+     }
+      /* Video responsivo */
+     .video-responsive { max-width: 100%; border-radius: var(--border-radius-small); }
+     .video-responsive iframe { border-radius: var(--border-radius-small); }
+
+
+     /* Curriculum Tabs */
+     .curriculum-tabs { flex-direction: column; align-items: stretch; gap: 0; margin-bottom: 20px; border-bottom: none; }
+     .curriculum-tabs .tab-button {
+         margin: 0; /* Remove horizontal margin */
+         margin-bottom: 5px; /* Add vertical margin */
+         text-align: center;
+         font-size: 1em; padding: 12px 15px;
+         border-bottom: 1px solid var(--border-color) !important; /* Add border bottom */
+         border-radius: 0 !important; /* Remove border radius */
+     }
+     .curriculum-tabs .tab-button.active {
+         border-bottom-color: var(--primary-color) !important; /* Keep active border color */
+         font-weight: 700;
+     }
+     .curriculum-tabs .tab-button:last-child {
+          margin-bottom: 0;
+     }
+     /* Curriculum Slides */
+     .curriculum-slide { min-height: 250px; padding: 15px; }
+     .curriculum-slide h3 { font-size: 1.2em; }
+     .curriculum-slide ul { padding-left: 20px; }
+     .curriculum-slide li { font-size: 0.9rem; margin-bottom: 8px; }
+     .curriculum-slide.download-slide p { font-size: 1em; }
+     .curriculum-slide.download-slide .btn { font-size: 0.9rem; padding: 10px 20px; }
+     /* Hide Swiper arrows on mobile */
+     .curriculum-carousel .swiper-button-prev, .curriculum-carousel .swiper-button-next { display: none; }
+     .curriculum-carousel { padding-bottom: 25px; }
+
+
+     /* FAQ */
+     .faq-question { padding: 15px 20px; font-size: 1em; }
+     .faq-answer { padding: 0 20px 15px; }
+     .faq-answer p { padding-top: 15px; }
+
+
+     /* Final CTA buttons stack */
+     .cta-section .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+     }
+      .cta-section .cta-buttons .btn {
+           width: 90%; /* Adjust width */
+           max-width: 300px; /* Max width */
+      }
+
+
+}

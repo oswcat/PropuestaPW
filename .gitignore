@@ -1,0 +1,112 @@
+# Archivos de Sistema Operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+._*
+
+# Archivos de Configuración de IDEs y Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sublime-workspace
+*.sublime-project
+nbproject/ # NetBeans
+*.komodoproject # Komodo
+
+# Archivos de Log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log.[0-9] # Rotated logs
+
+# Archivos de Variables de Entorno Locales
+.env
+.env.*
+!.env.example # A menos que quieras versionar un ejemplo de .env
+local.settings.json # Azure Functions
+appsettings.Development.json
+
+# Dependencias de Node, Python, etc.
+node_modules/
+jspm_packages/
+bower_components/
+vendor/ # PHP, Ruby, etc.
+.npm/
+.pnp.*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python # Virtualenv
+.venv/
+env/
+venv/
+
+
+# Archivos de configuración de herramientas de compilación/transpilación
+.parcel-cache/
+.cache/
+.next/
+.nuxt/
+.svelte-kit/
+public/build/ # Para algunos frameworks (ej. Symfony, Laravel Mix)
+dist/
+build/
+out/
+coverage/
+reports/
+
+# Archivos temporales y de backup de editores
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.rej
+
+# Archivos de configuración específicos de algunas herramientas
+.firebaserc
+# firebase.json # A menos que quieras versionar la configuración de hosting de Firebase
+.vercel/
+.netlify/
+.serverless/
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Archivos de Bases de Datos Locales
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+
+# Archivos de Credenciales y Secretos (¡MUY IMPORTANTE!)
+*secret*.json
+*secrets*.js
+*credentials*.json
+*token*.json
+*.pem
+*.key
+*.p12
+aws/credentials # AWS CLI credentials
+.boto # Boto (AWS SDK for Python)
+.npmrc # Puede contener tokens
+.yarnrc # Puede contener tokens
+.git-credentials
+*config.local.js 
+*settings.local.php
+
+apps-script/Config.gs
+
+*.zip
+*.tar.gz
+*.rar

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agenda una consulta educativa con un asesor de UNIREM. Selecciona fecha y hora.">
+    <title>Agenda tu Asesoría - UNIREM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/src/cropped-f1.webp" type="image/png">
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../src/Cita.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Librería para el confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- GA Tag (Opcional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2BBVRYBMM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K2BBVRYBMM');
+    </script>
+</head>
+<body>
+
+    <main class="booking-page-container">
+        <header class="booking-header">
+             <img src="../images/src/logo.png" alt="Logo UNIREM" class="unirem-logo-large">
+             <h1 class="form-title">¡Agenda tu Asesoría Educativa!</h1>
+             <p class="header-description">Selecciona la fecha y hora que mejor se adapte a tu disponibilidad para confirmar tu cita.</p>
+        </header>
+
+        <div class="booking-wrapper">
+            <section class="booking-calendar-pane">
+                <h3 class="calendar-title">1. Selecciona una fecha</h3>
+                <div class="calendar-nav">
+                    <button id="prev-month" class="button-icon" aria-label="Mes anterior"><i class="fas fa-chevron-left"></i></button>
+                    <span id="current-month-year" class="month-year-display" aria-live="polite"></span>
+                    <button id="next-month" class="button-icon" aria-label="Mes siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="day-name">Dom</div><div class="day-name">Lun</div><div class="day-name">Mar</div><div class="day-name">Mié</div><div class="day-name">Jue</div><div class="day-name">Vie</div><div class="day-name">Sáb</div>
+                </div>
+                 <div class="meeting-details-small">
+                     <p><i class="fas fa-clock"></i> Duración: 30 min</p>
+                     <p><i class="fas fa-map-pin"></i> Modalidad: Presencial</p>
+                 </div>
+                 
+                 <div class="location-details">
+                    <h4 class="location-title">Ubicación de la Asesoría</h4>
+
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.1093872183965!2d-99.08117488935001!3d19.318843081861154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce026aa4c8bc73%3A0x3ef6f7ba1af9505b!2sUNIREM%20-%20Universidad%20de%20la%20Rep%C3%BAblica%20Mexicana!5e1!3m2!1ses!2smx!4v1749860078503!5m2!1ses!2smx"
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de ubicación de UNIREM">
+                        </iframe>
+                    </div>
+
+                    <div class="address-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>
+                            Av. Tláhuac 1785, San Lorenzo Tezonco,<br>
+                            Iztapalapa, 09790 Ciudad de México, CDMX
+                        </p>
+                    </div>
+                
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=UNIREM+-+Universidad+de+la+República+Mexicana" target="_blank" class="button-directions">
+                        <i class="fas fa-route"></i>
+                        <span>Obtener Direcciones</span>
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="booking-slots-form-pane" id="slots-pane">
+                <h3 class="form-section-title">2. Elige un horario</h3>
+                <div class="selected-date-display" aria-live="polite"></div>
+                <div class="time-slots">
+                    <div class="no-date-selected">Selecciona una fecha en el calendario para ver los horarios.</div>
+                </div>
+                <form class="user-info-form is-hidden" id="booking-form">
+                    <h4 class="form-section-title">3. Completa tus Datos</h4>
+                    <div class="form-group">
+                        <label for="input-nombre" class="form-label">Nombre Completo<span class="required-star">*</span></label>
+                        <input type="text" id="input-nombre" name="nombre" class="form-input" required placeholder="Escribe tu nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email" class="form-label">Correo Electrónico<span class="required-star">*</span></label>
+                        <input type="email" id="input-email" name="email" class="form-input" required placeholder="tu.correo@ejemplo.com">
+                    </div>
+                     <div class="form-group">
+                        <label for="input-phone" class="form-label">Teléfono / WhatsApp<span class="required-star">*</span></label>
+                        <input type="tel" id="input-phone" name="telefono" class="form-input" required placeholder="Ej: 55 1234 5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="select-oferta" class="form-label">Oferta Educativa de Interés<span class="required-star">*</span></label>
+                        <select id="select-oferta" name="oferta_educativa" class="form-input" required>
+                            <option value="" disabled selected>-- Selecciona una opción --</option>
+                            <optgroup label="Bachillerato"><option value="bachillerato_general">Bachillerato General</option><option value="prepa_unam">Prepa UNAM</option></optgroup>
+                            <optgroup label="Licenciaturas Presenciales"><option value="licenciatura_fisioterapia">Licenciatura en Fisioterapia</option><option value="licenciatura_gastronomia">Licenciatura en Gastronomía</option><option value="licenciatura_derecho">Licenciatura en Derecho</option><option value="licenciatura_diseno_grafico">Licenciatura en Diseño Gráfico</option><option value="licenciatura_ingenieria_sistemas">Ingeniería en Sistemas</option><option value="licenciatura_arquitectura">Licenciatura en Arquitectura</option><option value="licenciatura_psicologia">Licenciatura en Psicología</option><option value="licenciatura_administracion_empresas">Administración de Empresas</option><option value="licenciatura_administracion_empresas_turisticas">Administración de Empresas Turísticas</option><option value="licenciatura_ciencias_comunicacion">Ciencias de la Comunicación</option><option value="licenciatura_mercadotecnia">Licenciatura en Mercadotecnia</option><option value="licenciatura_contaduria">Licenciatura en Contaduría</option><option value="licenciatura_comercio_internacional">Comercio Internacional</option><option value="licenciatura_nutricion">Licenciatura en Nutrición</option><option value="licenciatura_pedagogia">Licenciatura en Pedagogía</option></optgroup>
+                             <optgroup label="Licenciaturas Empresariales y en Línea"><option value="licenciatura_empresarias_derecho">Empresarial en Derecho</option><option value="licenciatura_empresarial_administracion_empresas">Empresarial en Administración</option><option value="licenciatura_linea_derecho">En línea en Derecho</option><option value="licenciatura_linea_pedagogia">En línea en Pedagogía</option></optgroup>
+                            <optgroup label="Posgrados"><option value="maestria_administracion_gestion_talento_humano">Maestría en Administración y Talento Humano</option><option value="maestria_derecho_fiscal_administrativo">Maestría en Derecho Fiscal y Administrativo</option><option value="maestria_derecho_corporativo_proteccion_empresarial">Maestría en Derecho Corporativo</option><option value="maestria_derecho_procesal_penal_acusatorio_adversarial">Maestría en Derecho Procesal Penal</option><option value="maestria_educacion">Maestría en Educación</option><option value="maestria_seguridad_tecnologias_informacion">Maestría en Seguridad y TI</option></optgroup>
+                            <optgroup label="Diplomados"><option value="diplomado_neuromarketing">Diplomado en Neuromarketing</option><option value="diplomado_sabor_salud">Diplomado en Sabor y Salud</option><option value="diplomado_habilidades_directivas">Diplomado en Habilidades Directivas</option></optgroup>
+                            <option value="otro_programa">Otro Programa/Consulta General</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="select-modalidad" class="form-label">Modalidad de Contacto Preferida<span class="required-star">*</span></label>
+                        <select id="select-modalidad" name="modalidad_contacto" class="form-input" required>
+                            <option value="" disabled selected>-- Selecciona una opción --</option>
+                            <option value="llamada">Llamada Telefónica</option><option value="whatsapp">Mensaje de WhatsApp</option><option value="correo">Correo Electrónico</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="form_source" value="cita_calendario_web">
+                    <div id="booking-form-status" class="form-status" aria-live="polite" role="status"></div>
+                    <button type="submit" id="btn-confirmar" class="button" disabled>
+                        <i class="fas fa-calendar-check" style="vertical-align: middle; margin-right: 8px;"></i>
+                        <span id="btn-confirmar-text">Selecciona Fecha y Hora</span>
+                    </button>
+                </form>
+            </section>
+            
+            <div id="booking-success-animation" class="booking-success-pane is-hidden">
+                <div class="success-icon animate__animated">🎉</div>
+                <h3 class="success-title">¡Cita Agendada!</h3>
+                <p class="success-message">Hemos enviado todos los detalles a tu correo electrónico. ¡Nos vemos pronto!</p>
+            </div>
+        </div> 
+    </main>
+
+    <script src="../js/Cita-script.js"></script>
+</body>
+</html>

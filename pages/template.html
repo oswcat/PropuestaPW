@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nombre de la Carrera] - UNIREM</title>
+    <meta name="description" content="Descubre la carrera de [Nombre de la Carrera] en UNIREM. Conoce el plan de estudios, oportunidades laborales y perfil del estudiante.">
+
+    <!-- Google Fonts (Igual que en Index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Igual que en Index.html) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper CSS (Para el carrusel del Plan de Estudios) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Estilos CSS Generales (TU style.css) -->
+    <!-- Using root-relative path / for safety assuming files are at the root or standard dirs -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Estilos CSS Específicos para la página de cada carrera -->
+     <!-- Using root-relative path / for safety -->
+    <link rel="stylesheet" href="/src/career-styles.css">
+
+    <!-- Favicon (Igual que en Index.html) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Twitter Cards (para compartir esta carrera en redes sociales) -->
+    <meta property="og:title" content="[Nombre de la Carrera] - UNIREM">
+    <meta property="og:description" content="[Meta Description - Usar la misma que la meta description tag]">
+    <!-- Replace with actual URL of a career image -->
+    <meta property="og:image" content="[URL de la imagen destacada de la carrera]">
+    <!-- Replace with actual URL of the career page -->
+    <meta property="og:url" content="[URL de la página de la carrera]">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Schema.org Markup (para SEO avanzado de esta Carrera) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOccupationalProgram", // O Course, dependiendo de la estructura
+      "name": "[Nombre Completo de la Carrera]", // Usar el nombre completo
+      "description": "[Breve descripción larga de la carrera - Similar a los primeros párrafos de la intro]",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad de la Republica Mexicana", // Tu nombre exacto
+        "url": "[URL de la Escuela]" // Tu URL principal
+      },
+      // Puedes añadir más detalles si aplica (duración, credenciales, occupationalCategory, etc.)
+      "timeToComplete": {
+          "@type": "Duration",
+          "hasUnit": "Annual",
+          "value": "[Número de años o cuatrimestres]" // Ej: 4 para años, 9 para cuatrimestres
+      },
+      "educationalCredentialAwarded": "[Título que otorga, ej: Licenciatura en ...]",
+      "occupationalCategory": "[Ej: Tecnología, Negocios, Arte, Salud, etc.]"
+    }
+    </script>
+
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <!-- Reutiliza la misma estructura y clases del navbar del Index -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container navbar-content">
+            <a href="/" class="logo">
+                <img src="/images/logo-escuela-moderno-blanco.png" alt="Logo UNIREM" height="45">
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                 <li><a href="/">Inicio</a></li>
+                 <li class="has-dropdown">
+                     <!-- Use href="#" for dropdown toggles unless they link to a specific page -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Quiénes Somos <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                     <ul class="dropdown-menu">
+                          <li><a href="/sobre-nosotros.html#mision">Misión y Visión</a></li>
+                         <li><a href="/sobre-nosotros.html#historia">Nuestra Historia</a></li>
+                         <li><a href="/sobre-nosotros.html#equipo">Equipo Directivo</a></li>
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                      <!-- Use href="#" for dropdown toggles unless they link to a specific page -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Oferta Educativa <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="/oferta/bachillerato.html">Bachillerato</a></li> <!-- Corrected path -->
+                         <li><a href="/oferta/licenciaturas.html">Licenciaturas</a></li> <!-- Corrected path -->
+                         <li><a href="/oferta/posgrados.html">Posgrados</a></li> <!-- Corrected path -->
+                     </ul>
+                 </li>
+                 <li class="has-dropdown">
+                      <!-- Use href="#" for dropdown toggles unless they link to a specific page -->
+                     <a href="#" aria-haspopup="true" aria-expanded="false">Vida Estudiantil <i class="fas fa-chevron-down dropdown-indicator"></i></a>
+                      <ul class="dropdown-menu">
+                         <li><a href="/actividades.html#deportes">Deportes</a></li> <!-- Corrected path -->
+                         <li><a href="/actividades.html#arte-cultura">Arte y Cultura</a></li> <!-- Corrected path -->
+                         <li><a href="/actividades.html#ciencias-tec">Ciencia y Tec.</a></li> <!-- Corrected path -->
+                         <li><a href="/actividades.html#extracurriculares">Extracurriculares</a></li> <!-- Corrected path -->
+                     </ul>
+                 </li>
+                 <li><a href="/noticias.html">Noticias</a></li> <!-- Corrected path -->
+                 <li><a href="/admisiones.html">Admisiones</a></li> <!-- Corrected path -->
+                 <li><a href="/contacto.html">Contacto</a></li> <!-- Corrected path -->
+                 <li><a href="/inscripciones.html" class="nav-cta btn btn-primary btn-small">Inscribirse</a></li> <!-- Corrected path -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content">
+
+        <!-- === SECCIÓN 1: HERO / INTRO DE CARRERA === -->
+        <!-- Note: The hero section should ideally handle padding-top itself to clear the fixed navbar -->
+        <section class="hero-section career-hero" id="career-hero">
+            <div class="hero-image">
+                 <!-- Replace with actual image path -->
+                <img src="[URL imagen destacada de la carrera]" alt="Imagen representativa de [Nombre de la Carrera]">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="career-title animate-on-scroll">[Nombre Completo de la Carrera]</h1>
+                <p class="career-tagline animate-on-scroll">[Slogan o Bajada atractiva sobre la carrera que resalte su valor]</p>
+                <div class="hero-actions animate-on-scroll">
+                     <!-- Replace with actual URLs and add aria-label -->
+                    <a href="[URL página de Admisiones o Formulario específico]" class="btn btn-primary btn-lg" aria-label="Inscribirse ahora a [Nombre de la Carrera]">¡Inscríbete Ahora!</a>
+                    <a href="#why-study-section" class="btn btn-secondary btn-lg" aria-label="Más información sobre [Nombre de la Carrera]">Más Información</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- === SECCIÓN 2: INTRODUCCIÓN / ¿POR QUÉ ESTUDIAR ESTO? (LAYOUT SPLIT) === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="why-study-section" class="section-padding career-intro">
+            <div class="container">
+                <div class="split-section">
+                    <!-- Added animate-on-scroll -->
+                    <div class="split-content animate-on-scroll">
+                        <h2 class="section-title text-left">¿Qué es la carrera de [Nombre Corto]?</h2>
+                        <p>Aquí va una descripción detallada de qué trata la carrera, su campo de estudio, su importancia en el mundo actual, las áreas de conocimiento que abarca, etc. Sé claro y atractivo.</p>
+                        <p>Explica el enfoque único de UNIREM en esta carrera. ¿Qué la hace diferente? (ej. prácticas, tecnología de punta, convenios con empresas, enfoque humanístico, profesores con experiencia real).</p>
+                         <h3 class="section-subtitle">¿Por qué elegir [Nombre Corto] en UNIREM?</h3>
+                         <ul class="checked-list">
+                             <li><i class="fas fa-check-circle icon-left"></i>Beneficio 1 (ej: Claustro de expertos)</li>
+                             <li><i class="fas fa-check-circle icon-left"></i>Beneficio 2 (ej: Infraestructura de vanguardia)</li>
+                             <li><i class="fas fa-check-circle icon-left"></i>Beneficio 3 (ej: Conexión con la industria)</li>
+                             <!-- Add more benefits -->
+                         </ul>
+                    </div>
+                     <!-- Added animate-on-scroll -->
+                    <div class="split-image animate-on-scroll">
+                         <!-- Replace with actual image path and alt text -->
+                        <img src="[URL imagen representativa intro]" alt="Imagen relacionada con [Nombre de la Carrera]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === SECCIÓN 3: PERFIL DEL ESTUDIANTE IDEAL + TEST VOCACIONAL === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="student-profile-section" class="section-padding student-profile-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+            <div class="container">
+                <h2 class="section-title">¿Es esta carrera para ti?</h2>
+                <p class="text-center">Explora el perfil del estudiante ideal y descubre si tus intereses y habilidades se alinean con esta profesión.</p>
+
+                <div class="features-grid mt-5"> <!-- Grid de tarjetas de atributos -->
+                     <!-- Add animate-on-scroll to each feature card -->
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon"><i class="fas fa-lightbulb fa-2x"></i></div>
+                        <h4>Curiosidad y Pasión</h4>
+                        <p>Interés genuino por [Área de interés 1] y deseo constante de aprender.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                         <div class="feature-icon"><i class="fas fa-brain fa-2x"></i></div>
+                        <h4>Pensamiento Analítico</h4>
+                        <p>Capacidad para observar, evaluar información y resolver problemas lógicamente.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                         <div class="feature-icon"><i class="fas fa-pencil-ruler fa-2x"></i></div>
+                        <h4>Creatividad e Innovación</h4>
+                        <p>Habilidad para generar nuevas ideas y enfoques en [Área de la carrera].</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                         <div class="feature-icon"><i class="fas fa-users-line fa-2x"></i></div>
+                        <h4>Habilidades Colaborativas</h4>
+                        <p>Disposición para trabajar en equipo y comunicarse eficazmente.</p>
+                    </div>
+                     <!-- Añadir más cards de perfil relevantes -->
+                </div>
+
+                <!-- Nuevo bloque de CTA para el test vocacional -->
+                 <!-- Added animate-on-scroll -->
+                <div class="profile-cta-block text-center mt-5 animate-on-scroll">
+                    <h3 class="section-subtitle">¿Aún con dudas? Haz nuestro Test Vocacional.</h3>
+                    <p>Descubre tus intereses y aptitudes de manera personalizada. Nuestro test te ayudará a confirmar si esta carrera es la opción perfecta para ti.</p>
+                     <!-- Replace with actual URL and add aria-label -->
+                    <a href="[URL de tu Test Vocacional]" class="btn btn-primary btn-large" aria-label="Realizar Test Vocacional"><i class="fas fa-feather-alt mr-2"></i> Realiza el Test Vocacional</a> <!-- Botón con ícono -->
+                </div>
+
+                <p class="profile-note text-center mt-4">Recuerda, el desarrollo de habilidades es parte fundamental de tu formación en UNIREM.</p> <!-- Nota final -->
+
+            </div>
+        </section>
+
+        <!-- === SECCIÓN 4: PLAN DE ESTUDIOS / CURRÍCULO (CARRUSEL SWIPER) === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="curriculum-section" class="section-padding curriculum-section">
+            <div class="container">
+                <h2 class="section-title">Plan de Estudios</h2>
+                <p class="text-center">Nuestro programa de estudios está diseñado para [Objetivo del plan de estudios].</p>
+
+                 <!-- Added animate-on-scroll to the whole interactive block -->
+                <div class="curriculum-interactive mt-5 animate-on-scroll">
+                    <!-- Botones de navegación para el Carrusel (simulan tabs) -->
+                    <div class="curriculum-tabs" id="curriculum-tabs-nav">
+                        <button class="tab-button active" data-slide-index="0">1º Cuatrimestre</button> <!-- Added active class to initial tab -->
+                        <button class="tab-button" data-slide-index="1">2º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="2">3º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="3">4º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="4">5º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="5">6º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="6">7º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="7">8º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="8">9º Cuatrimestre</button>
+                        <button class="tab-button" data-slide-index="9">Descargar PDF</button> <!-- Índice 9 para 9 cuatrimestres + 1 descarga -->
+                    </div>
+
+                    <!-- Contenedor del Carrusel Swiper -->
+                    <div class="swiper curriculum-carousel" id="curriculum-carousel-swiper">
+                        <!-- Wrapper con las Slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1: 1º Cuatrimestre (Índice 0) -->
+                            <div class="swiper-slide curriculum-slide">
+                                <h3>1º Cuatrimestre</h3>
+                                <ul>
+                                    <li><strong>Materia 1.1:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 1.2:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 1.3:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 1.4:</strong> Breve descripción opcional.</li>
+                                    <!-- Añadir todas las materias del cuatrimestre -->
+                                </ul>
+                            </div>
+                            <!-- Slide 2: 2º Cuatrimestre (Índice 1) -->
+                            <div class="swiper-slide curriculum-slide">
+                                <h3>2º Cuatrimestre</h3>
+                                <ul>
+                                    <li><strong>Materia 2.1:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 2.2:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 2.3:</strong> Breve descripción opcional.</li>
+                                    <!-- Añadir todas las materias del cuatrimestre -->
+                                </ul>
+                            </div>
+                             <!-- Slide 3: 3º Cuatrimestre (Índice 2) -->
+                            <div class="swiper-slide curriculum-slide">
+                                <h3>3º Cuatrimestre</h3>
+                                <ul>
+                                    <li><strong>Materia 3.1:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 3.2:</strong> Breve descripción opcional.</li>
+                                    <!-- Añadir todas las materias del cuatrimestre -->
+                                </ul>
+                            </div>
+                            <!-- ... Añadir slides para los Cuatrimestres 4 al 9 (Índices 3 a 8) ... -->
+                             <!-- Ejemplo de Slide para un Cuatrimestre intermedio (ej. 5º) -->
+                             <div class="swiper-slide curriculum-slide">
+                                <h3>5º Cuatrimestre</h3>
+                                <ul>
+                                     <li><strong>Materia 5.1:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 5.2:</strong> Breve descripción opcional.</li>
+                                    <li><strong>Materia 5.3:</strong> Breve descripción opcional.</li>
+                                    <!-- Añadir todas las materias del cuatrimestre -->
+                                </ul>
+                             </div>
+                             <!-- Asegúrate de tener 9 slides en total para los cuatrimestres -->
+
+                            <!-- Última Slide: Descarga del PDF (Índice 9) -->
+                            <div class="swiper-slide curriculum-slide text-center download-slide">
+                                <h3>Descarga el Plan Completo</h3>
+                                <p>Obtén el documento oficial con el detalle completo del plan de estudios, carga horaria y perfiles docentes.</p>
+                                <!-- Replace with actual URL and add aria-label -->
+                                <a href="[URL para descargar PDF completo]" target="_blank" class="btn btn-primary btn-large" aria-label="Descargar Plan de Estudios completo en PDF"><i class="fas fa-file-pdf mr-2"></i> Descargar PDF Completo</a>
+                            </div>
+
+                        </div>
+                         <!-- Add Swiper Pagination and Navigation -->
+                         <div class="swiper-pagination"></div>
+                         <div class="swiper-button-prev"></div>
+                         <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === SECCIÓN 5: CAMPO LABORAL / OPORTUNIDADES (LAYOUT GRID DE CARDS) === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="job-opportunities" class="section-padding job-opportunities"> <!-- Removed bg-light, background forced white via career-styles.css -->
+            <div class="container">
+                <h2 class="section-title">Tu Futuro Profesional</h2>
+                <p class="text-center">Al egresar de [Nombre de la Carrera] en UNIREM, podrás desempeñarte en:</p>
+                <div class="job-list features-grid"> <!-- Reutiliza features-grid para el layout si tienen el mismo estilo base -->
+                     <!-- Add animate-on-scroll to each job item -->
+                    <div class="job-item feature-card animate-on-scroll"> <!-- Or use feature-card -->
+                        <i class="fas fa-building fa-2x"></i>
+                        <h3>Sectores Clave</h3>
+                        <ul>
+                            <li>Tecnología y Desarrollo</li>
+                            <li>Consultoría</li>
+                            <li>Innovación</li>
+                            <!-- Añadir sectores relevantes -->
+                        </ul>
+                    </div>
+                    <div class="job-item feature-card animate-on-scroll">
+                        <i class="fas fa-user-tie fa-2x"></i>
+                        <h3>Roles y Puestos</h3>
+                        <ul>
+                            <li>Analista de Datos</li>
+                            <li>Desarrollador/a</li>
+                            <li>Gerente de Proyectos</li>
+                         </ul>
+                    </div>
+                     <div class="job-item feature-card animate-on-scroll">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                        <h3>Potencial de Crecimiento</h3>
+                        <p>La demanda de profesionales en esta área es alta y se espera un crecimiento constante en los próximos años.</p>
+                    </div>
+                     <!-- Add more job items -->
+                </div>
+                 <!-- Innovación: Logos de empresas si tienes -->
+                 <!-- <div class="company-logos text-center mt-5">
+                    <h3 class="section-subtitle">Nuestros egresados trabajan en:</h3>
+                    <img src="/images/logos/empresa1.png" alt="Logo Empresa 1">
+                    <img src="/images/logos/empresa2.png" alt="Logo Empresa 2">
+                    <img src="/images/logos/empresa3.png" alt="Logo Empresa 3">
+                 </div> -->
+            </div>
+        </section>
+
+        <!-- === SECCIÓN 6: TESTIMONIOS (CARRUSEL SWIPER O VIDEO) === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="testimonials-section" class="section-padding testimonials-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+             <div class="container">
+                 <h2 class="section-title">Voces de Nuestros Estudiantes</h2>
+                 <p class="text-center">Conoce la experiencia de quienes ya forman parte de UNIREM en esta carrera.</p>
+
+                 <!-- Example Swiper Testimonials (if needed, add Swiper logic to career-scripts.js) -->
+                 <!-- <div class="swiper testimonials-carousel animate-on-scroll">
+                      <div class="swiper-wrapper">
+                           <div class="swiper-slide testimonial-item">
+                                <img src="/images/placeholder-avatar.jpg" alt="Foto de Estudiante 1" width="80" height="80">
+                                <p class="quote">"Estudiar aquí cambió mi perspectiva profesional. Los profesores son increíbles y la infraestructura es top."</p>
+                                <p class="author">- Nombre Estudiante 1</p>
+                           </div>
+                           ... add more slides ...
+                      </div>
+                      <div class="swiper-pagination"></div>
+                 </div> -->
+
+                 <!-- Example Video Testimonial -->
+                 <div class="video-testimonial text-center mt-5 animate-on-scroll">
+                      <h3 class="section-subtitle">Testimonio en Video</h3>
+                       <!-- Replace with actual YouTube/Vimeo embed URL -->
+                      <div class="video-responsive">
+                           <iframe src="[YouTube/Vimeo Embed URL]" title="Testimonio de Estudiante UNIREM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-screen" allowfullscreen></iframe>
+                      </div>
+                 </div>
+
+             </div>
+         </section>
+
+
+        <!-- === SECCIÓN 7: INFRAESTRUCTURA / INSTALACIONES (LAYOUT IMAGEN + TEXTO O GRID) === -->
+        <!-- Added ID for potential timeline nav linking -->
+        <section id="facilities-section" class="section-padding facilities-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+             <div class="container">
+                 <h2 class="section-title">Infraestructura Especializada</h2>
+                 <p class="text-center">Contamos con instalaciones de vanguardia y tecnología para tu formación en [Nombre de la Carrera].</p>
+
+                 <div class="split-section reverse mt-5">
+                      <!-- Added animate-on-scroll -->
+                      <div class="split-image animate-on-scroll">
+                           <!-- Replace with actual image path and alt text -->
+                           <img src="[Imagen destacada de una instalación clave]" alt="Laboratorio o instalación clave para [Nombre de la Carrera]">
+                      </div>
+                      <!-- Added animate-on-scroll -->
+                      <div class="split-content animate-on-scroll">
+                           <h3 class="section-subtitle text-left">Nuestros Espacios para Aprender</h3>
+                           <p>Desarrolla tus habilidades en [describir instalaciones clave].</p>
+                           <p>Accede a tecnología de última generación que te preparará para las exigencias del mercado laboral.</p>
+                            <ul class="checked-list">
+                                <li><i class="fas fa-check-circle icon-left"></i>Laboratorios especializados</li>
+                                <li><i class="fas fa-check-circle icon-left"></i>Software actualizado</li>
+                                <li><i class="fas fa-check-circle icon-left"></i>Espacios colaborativos</li>
+                           </ul>
+                           <!-- Replace with actual URL and add aria-label -->
+                           <a href="[URL Tour Virtual]" class="btn btn-outline-primary mt-4" aria-label="Realizar Tour Virtual de instalaciones"><i class="fas fa-vr-cardboard mr-2"></i> Haz un Tour Virtual</a>
+                      </div>
+                 </div>
+
+                  <!-- Optional: Add a gallery of images if needed -->
+                  <!-- <div class="facilities-gallery grid mt-5 animate-on-scroll">
+                       <img src="/images/facilities/facility1.jpg" alt="Facility 1">
+                       <img src="/images/facilities/facility2.jpg" alt="Facility 2">
+                       <img src="/images/facilities/facility3.jpg" alt="Facility 3">
+                       ... add more images ...
+                  </div> -->
+             </div>
+         </section>
+
+         <!-- === SECCIÓN 8: CLAUSTRO DOCENTE (GRID DE CARDS) === -->
+         <!-- Added ID for potential timeline nav linking -->
+         <section id="faculty-section" class="section-padding faculty-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+              <div class="container">
+                   <h2 class="section-title">Nuestro Claustro Docente</h2>
+                   <p class="text-center">Aprenderás de expertos con amplia experiencia en el campo.</p>
+
+                   <div class="faculty-list features-grid mt-5">
+                        <!-- Add animate-on-scroll to each faculty member card -->
+                        <div class="faculty-member feature-card text-center animate-on-scroll">
+                             <!-- Replace with actual image path and alt text -->
+                             <img src="/images/faculty/faculty1.jpg" alt="Foto de Profesor/a 1" class="rounded-circle mb-3" width="100" height="100">
+                             <h3>[Nombre del Profesor/a]</h3>
+                             <p class="title">[Título o Cargo]</p>
+                             <p class="bio-summary">Breve resumen de su experiencia o especialidad.</p>
+                              <!-- Optional: Link to full bio page -->
+                              <!-- <a href="[URL Bio Profesor]" class="small-link">Ver Perfil</a> -->
+                        </div>
+                         <!-- Add more faculty member cards -->
+                          <div class="faculty-member feature-card text-center animate-on-scroll">
+                             <img src="/images/faculty/faculty2.jpg" alt="Foto de Profesor/a 2" class="rounded-circle mb-3" width="100" height="100">
+                             <h3>[Nombre del Profesor/a]</h3>
+                             <p class="title">[Título o Cargo]</p>
+                             <p class="bio-summary">Breve resumen de su experiencia o especialidad.</p>
+                        </div>
+                   </div>
+              </div>
+         </section>
+
+         <!-- === SECCIÓN 9: PROYECTOS ESTUDIANTILES / GALERÍA (GRID) === -->
+         <!-- Added ID for potential timeline nav linking -->
+         <section id="projects-section" class="section-padding projects-gallery"> <!-- Removed bg-light, background forced white via career-styles.css -->
+              <div class="container">
+                   <h2 class="section-title">Proyectos Destacados</h2>
+                   <p class="text-center">Conoce algunos de los trabajos y proyectos desarrollados por nuestros estudiantes.</p>
+
+                   <div class="gallery-grid mt-5"> <!-- You might need to define .gallery-grid layout -->
+                       <!-- Add animate-on-scroll to each gallery item -->
+                       <div class="gallery-item animate-on-scroll">
+                             <!-- Replace with actual image path and alt text -->
+                             <img src="/images/projects/project1.jpg" alt="Proyecto Estudiantil 1">
+                             <div class="item-caption">
+                                  <h4>Nombre del Proyecto</h4>
+                                  <p>Breve descripción.</p>
+                                  <!-- Optional: Link to project details -->
+                                  <!-- <a href="#" class="btn btn-secondary btn-small">Ver Más</a> -->
+                             </div>
+                       </div>
+                       <!-- Add more gallery items -->
+                        <div class="gallery-item animate-on-scroll">
+                             <img src="/images/projects/project2.jpg" alt="Proyecto Estudiantil 2">
+                             <div class="item-caption">
+                                  <h4>Nombre del Proyecto</h4>
+                                  <p>Breve descripción.</p>
+                             </div>
+                       </div>
+                   </div>
+              </div>
+         </section>
+
+         <!-- === SECCIÓN 10: PROCESO DE ADMISIÓN / PRÓXIMOS PASOS (SPLIT) === -->
+          <!-- Added ID for potential timeline nav linking -->
+         <section id="admissions-section" class="section-padding admissions-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+              <div class="container">
+                   <h2 class="section-title">Proceso de Admisión</h2>
+                   <div class="split-section mt-5">
+                        <!-- Added animate-on-scroll -->
+                       <div class="split-content animate-on-scroll">
+                            <h3 class="section-subtitle text-left">Sigue estos sencillos pasos:</h3>
+                            <ul class="decimal-list">
+                                 <li><strong>Paso 1:</strong> [Descripción del Paso 1, ej: Llena tu solicitud en línea].</li>
+                                 <li><strong>Paso 2:</strong> [Descripción del Paso 2, ej: Envía tus documentos requeridos].</li>
+                                 <li><strong>Paso 3:</strong> [Descripción del Paso 3, ej: Realiza tu pago de inscripción].</li>
+                                 <!-- Add all steps -->
+                            </ul>
+                             <p class="admissions-cta-text mt-4">¡Estamos listos para guiarte en cada etapa!</p>
+                             <!-- Replace with actual URL and add aria-label -->
+                             <a href="/admisiones.html" class="btn btn-primary mt-4" aria-label="Ver detalles completos del proceso de admisión">Ver Proceso Completo</a>
+                       </div>
+                        <!-- Added animate-on-scroll -->
+                       <div class="split-image animate-on-scroll">
+                           <!-- Replace with actual image path and alt text -->
+                           <img src="/images/admissions-image.jpg" alt="Imagen representativa del proceso de admisión">
+                       </div>
+                   </div>
+              </div>
+         </section>
+
+         <!-- === SECCIÓN 11: PREGUNTAS FRECUENTES (FAQ) (ACORDEÓN) === -->
+          <!-- Added ID for potential timeline nav linking -->
+         <section id="faq-section" class="section-padding faq-section"> <!-- Removed bg-light, background forced white via career-styles.css -->
+             <div class="container">
+                  <h2 class="section-title">Preguntas Frecuentes</h2>
+
+                  <div class="faq-items mt-5 animate-on-scroll"> <!-- Added animate-on-scroll to the container -->
+                       <div class="faq-item">
+                            <!-- Add aria-expanded="false" initially -->
+                           <button class="faq-question" aria-expanded="false">¿Cuál es el costo de la inscripción y las mensualidades?</button>
+                           <div class="faq-answer">
+                                <p>La información detallada sobre costos se encuentra en nuestra sección de <a href="/admisiones.html#costos">Admisiones</a> o puedes contactar a un asesor.</p>
+                           </div>
+                       </div>
+                       <div class="faq-item">
+                            <!-- Add aria-expanded="false" initially -->
+                           <button class="faq-question" aria-expanded="false">¿Se ofrecen becas o apoyos financieros?</button>
+                           <div class="faq-answer">
+                                <p>Sí, contamos con diversos programas de becas académicas y deportivas. Consulta los requisitos en nuestra sección de <a href="/admisiones.html#becas">Becas</a>.</p>
+                           </div>
+                       </div>
+                       <div class="faq-item">
+                             <!-- Add aria-expanded="false" initially -->
+                           <button class="faq-question" aria-expanded="false">¿Es presencial, en línea o híbrida?</button>
+                           <div class="faq-answer">
+                                <p>La carrera de [Nombre de la Carrera] se ofrece en modalidad [Presencial/En Línea/Híbrida]. Consulta los detalles específicos de la modalidad <a href="#curriculum-section">aquí</a>.</p>
+                           </div>
+                       </div>
+                       <!-- Add more FAQ items -->
+                  </div>
+
+                  <!-- CTA within FAQ -->
+                   <div class="text-center mt-5 animate-on-scroll">
+                        <h3 class="section-subtitle">¿No encuentras tu respuesta?</h3>
+                         <!-- Replace with actual URL and add aria-label -->
+                        <a href="/contacto.html" class="btn btn-outline-primary btn-large mt-3" aria-label="Contactar para hacer una pregunta"><i class="fas fa-question-circle mr-2"></i> Envíanos tu Pregunta</a>
+                   </div>
+             </div>
+         </section>
+
+
+         <!-- === SECCIÓN FINAL CTA (SIMILAR AL INDEX) === -->
+          <!-- Added ID for potential timeline nav linking -->
+         <section id="final-cta-section" class="cta-section section-padding">
+            <!-- Removed cta-overlay, background forced white via career-styles.css -->
+            <div class="container text-center">
+                <h2 class="cta-title animate-on-scroll">¡Inicia tu Camino en [Nombre de la Carrera]!</h2>
+                <p class="cta-text animate-on-scroll">No esperes más para construir el futuro que sueñas. En UNIREM te ofrecemos las herramientas y el apoyo para lograrlo.</p>
+                <div class="cta-buttons animate-on-scroll">
+                     <!-- Replace with actual URLs and add aria-label -->
+                     <a href="[URL página de Admisiones]" class="btn btn-light btn-large" aria-label="Inscribirse ahora"><i class="fas fa-user-plus mr-2"></i> Inscríbete Ahora</a>
+                     <a href="[URL contacto]" class="btn btn-outline-light btn-large" aria-label="Hablar con un asesor sobre la carrera"><i class="fas fa-envelope mr-2"></i> Habla con un Asesor</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <!-- Reutiliza la misma estructura del footer del Index -->
+    <footer class="footer" id="footer-section">
+         <div class="container footer-content">
+             <div class="footer-about">
+                  <img src="/images/logo-escuela-blanco.png" alt="Logo UNIREM Blanco" height="50" class="footer-logo">
+                  <p>Formando profesionales líderes, éticos y comprometidos con el desarrollo de México.</p>
+             </div>
+             <div class="footer-links">
+                 <h4>Enlaces Rápidos</h4>
+                 <ul>
+                     <li><a href="/">Inicio</a></li>
+                     <li><a href="/sobre-nosotros.html">Quiénes Somos</a></li>
+                     <li><a href="/oferta/licenciaturas.html">Oferta Educativa</a></li> <!-- Link to general offer page -->
+                     <li><a href="/admisiones.html">Admisiones</a></li>
+                     <li><a href="/noticias.html">Noticias</a></li>
+                     <li><a href="/contacto.html">Contacto</a></li>
+                 </ul>
+             </div>
+             <div class="footer-contact">
+                  <h4>Contacto</h4>
+                  <p><i class="fas fa-map-marker-alt fa-fw"></i> Dirección Completa de UNIREM, Ciudad, México</p>
+                  <p><i class="fas fa-phone fa-fw"></i> +52 55 1234 5678</p>
+                  <p><i class="fas fa-envelope fa-fw"></i> info@unirem.mx</p>
+             </div>
+             <div class="footer-social">
+                 <h4>Síguenos</h4>
+                 <!-- Replace with actual URLs and add rel="noopener noreferrer" -->
+                 <a href="[URL Facebook]" target="_blank" rel="noopener noreferrer" aria-label="Facebook de UNIREM" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="[URL Twitter]" target="_blank" rel="noopener noreferrer" aria-label="Twitter de UNIREM" title="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="[URL Instagram]" target="_blank" rel="noopener noreferrer" aria-label="Instagram de UNIREM" title="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="[URL LinkedIn]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de UNIREM" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="[URL TikTok]" target="_blank" rel="noopener noreferrer" aria-label="TikTok de UNIREM" title="TikTok"><i class="fab fa-tiktok"></i></a>
+             </div>
+         </div>
+         <div class="footer-bottom">
+              <p>© 2024 Universidad de la Republica Mexicana. Todos los derechos reservados. | <a href="/politica-privacidad.html">Política de Privacidad</a></p>
+         </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- ==        BOTÓN FLOTANTE WHATSAPP        == -->
+    <!-- ============================================= -->
+    <!-- Added rel="noopener noreferrer" for security with target="_blank" -->
+    <!-- Update text placeholder -->
+    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20gustaría%20más%20información%20sobre%20la%20carrera%20de%20[Nombre de la Carrera]."
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Swiper JS --> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script principal del sitio (maneja navbar show/hide, mobile menu, reveal on scroll) -->
+    <!-- Using root-relative path / for safety -->
+    <script src="../script.js"></script>
+    <!-- Script específico para páginas de Carrera (para Swiper Carousel y Accordions) -->
+     <!-- Using root-relative path / for safety -->
+    <script src="/js/career-scripts.js"></script>
+
+    <!-- Script de Font Awesome (Si usas un kit, descomenta y reemplaza YOUR_KIT_CODE) -->
+    <!-- <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> -->
+    <!-- Script de embebidos de TikTok (solo si usas embeds de TikTok en ESTA página de carrera) -->
+    <!-- <script async src="https://www.tiktok.com/embed.js"></script> -->
+
+</body>
+</html>
