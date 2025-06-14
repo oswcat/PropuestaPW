@@ -205,5 +205,40 @@ h1.form-title { font-family: var(--font-primary); color: var(--unirem-blue); fon
 .success-message { font-size: 1.1em; color: var(--text-secondary); max-width: 400px; }
 
 /* RESPONSIVE */
-@media (min-width: 992px) { .location-details { display: block; } }
-@media (max-width: 992px) { .booking-wrapper { flex-direction: column; } .booking-page-container { margin: 20px auto; } }
+@media (max-width: 992px) {
+    .booking-wrapper {
+        flex-direction: column;
+        /* Opcional: añade un poco menos de espacio entre los paneles en móvil */
+        gap: 25px; 
+    }
+
+    .booking-page-container {
+        margin: 20px 15px; /* Añadimos un pequeño margen a los lados en móvil */
+        padding: 20px;
+    }
+
+    /* === ¡AÑADIR ESTE BLOQUE ES LA SOLUCIÓN CLAVE! === */
+    .booking-calendar-pane, 
+    .booking-slots-form-pane, 
+    .booking-success-pane {
+        flex-basis: 100%; /* El panel debe basar su tamaño en el 100% del contenedor */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        min-width: 0; /* Anula el min-width de escritorio para evitar conflictos */
+        box-sizing: border-box; /* Asegura que el padding no desborde */
+    }
+    /* === FIN DEL BLOQUE AÑADIDO === */
+
+    /* === AJUSTES ADICIONALES PARA MEJORAR LA LECTURA EN MÓVIL === */
+    h1.form-title {
+        font-size: 2.2em; /* Un poco más pequeño para que no ocupe tanto espacio */
+    }
+
+    .header-description {
+        font-size: 1em;
+    }
+
+    /* Para que los botones de horario sean más grandes y fáciles de tocar */
+    .time-slot {
+        flex-basis: calc(50% - 4px); /* Ocupa la mitad del espacio menos la mitad del gap */
+    }
+}
